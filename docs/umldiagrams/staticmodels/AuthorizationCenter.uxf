@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>170</x>
+      <y>240</y>
+      <w>450</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;application logic&gt;&gt;
+AuthorizationCenterUI
+--
+authorizeCard(cardNumber: long, pin: int, cost: double): int
+--
+Authorizes card transactions requested by the
+transaction manager.</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
