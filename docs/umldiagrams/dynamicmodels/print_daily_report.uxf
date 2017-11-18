@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>20</x>
+      <y>20</y>
+      <w>280</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Print Daily Report Use Case</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>60</y>
+      <w>210</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;control&gt;&gt;
+_:Timer_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>260</y>
+      <w>210</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;application logic&gt;&gt;
+_:TransactionManager_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>130</y>
+      <w>30</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>170</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>240</x>
+      <y>160</y>
+      <w>100</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>1. Signal Prepare Daily Report</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>110</x>
+      <y>440</y>
+      <w>210</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;entity&gt;&gt;
+_:Printer_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>160</x>
+      <y>330</y>
+      <w>30</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>350</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>250</x>
+      <y>350</y>
+      <w>100</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>2. Signal Print Report</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

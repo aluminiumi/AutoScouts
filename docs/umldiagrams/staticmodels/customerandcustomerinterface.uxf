@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>20</y>
+      <w>440</w>
+      <h>400</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;user interface&gt;&gt;
+CustomerUI
+--
+-co: CustomerOrder
+-cardNumber: Long
+-pin: int
+--
+#CheckoutOrder(i: CustomerOrder): void
+#PromptToScan(): void
+#ScanItem(i: int): void
+#UpdateOrderDisplay(): void
+#PrintTotal(): void
+#PromptForPaymentType(): void
+#SelectPaymentType(): void
+#ShowSubtotal(): void
+#SendAuthorizationRequest()
+#NewScreen(): void
+#ReportToTransManager(CustomerOrder: List&lt;Item&gt;): void
+--
+This class resides on the checkout 
+station itself, and communicates 
+with the CustomerInterface.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>30</y>
+      <w>290</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;entity&gt;&gt;
+CustomerOrder
+{Some Properties}
+--
+_-ClassAttribute: List&lt;InventoryItem&gt;_
+--
+#getItemAtIndex(i: int): InventoryItem
+#size(): int
+#getSubtotal(): double
+--
+This class is a list of type InventoryItem
+whose contents are used throughout 
+the system for inventory management 
+and receipt printing. Reset for each 
+customer.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>100</y>
+      <w>90</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+uses &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;70.0;20.0</additional_attributes>
+  </element>
+</diagram>

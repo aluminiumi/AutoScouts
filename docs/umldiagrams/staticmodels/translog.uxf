@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>870</x>
+      <y>20</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>_object: TransactionLog_
+--
+id: Date
+--
+Daily list of all customer 
+transactions.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>870</x>
+      <y>220</y>
+      <w>210</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>_object: Transaction_
+--
+item:int
+price:float
+quantity:int
+--
+Historic record of a customer
+transaction, including items
+purchased, their prices and 
+the quantity purchased.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>980</x>
+      <y>100</y>
+      <w>70</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+has &gt;
+</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

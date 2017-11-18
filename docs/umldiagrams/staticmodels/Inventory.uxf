@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>500</x>
+      <y>130</y>
+      <w>290</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;application logic&gt;&gt;
+InventoryManager
+--
+inventory: List&lt;InventoryItem&gt;
+inventoryLevels: List&lt;StockingLevel&gt;
+inventoryMessageReport:
+    List&lt;InventoryMessage&gt;
+--
+PrintDailyReport(): void
+UpdateInventory(): void
+--
+Keeps track of the items carried
+by the store, how many of each
+have been sold, and how many
+of each remain.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>470</y>
+      <w>210</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;entity&gt;&gt;
+InventoryItem
+--
+id: int
+name: String
+price: float
+discount: float
+--
+Describes an item
+carried by the store.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>470</y>
+      <w>160</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;entity&gt;&gt;
+InventoryMessage
+--
+itemId: int
+--
+Denotes an item
+whose stock is
+getting low.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>350</y>
+      <w>190</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2=0..*
+includes &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;150.0;70.0;150.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>350</y>
+      <w>180</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+&lt; includes</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;70.0;160.0;70.0;160.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>170</y>
+      <w>250</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;entity&gt;&gt;
+StockingLevel
+--
+-id: int
+-qty: int
+:msgThresh: int
+--
+Keeps track of threshold and qty
+of item</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
