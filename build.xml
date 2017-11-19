@@ -131,7 +131,8 @@
   <property name="dist.home"        value="${basedir}/dist"/>
   <property name="docs.home"        value="${basedir}/docs"/>
   <property name="src.home"         value="${basedir}/src"/>
-  <property name="web.home"         value="${basedir}/web"/>
+  <!-- property name="web.home"         value="${basedir}/web"/ -->
+  <property name="lib.home"         value="${basedir}/lib"/>
 
 
 <!-- ==================== External Dependencies =========================== -->
@@ -158,7 +159,8 @@
   <property name="foo.jar"
            value="/path/to/foo.jar"/>
 -->
-
+<property name="mysql-connector-java-5.1.23-bin.jar"
+          value="${lib.home}/mysql-connector-java-5.1.23-bin.jar"/>
 
 <!-- ==================== Compilation Classpath =========================== -->
 
@@ -182,11 +184,11 @@
 -->
 
     <!-- Include all elements that Tomcat exposes to applications -->
-    <fileset dir="${catalina.home}/bin">
+    <!-- fileset dir="${catalina.home}/bin">
       <include name="*.jar"/>
-    </fileset>
-    <pathelement location="${catalina.home}/lib"/>
-    <fileset dir="${catalina.home}/lib">
+    </fileset -->
+    <pathelement location="${build.home}/classes"/>
+    <fileset dir="${build.home}/classes">
       <include name="*.jar"/>
     </fileset>
 
@@ -216,8 +218,8 @@
 
 -->
 
-  <taskdef resource="org/apache/catalina/ant/catalina.tasks"
-           classpathref="compile.classpath"/>
+  <!-- taskdef resource="org/apache/catalina/ant/catalina.tasks"
+           classpathref="compile.classpath"/ -->
 
 
 <!--  ==================== Compilation Control Options ==================== -->
@@ -446,7 +448,7 @@ includeantruntime="false">
   <target name="prepare">
 
     <!-- Create build directories as needed -->
-    <mkdir  dir="${build.home}"/>
+    <mkdir  dir="${build.home}/classes"/>
     <!-- mkdir  dir="${build.home}/WEB-INF"/>
     <mkdir  dir="${build.home}/WEB-INF/classes"/ -->
 

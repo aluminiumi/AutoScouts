@@ -42,7 +42,7 @@ public class InventoryItem {
     }
 
     void setPrice(double newPrice) {
-        price - newPrice;
+        price = newPrice;
     }
 
     void setDiscount(double newDiscount) {
