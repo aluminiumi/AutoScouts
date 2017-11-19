@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
   <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
@@ -8,7 +9,7 @@
       <w>450</w>
       <h>190</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;application logic&gt;&gt;
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
 AuthorizationCenterUI
 --
 authorizeCard(cardNumber: long, pin: int, cost: double): int
