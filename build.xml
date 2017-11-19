@@ -128,6 +128,7 @@
   <property name="app.path"         value="/${app.name}"/>
   <property name="app.version"      value="0.1-dev"/>
   <property name="build.home"       value="${basedir}/build"/>
+  <property name="class.home"       value="${build.home}/classes"/>
   <property name="dist.home"        value="${basedir}/dist"/>
   <property name="docs.home"        value="${basedir}/docs"/>
   <property name="src.home"         value="${basedir}/src"/>
@@ -159,8 +160,8 @@
   <property name="foo.jar"
            value="/path/to/foo.jar"/>
 -->
-<property name="mysql-connector-java-5.1.23-bin.jar"
-          value="${lib.home}/mysql-connector-java-5.1.23-bin.jar"/>
+<!-- property name="mysql-connector-java-5.1.23-bin.jar"
+          value="${lib.home}/mysql-connector-java-5.1.23-bin.jar"/ -->
 
 <!-- ==================== Compilation Classpath =========================== -->
 
@@ -187,8 +188,9 @@
     <!-- fileset dir="${catalina.home}/bin">
       <include name="*.jar"/>
     </fileset -->
-    <pathelement location="${build.home}/classes"/>
-    <fileset dir="${build.home}/classes">
+
+    <pathelement location="${lib.home}"/>
+    <fileset dir="${lib.home}">
       <include name="*.jar"/>
     </fileset>
 
@@ -288,7 +290,7 @@
     <!-- Compile Java classes as necessary -->
     <!--mkdir    dir="${build.home}/WEB-INF/classes"/ -->
     <javac srcdir="${src.home}"
-          destdir="${build.home}/classes"
+          destdir="${build.home}"
             debug="${compile.debug}"
       deprecation="${compile.deprecation}"
 includeantruntime="false">
@@ -296,7 +298,7 @@ includeantruntime="false">
     </javac>
 
     <!-- Copy application resources -->
-    <copy  todir="${build.home}/classes">
+    <copy  todir="${build.home}">
       <fileset dir="${src.home}" excludes="**/*.java"/>
     </copy>
 
@@ -331,7 +333,8 @@ includeantruntime="false">
     </copy>
 
     <!-- Create application JAR file -->
-    <jar jarfile="${dist.home}/${app.name}-${app.version}.jar"
+    <!-- jar jarfile="${dist.home}/${app.name}-${app.version}.jar" -->
+    <jar jarfile="${dist.home}/${app.name}.jar"
          basedir="${build.home}"/>
 
     <!-- Copy additional files to ${dist.home} as necessary -->
@@ -448,7 +451,7 @@ includeantruntime="false">
   <target name="prepare">
 
     <!-- Create build directories as needed -->
-    <mkdir  dir="${build.home}/classes"/>
+    <mkdir  dir="${build.home}"/>
     <!-- mkdir  dir="${build.home}/WEB-INF"/>
     <mkdir  dir="${build.home}/WEB-INF/classes"/ -->
 
