@@ -334,8 +334,9 @@ includeantruntime="false">
 
     <!-- Create application JAR file -->
     <!-- jar jarfile="${dist.home}/${app.name}-${app.version}.jar" -->
-    <jar jarfile="${dist.home}/${app.name}.jar"
-         basedir="${build.home}"/>
+    <jar jarfile="${dist.home}/${app.name}.jar" basedir="${build.home}">
+	<zipgroupfileset dir="${lib.home}" includes="*.jar" />
+    </jar>
 
     <!-- Copy additional files to ${dist.home} as necessary -->
 

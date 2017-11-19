@@ -26,14 +26,11 @@ public final class DBManager {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = ConnectionProvider.getCon();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM Inventory;");
-			ps.setString(1, accountID);
-			ps.setString(2, password);
 			ResultSet rs=ps.executeQuery();
-			boolean status = rs.next();
-			if(status) {
-				System.out.println(new InventoryItem(rs.getInteger(1), rs.getString(2), rs.getDouble(3), rs.getDouble(4), rs.getInteger(5), rs.getInteger(6)));
-
+			while(rs.next()) {
+				System.out.println(new InventoryItem(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getDouble(4), rs.getInt(5), rs.getInt(6)));
 			}
+
 		} catch (Exception e) {
 			System.out.println("readAccountInfo() Exception: "+e);
 		}
