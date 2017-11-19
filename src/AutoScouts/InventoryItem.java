@@ -9,6 +9,19 @@ public class InventoryItem {
     int qty;
     int messageThresh;
 
+    InventoryItem(int i, String n, double p, double d, int q, int t) {
+        id = i;
+        name = n;
+        price = p;
+        discount = d;
+        qty = q;
+        messageThresh = t;
+    }
+
+    public String toString() {
+        return id+" "+name+" "+price+" "+discount+" "+qty+" "+messageThresh;
+    }
+
     public int getId() {
         return id;
     }
