@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
   <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
@@ -40,6 +41,8 @@ id: int
 name: String
 price: float
 discount: float
+qty: int
+msgThresh: int
 --
 Describes an item
 carried by the store.</panel_attributes>
@@ -88,24 +91,5 @@ includes &gt;</panel_attributes>
 m1=0..*
 &lt; includes</panel_attributes>
     <additional_attributes>10.0;120.0;10.0;70.0;160.0;70.0;160.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>160</x>
-      <y>170</y>
-      <w>250</w>
-      <h>240</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;entity&gt;&gt;
-StockingLevel
---
--id: int
--qty: int
-:msgThresh: int
---
-Keeps track of threshold and qty
-of item</panel_attributes>
-    <additional_attributes/>
   </element>
 </diagram>
