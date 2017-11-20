@@ -4,13 +4,227 @@
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>920</x>
-      <y>100</y>
+      <x>910</x>
+      <y>0</y>
       <w>440</w>
-      <h>410</h>
+      <h>240</h>
     </coordinates>
-    <panel_attributes>Note..
-bg=blue</panel_attributes>
+    <panel_attributes>Use Case Name:  View/Update Product Inventory 
+Summary:  Information about a product is viewed/updated 
+including price, descriptions, and discount information. 
+Actor:  Manager 
+Precondition:  Menu is displayed to manager. 
+Description:   
+1. Manager selects View/Update from menu. 
+2. System prompts and manager selects an item to view/update. 
+3. System displays the price, description, and discount 
+information of the item. 4. Manager updates any information 
+by typing over if necessary and enters when done 
+(OK, SUBMIT, ENTER key or graphical user interface button). 
+5. System updates information if necessary and displays new values.
+Postcondition:  Product inventory is viewed/updated. </panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>80</x>
+      <y>330</y>
+      <w>80</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Manager
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>290</x>
+      <y>300</y>
+      <w>300</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;user interface&gt;&gt;
+ManagerUI
+--
+#ViewOrUpdate(): void
+#requestInventoryItem(id: int): InventoryItem
+#displayInventoryItem(): void
+#updateInventoryItem(i: InventoryItem): int
+--
+This class interacts with the
+system to perform the functions
+in the Manager class</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>150</x>
+      <y>370</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>780</x>
+      <y>290</y>
+      <w>330</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;business logic&gt;&gt;
+_:CommunicationManager_
+--
+Facilitates communication 
+across all interfaces and 
+manager classes</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>790</x>
+      <y>610</y>
+      <w>320</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;application logic&gt;&gt;
+_:InventoryManager_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>580</x>
+      <y>360</y>
+      <w>220</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>940</x>
+      <y>460</y>
+      <w>30</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>170</x>
+      <y>240</y>
+      <w>120</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+
+M1: Select 
+view/update
+
+M3: Item choice
+
+M9: Item update</panel_attributes>
+    <additional_attributes>90.0;20.0;20.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>160</x>
+      <y>400</y>
+      <w>130</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+
+M2: Prompt 
+for item
+
+M8: Display price, 
+description and 
+discount
+
+M14: Display 
+updated details
+</panel_attributes>
+    <additional_attributes>20.0;20.0;100.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>620</x>
+      <y>280</y>
+      <w>130</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+
+M4: Item ID
+
+M10: Item update</panel_attributes>
+    <additional_attributes>100.0;20.0;20.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>500</y>
+      <w>140</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+M5: Item info 
+request
+
+M11: Item update
+</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>980</x>
+      <y>500</y>
+      <w>130</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+M6: Item details
+
+M12 New details</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>620</x>
+      <y>390</y>
+      <w>130</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+
+M7: Item details
+
+M13: New details</panel_attributes>
+    <additional_attributes>20.0;20.0;100.0;20.0</additional_attributes>
   </element>
 </diagram>
