@@ -10,7 +10,7 @@
       <h>190</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
-AuthorizationCenterUI
+AuthorizationCenterServiceInterface
 --
 authorizeCard(cardNumber: long, pin: int, cost: double): int
 --
