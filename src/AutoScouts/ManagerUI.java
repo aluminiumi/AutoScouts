@@ -1,8 +1,8 @@
 package AutoScouts;
 
-class ManagerInterface {
+class ManagerUI {
 	public static void main(String args[]) {
-		System.out.println("ManagerInterface");
+		System.out.println("ManagerUI");
 	}
 
 }
