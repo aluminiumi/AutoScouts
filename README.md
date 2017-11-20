@@ -15,6 +15,8 @@ $ *java -cp dist/AutoScouts.jar AutoScouts.RestockerUI*
 
 $ *java -cp dist/AutoScouts.jar AutoScouts.ManagerUI*
 
+$ *java -cp dist/AutoScouts.jar AutoScouts.CustomerUI*
+
 ### To clean up for proper push to GitHub:
 $ *ant clean*
 
