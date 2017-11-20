@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>500</x>
+      <y>210</y>
+      <w>270</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;control&gt;&gt;
+_:CommunicationManager_
+--
+Facilitates communication 
+across all interfaces and 
+manager classes</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>970</x>
+      <y>230</y>
+      <w>280</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>Note..
+bg=blue
+Need to aggregate functions
+from the interfaces to complete 
+this model.
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
