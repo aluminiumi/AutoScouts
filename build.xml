@@ -45,7 +45,7 @@
      set to the current working directory.
 -->
 
-<project name="OSS" default="compile" basedir=".">
+<project name="AutoScouts" default="compile" basedir=".">
 
 
 
@@ -102,25 +102,9 @@
                        "compile" targets will generate their output.
                        Defaults to "build".
 
-  catalina.home        The directory in which you have installed
-                       a binary distribution of Tomcat.  This will
-                       be used by the "deploy" target.
-
   dist.home            The name of the base directory in which
                        distribution files are created.
                        Defaults to "dist".
-
-  manager.password     The login password of a user that is assigned the
-                       "manager-script" role (so that he or she can execute
-                       commands via the "/manager" web application)
-
-  manager.url          The URL of the "/manager" web application on the
-                       Tomcat installation to which we will deploy web
-                       applications and web services.
-
-  manager.username     The login username of a user that is assigned the
-                       "manager-script" role (so that he or she can execute
-                       commands via the "/manager" web application)
 
 -->
 
@@ -288,7 +272,6 @@
    description="Compile Java sources">
 
     <!-- Compile Java classes as necessary -->
-    <!--mkdir    dir="${build.home}/WEB-INF/classes"/ -->
     <javac srcdir="${src.home}"
           destdir="${build.home}"
             debug="${compile.debug}"
@@ -334,9 +317,49 @@ includeantruntime="false">
 
     <!-- Create application JAR file -->
     <!-- jar jarfile="${dist.home}/${app.name}-${app.version}.jar" -->
-    <jar jarfile="${dist.home}/${app.name}.jar" basedir="${build.home}">
+    <jar jarfile="${dist.home}/${app.name}.jar" basedir="${build.home}" 
+	excludes="**/RestockerUI.class,**/ManagerUI.class,**/CustomerUI.class">
 	<zipgroupfileset dir="${lib.home}" includes="*.jar" />
+        <manifest>
+		<attribute name = "Main-Class" value = "AutoScouts.CommunicationManager"/>
+        </manifest>
     </jar>
+
+    <jar jarfile="${dist.home}/RestockerUI.jar" basedir="${build.home}" 
+	excludes="**/CommunicationManager.class,**/ManagerUI.class,**/CustomerUI.class,
+	**/ConnectionProvider.class,**/DBManager.class,
+	**/InventoryManager.class,**/InventoryMessage.class,**/TransactionManager.class">
+        <manifest>
+		<attribute name = "Main-Class" value = "AutoScouts.RestockerUI"/>
+        </manifest>
+    </jar>
+
+    <jar jarfile="${dist.home}/ManagerUI.jar" basedir="${build.home}"
+	excludes="**/CommunicationManager.class,**/RestockerUI.class,**/CustomerUI.class
+	**/ConnectionProvider.class,**/DBManager.class,
+	**/InventoryManager.class,**/InventoryMessage.class,**/TransactionManager.class">
+        <manifest>
+		<attribute name = "Main-Class" value = "AutoScouts.ManagerUI"/>
+        </manifest>
+    </jar>
+
+    <jar jarfile="${dist.home}/CustomerUI.jar" basedir="${build.home}"
+	excludes="**/CommunicationManager.class,**/ManagerUI.class,**/RestockerUI.class
+	**/ConnectionProvider.class,**/DBManager.class,
+	**/InventoryManager.class,**/InventoryMessage.class,**/TransactionManager.class">
+        <manifest>
+		<attribute name = "Main-Class" value = "AutoScouts.CustomerUI"/>
+        </manifest>
+    </jar>
+
+
+
+<!--
+	<fileset dir="${build.home}"/>
+	<zipfileset dir="${build.home}"
+	       includes="RestockerUI.class"
+               fullpath="AutoScouts/RestockerUI.class"/>
+-->
 
     <!-- Copy additional files to ${dist.home} as necessary -->
 
@@ -348,24 +371,11 @@ includeantruntime="false">
 
 <!--
 
-  The "install" target tells the specified Tomcat installation to dynamically
-  install this web application and make it available for execution.  It does
-  *not* cause the existence of this web application to be remembered across
-  Tomcat restarts; if you restart the server, you will need to re-install all
-  this web application.
-
-  If you have already installed this application, and simply want Tomcat to
-  recognize that you have updated Java classes (or the web.xml file), use the
-  "reload" target instead.
-
-  NOTE:  This target will only succeed if it is run from the same server that
-  Tomcat is running on.
-
   NOTE:  This is the logical opposite of the "remove" target.
 
 -->
 
-  <target name="install" depends="dist"
+  <!-- target name="install" depends="dist"
    description="Install application to servlet container">
    
     <copy    todir="${share.path}">
@@ -374,21 +384,12 @@ includeantruntime="false">
        </fileset>
     </copy>
 
-    <!-- deploy url="${manager.url}"
-       username="${manager.username}"
-       password="${manager.password}"
-           path="${app.path}"
-       localWar="file://${share.path}/${app.name}-${app.version}.war"/ -->
-
   </target>
-
-       <!-- localWar="file://${build.home}"/ -->
-
 
 
   <target name="reinstall" depends="clean,install"
    description="Install application to servlet container">
-  </target>
+  </target -->
 
 <!-- ==================== Javadoc Target ================================== -->
 
@@ -414,28 +415,6 @@ includeantruntime="false">
   </target>
 
 
-
-<!-- ====================== List Target =================================== -->
-
-<!--
-
-  The "list" target asks the specified Tomcat installation to list the
-  currently running web applications, either loaded at startup time or
-  installed dynamically.  It is useful to determine whether or not the
-  application you are currently developing has been installed.
-
--->
-
-  <!-- target name="list"
-   description="List installed applications on servlet container">
-
-    <list    url="${manager.url}"
-        username="${manager.username}"
-        password="${manager.password}"/>
-
-  </target -->
-
-
 <!-- ==================== Prepare Target ================================== -->
 
 <!--
@@ -453,61 +432,14 @@ includeantruntime="false">
 
     <!-- Create build directories as needed -->
     <mkdir  dir="${build.home}"/>
-    <!-- mkdir  dir="${build.home}/WEB-INF"/>
-    <mkdir  dir="${build.home}/WEB-INF/classes"/ -->
 
-
-    <!-- Copy static content of this web application -->
-    <!-- copy todir="${build.home}">
-      <fileset dir="${web.home}"/>
-    </copy -->
-
-    <!-- Copy external dependencies as required -->
-    <!-- *** CUSTOMIZE HERE AS REQUIRED BY YOUR APPLICATION *** -->
-    <!-- mkdir  dir="${build.home}/WEB-INF/lib"/ -->
-<!--
-    <copy todir="${build.home}/WEB-INF/lib" file="${foo.jar}"/>
--->
-
-    <!-- Copy static files from external dependencies as needed -->
-    <!-- *** CUSTOMIZE HERE AS REQUIRED BY YOUR APPLICATION *** -->
 
   </target>
-
-
-<!-- ==================== Reload Target =================================== -->
-
-<!--
-
-  The "reload" signals the specified application Tomcat to shut itself down
-  and reload. This can be useful when the web application context is not
-  reloadable and you have updated classes or property files in the
-  /WEB-INF/classes directory or when you have added or updated jar files in the
-  /WEB-INF/lib directory.
-
-  NOTE: The /WEB-INF/web.xml web application configuration file is not reread
-  on a reload. If you have made changes to your web.xml file you must stop
-  then start the web application.
-
--->
-
-  <!--target name="reload" depends="compile"
-   description="Reload application on servlet container">
-
-    <reload url="${manager.url}"
-       username="${manager.username}"
-       password="${manager.password}"
-           path="${app.path}"/>
-
-  </target -->
 
 
 <!-- ==================== Remove Target =================================== -->
 
 <!--
-
-  The "remove" target tells the specified Tomcat installation to dynamically
-  remove this web application from service.
 
   NOTE:  This is the logical opposite of the "install" target.
 
@@ -516,10 +448,6 @@ includeantruntime="false">
   <!-- target name="remove"
    description="Remove application on servlet container">
 
-    <undeploy url="${manager.url}"
-         username="${manager.username}"
-         password="${manager.password}"
-             path="${app.path}"/>
 
   </target -->
 

@@ -9,13 +9,13 @@ $ *ant*
 $ *ant dist*
 
 ### To run, after dist:
-$ *java -cp dist/AutoScouts.jar AutoScouts.CommunicationManager*
+$ *java -jar dist/AutoScouts.jar*   #runs server
 
-$ *java -cp dist/AutoScouts.jar AutoScouts.RestockerUI*
+$ *java -jar dist/RestockerUI.jar*   #runs restocker client
 
-$ *java -cp dist/AutoScouts.jar AutoScouts.ManagerUI*
+$ *java -jar dist/ManagerUI.jar*   #runs manager client
 
-$ *java -cp dist/AutoScouts.jar AutoScouts.CustomerUI*
+$ *java -jar dist/CustomerUI.jar*   #runs point of sale client
 
 ### To clean up for proper push to GitHub:
 $ *ant clean*
