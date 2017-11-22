@@ -32,13 +32,17 @@ class CommunicationManager implements Runnable {
 
 	public void startServer() {
 		boolean workToDo = true;
-		while(workToDo) {
-			try ( 
-				ServerSocket serverSocket = new ServerSocket(41114);
+		int portNum = 41114;
+		while(portNum < 65535) {
+			try (
+				ServerSocket serverSocket = new ServerSocket(portNum);
 			) {
-				new Thread(new CommunicationManager(tm, im, serverSocket.accept())).start();
+				System.out.println("Listening on port "+portNum);
+				while(workToDo)
+					new Thread(new CommunicationManager(tm, im, serverSocket.accept())).start();
 			} catch (IOException e) {
 				System.out.println("startServer(): Exception: "+e);
+				portNum++;
 			}
 		}
 	}

@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 class Client {
 	String destAddress = "localhost";
+	int portNum = 41114;
 	PrintWriter sout;
 	String sendBuffer;
 	boolean workToDo = true;
@@ -19,6 +20,11 @@ class Client {
 	Client(String destAddress) {
 		this.destAddress = destAddress;
 	} 
+
+	Client(String destAddress, int portNum) {
+		this.destAddress = destAddress;
+		this.portNum = portNum;
+	}
 	
 	public void send(String message) {
 		System.out.println("Sending: "+message);
@@ -51,7 +57,7 @@ class Client {
 
 		public void run() {
 			try (
-				Socket cSocket = new Socket(destAddress, 41114);
+				Socket cSocket = new Socket(destAddress, portNum);
 			)
 			{
 				Thread sender = new Thread(new ClientSenderThread(cSocket));
