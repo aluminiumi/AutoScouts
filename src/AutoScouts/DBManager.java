@@ -21,20 +21,25 @@ public final class DBManager {
 	}
 
 	public static void printDB() {
+		System.out.println("printDB(): ");
+		System.out.println(getDBDump());
+	}
+
+	public static String getDBDump() {
+		String output = "";
 		try {
-			System.out.println("printDB(): ");
 			Class.forName("com.mysql.jdbc.Driver");
 			con = ConnectionProvider.getCon();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM Inventory;");
 			ResultSet rs=ps.executeQuery();
 			while(rs.next()) {
-				System.out.println(new InventoryItem(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getDouble(4), rs.getInt(5), rs.getInt(6)));
+				output += new InventoryItem(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getDouble(4), rs.getInt(5), rs.getInt(6))+"\n";
 			}
 
 		} catch (Exception e) {
 			System.out.println("readAccountInfo() Exception: "+e);
 		}
-
+		return output;
 	}
 
 /*
