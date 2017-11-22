@@ -13,9 +13,9 @@ $ *java -jar dist/AutoScouts.jar*
 
 $ *java -jar dist/RestockerUI.jar* 
 
-$ *java -jar dist/ManagerUI.jar*   #runs manager client
+$ *java -jar dist/ManagerUI.jar*
 
-$ *java -jar dist/CustomerUI.jar*   #runs point of sale client
+$ *java -jar dist/CustomerUI.jar*
 
 ### To clean up for proper push to GitHub:
 $ *ant clean*
