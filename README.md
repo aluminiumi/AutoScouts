@@ -17,6 +17,9 @@ $ *java -jar dist/ManagerUI.jar*
 
 $ *java -jar dist/CustomerUI.jar*
 
+The server (AutoScouts.jar) starts up on port 41114.
+The clients will attempt to connect on localhost by default, but can take an alternative address as an argument.
+
 ### To clean up for proper push to GitHub:
 $ *ant clean*
 
