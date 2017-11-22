@@ -1,0 +1,5 @@
+localhost
+3306
+autoscouts
+cs3365
+reedsgroup
