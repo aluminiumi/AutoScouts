@@ -115,8 +115,8 @@
   <property name="class.home"       value="${build.home}/classes"/>
   <property name="dist.home"        value="${basedir}/dist"/>
   <property name="docs.home"        value="${basedir}/docs"/>
+  <property name="res.home"         value="${basedir}/res"/>
   <property name="src.home"         value="${basedir}/src"/>
-  <!-- property name="web.home"         value="${basedir}/web"/ -->
   <property name="lib.home"         value="${basedir}/lib"/>
 
 
@@ -315,6 +315,10 @@ includeantruntime="false">
     <mkdir   dir="${dist.home}/docs"/>
     <copy    todir="${dist.home}/docs">
       <fileset dir="${docs.home}"/>
+    </copy>
+
+    <copy  todir="${dist.home}">
+      <fileset dir="${res.home}"/>
     </copy>
 
     <!-- Create application JAR file -->

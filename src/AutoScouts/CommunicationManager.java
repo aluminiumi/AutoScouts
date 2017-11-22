@@ -13,6 +13,9 @@ class CommunicationManager implements Runnable {
 	Socket clientSocket;
 
 	public static void main(String args[]) {
+		if(args.length == 1) {
+			ConnectionProvider.setCredFile(args[0]);
+		}
 		CommunicationManager cm = new CommunicationManager();
 	}
 
