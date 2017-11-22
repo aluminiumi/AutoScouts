@@ -4,10 +4,10 @@
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>910</x>
-      <y>0</y>
-      <w>440</w>
-      <h>240</h>
+      <x>300</x>
+      <y>270</y>
+      <w>460</w>
+      <h>280</h>
     </coordinates>
     <panel_attributes>Use Case Name:  View/Update Product Inventory 
 Summary:  Information about a product is viewed/updated 
@@ -16,12 +16,14 @@ Actor:  Manager
 Precondition:  Menu is displayed to manager. 
 Description:   
 1. Manager selects View/Update from menu. 
-2. System prompts and manager selects an item to view/update. 
+2. System prompts and manager selects an item to 
+view/update. 
 3. System displays the price, description, and discount 
 information of the item. 4. Manager updates any information 
 by typing over if necessary and enters when done 
 (OK, SUBMIT, ENTER key or graphical user interface button). 
-5. System updates information if necessary and displays new values.
+5. System updates information if necessary and displays new 
+values.
 Postcondition:  Product inventory is viewed/updated. </panel_attributes>
     <additional_attributes/>
   </element>
@@ -29,7 +31,7 @@ Postcondition:  Product inventory is viewed/updated. </panel_attributes>
     <id>UMLActor</id>
     <coordinates>
       <x>80</x>
-      <y>330</y>
+      <y>100</y>
       <w>80</w>
       <h>120</h>
     </coordinates>
@@ -41,7 +43,7 @@ Postcondition:  Product inventory is viewed/updated. </panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>290</x>
-      <y>300</y>
+      <y>70</y>
       <w>300</w>
       <h>170</h>
     </coordinates>
@@ -62,7 +64,7 @@ in the Manager class</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>150</x>
-      <y>370</y>
+      <y>140</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -74,7 +76,7 @@ in the Manager class</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>780</x>
-      <y>290</y>
+      <y>60</y>
       <w>330</w>
       <h>180</h>
     </coordinates>
@@ -90,7 +92,7 @@ manager classes</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>790</x>
-      <y>610</y>
+      <y>380</y>
       <w>320</w>
       <h>70</h>
     </coordinates>
@@ -103,7 +105,7 @@ _:InventoryManager_
     <id>Relation</id>
     <coordinates>
       <x>580</x>
-      <y>360</y>
+      <y>130</y>
       <w>220</w>
       <h>40</h>
     </coordinates>
@@ -115,7 +117,7 @@ _:InventoryManager_
     <id>Relation</id>
     <coordinates>
       <x>940</x>
-      <y>460</y>
+      <y>230</y>
       <w>30</w>
       <h>170</h>
     </coordinates>
@@ -126,28 +128,28 @@ _:InventoryManager_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>170</x>
-      <y>240</y>
-      <w>120</w>
+      <x>160</x>
+      <y>10</y>
+      <w>140</w>
       <h>140</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>
 
-
+lt=&lt;-
 M1: Select 
 view/update
 
 M3: Item choice
 
 M9: Item update</panel_attributes>
-    <additional_attributes>90.0;20.0;20.0;20.0</additional_attributes>
+    <additional_attributes>100.0;20.0;30.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>160</x>
-      <y>400</y>
-      <w>130</w>
+      <x>150</x>
+      <y>170</y>
+      <w>150</w>
       <h>210</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -163,14 +165,14 @@ discount
 M14: Display 
 updated details
 </panel_attributes>
-    <additional_attributes>20.0;20.0;100.0;20.0</additional_attributes>
+    <additional_attributes>30.0;20.0;110.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>620</x>
-      <y>280</y>
-      <w>130</w>
+      <x>610</x>
+      <y>50</y>
+      <w>150</w>
       <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -179,14 +181,14 @@ updated details
 M4: Item ID
 
 M10: Item update</panel_attributes>
-    <additional_attributes>100.0;20.0;20.0;20.0</additional_attributes>
+    <additional_attributes>110.0;20.0;30.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>780</x>
-      <y>500</y>
-      <w>140</w>
+      <y>270</y>
+      <w>150</w>
       <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -201,8 +203,8 @@ M11: Item update
     <id>Relation</id>
     <coordinates>
       <x>980</x>
-      <y>500</y>
-      <w>130</w>
+      <y>270</y>
+      <w>140</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -215,7 +217,7 @@ M12 New details</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>620</x>
-      <y>390</y>
+      <y>160</y>
       <w>130</w>
       <h>90</h>
     </coordinates>

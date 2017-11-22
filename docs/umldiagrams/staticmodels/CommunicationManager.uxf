@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="14.2">
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
   <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
@@ -20,8 +19,8 @@ manager classes</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>970</x>
-      <y>230</y>
+      <x>810</x>
+      <y>200</y>
       <w>280</w>
       <h>200</h>
     </coordinates>

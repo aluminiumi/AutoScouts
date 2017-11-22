@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="14.2">
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
   <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
@@ -76,7 +75,7 @@ getting low.</panel_attributes>
     </coordinates>
     <panel_attributes>lt=-
 m2=0..*
-includes &gt;</panel_attributes>
+sends &gt;</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0;150.0;70.0;150.0;120.0</additional_attributes>
   </element>
   <element>

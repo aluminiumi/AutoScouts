@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>10</zoom_level>
+  <zoom_level>5</zoom_level>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>240</x>
-      <y>350</y>
-      <w>80</w>
-      <h>110</h>
+      <x>435</x>
+      <y>160</y>
+      <w>40</w>
+      <h>55</h>
     </coordinates>
     <panel_attributes>Restocker</panel_attributes>
     <additional_attributes/>
@@ -15,10 +15,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>720</x>
-      <y>770</y>
-      <w>140</w>
-      <h>40</h>
+      <x>675</x>
+      <y>370</y>
+      <w>70</w>
+      <h>20</h>
     </coordinates>
     <panel_attributes>&lt;&lt;application logic&gt;&gt;
 _:InventoryManager_</panel_attributes>
@@ -27,21 +27,21 @@ _:InventoryManager_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>320</x>
-      <y>380</y>
-      <w>420</w>
-      <h>30</h>
+      <x>475</x>
+      <y>175</y>
+      <w>175</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;400.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;330.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>780</x>
-      <y>400</y>
-      <w>30</w>
-      <h>200</h>
+      <x>705</x>
+      <y>185</y>
+      <w>15</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
@@ -49,10 +49,10 @@ _:InventoryManager_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>390</x>
-      <y>230</y>
-      <w>140</w>
-      <h>140</h>
+      <x>505</x>
+      <y>100</y>
+      <w>80</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
@@ -63,15 +63,15 @@ M3: Scanned item ID
 
 M9: Quantity
 </panel_attributes>
-    <additional_attributes>120.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>130.0;20.0;20.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>680</x>
-      <y>450</y>
-      <w>110</w>
-      <h>90</h>
+      <x>650</x>
+      <y>210</y>
+      <w>65</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 M4: Scanned 
@@ -83,10 +83,10 @@ M10: Quantity</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>370</x>
-      <y>390</y>
-      <w>190</w>
-      <h>140</h>
+      <x>500</x>
+      <y>180</y>
+      <w>95</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
@@ -102,10 +102,10 @@ M14: New Quantity</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>810</x>
-      <y>450</y>
-      <w>140</w>
-      <h>90</h>
+      <x>720</x>
+      <y>210</y>
+      <w>80</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 M7: Item name
@@ -116,10 +116,10 @@ M13: New quantity</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>660</x>
-      <y>580</y>
-      <w>270</w>
-      <h>110</h>
+      <x>645</x>
+      <y>275</y>
+      <w>135</w>
+      <h>55</h>
     </coordinates>
     <panel_attributes>&lt;&lt;business logic&gt;&gt;
 _:CommunicationManager_
@@ -132,10 +132,10 @@ manager classes</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>720</x>
-      <y>210</y>
-      <w>250</w>
-      <h>200</h>
+      <x>640</x>
+      <y>90</y>
+      <w>145</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>&lt;&lt;user interface&gt;&gt;
 RestockerUI
@@ -155,10 +155,10 @@ system to fulfill the restock use case</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>780</x>
-      <y>680</y>
-      <w>30</w>
-      <h>110</h>
+      <x>705</x>
+      <y>325</y>
+      <w>15</w>
+      <h>55</h>
     </coordinates>
     <panel_attributes>lt=-
 </panel_attributes>
@@ -167,28 +167,27 @@ system to fulfill the restock use case</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>680</x>
-      <y>670</y>
-      <w>110</w>
-      <h>130</h>
+      <x>650</x>
+      <y>325</y>
+      <w>60</w>
+      <h>55</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
-
-
+    <panel_attributes>
 M5: Item ID
 
 M11:Quantity
 
+lt=&lt;-
 </panel_attributes>
-    <additional_attributes>10.0;80.0;10.0;40.0</additional_attributes>
+    <additional_attributes>10.0;70.0;10.0;30.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>810</x>
-      <y>670</y>
-      <w>140</w>
-      <h>130</h>
+      <x>720</x>
+      <y>320</y>
+      <w>80</w>
+      <h>65</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
@@ -203,10 +202,10 @@ M12: New quantity
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1040</x>
-      <y>30</y>
-      <w>340</w>
-      <h>300</h>
+      <x>825</x>
+      <y>85</y>
+      <w>200</w>
+      <h>150</h>
     </coordinates>
     <panel_attributes>Use Case Name:  Restock Product Inventory 
 Summary:  Restocker restocks inventory into system.  
@@ -221,7 +220,225 @@ Description:
 4. The system prompts for the quantity. 
 5. The restocker enters the quantity to be restocked. 
 6. The system displays the quantity. 
-Alternatives:    If the scanned item is new 
+
+Postcondition: Inventory has been restocked. 
+ 
+ </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>435</x>
+      <y>495</y>
+      <w>40</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>Restocker</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>675</x>
+      <y>725</y>
+      <w>70</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;application logic&gt;&gt;
+_:InventoryManager_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>475</x>
+      <y>510</y>
+      <w>210</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;400.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>705</x>
+      <y>520</y>
+      <w>15</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>505</x>
+      <y>470</y>
+      <w>70</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+
+M6A3: Submit 
+item info
+</panel_attributes>
+    <additional_attributes>120.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>655</x>
+      <y>545</y>
+      <w>55</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+M6A4: New 
+item info
+</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>500</x>
+      <y>515</y>
+      <w>75</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+
+M6A2: Prompt 
+for item details
+
+
+
+</panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>545</y>
+      <w>65</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+M6A1: Request 
+item details
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>645</x>
+      <y>610</y>
+      <w>135</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;business logic&gt;&gt;
+_:CommunicationManager_
+--
+Facilitates communication 
+across all interfaces and 
+manager classes</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>675</x>
+      <y>425</y>
+      <w>125</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;user interface&gt;&gt;
+RestockerUI
+--
+#PromptForScan(): void
+#RestockItem(i: int): int
+#UpdateQuantity(i: int): void
+#AddNewItem(i: InventoryItem): void
+--
+This class initiates the restock use
+case associated with the actor
+Restocker
+This class interacts with the rest of the
+system to fulfill the restock use case</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>705</x>
+      <y>660</y>
+      <w>15</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>655</x>
+      <y>670</y>
+      <w>65</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+M6A5: Create 
+new inventory 
+item
+</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>715</x>
+      <y>635</y>
+      <w>70</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+
+
+
+
+M6A: Null item
+
+M6A6: New item 
+name
+
+
+
+
+</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>835</x>
+      <y>425</y>
+      <w>170</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>Use Case Name:  Restock Product Inventory 
+
+Alternatives:   If the scanned item is new 
 then the system prompts and the restocker
 enters the item description, price, discount 
 information, and quantity. 
@@ -229,5 +446,16 @@ Postcondition: Inventory has been restocked.
  
  </panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>395</y>
+      <w>795</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;1570.0;20.0</additional_attributes>
   </element>
 </diagram>
