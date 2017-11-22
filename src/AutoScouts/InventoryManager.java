@@ -6,4 +6,8 @@ class InventoryManager {
 		DBManager.printDB();
 	}
 
+	public String getDBDump() {
+		return DBManager.getDBDump();
+	}
+
 }
