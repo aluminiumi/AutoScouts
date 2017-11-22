@@ -305,6 +305,8 @@ includeantruntime="false">
 
 -->
 
+  <property name="serverclasses" value="**/ConnectionProvider.class,**/DBManager.class,
+	**/InventoryManager.class,**/InventoryMessage.class,**/TransactionManager.class"/>
   <!-- target name="dist" depends="compile" -->
   <target name="dist" depends="compile,javadoc"
    description="Create binary distribution">
@@ -326,27 +328,21 @@ includeantruntime="false">
     </jar>
 
     <jar jarfile="${dist.home}/RestockerUI.jar" basedir="${build.home}" 
-	excludes="**/CommunicationManager.class,**/ManagerUI.class,**/CustomerUI.class,
-	**/ConnectionProvider.class,**/DBManager.class,
-	**/InventoryManager.class,**/InventoryMessage.class,**/TransactionManager.class">
+	excludes="**/CommunicationManager.class,**/ManagerUI.class,**/CustomerUI.class,${serverclasses}">
         <manifest>
 		<attribute name = "Main-Class" value = "AutoScouts.RestockerUI"/>
         </manifest>
     </jar>
 
     <jar jarfile="${dist.home}/ManagerUI.jar" basedir="${build.home}"
-	excludes="**/CommunicationManager.class,**/RestockerUI.class,**/CustomerUI.class
-	**/ConnectionProvider.class,**/DBManager.class,
-	**/InventoryManager.class,**/InventoryMessage.class,**/TransactionManager.class">
+	excludes="**/CommunicationManager.class,**/RestockerUI.class,**/CustomerUI.class,${serverclasses}">
         <manifest>
 		<attribute name = "Main-Class" value = "AutoScouts.ManagerUI"/>
         </manifest>
     </jar>
 
     <jar jarfile="${dist.home}/CustomerUI.jar" basedir="${build.home}"
-	excludes="**/CommunicationManager.class,**/ManagerUI.class,**/RestockerUI.class
-	**/ConnectionProvider.class,**/DBManager.class,
-	**/InventoryManager.class,**/InventoryMessage.class,**/TransactionManager.class">
+	excludes="**/CommunicationManager.class,**/ManagerUI.class,**/RestockerUI.class,${serverclasses}">
         <manifest>
 		<attribute name = "Main-Class" value = "AutoScouts.CustomerUI"/>
         </manifest>

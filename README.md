@@ -9,9 +9,9 @@ $ *ant*
 $ *ant dist*
 
 ### To run, after dist:
-$ *java -jar dist/AutoScouts.jar*   #runs server
+$ *java -jar dist/AutoScouts.jar*
 
-$ *java -jar dist/RestockerUI.jar*   #runs restocker client
+$ *java -jar dist/RestockerUI.jar* 
 
 $ *java -jar dist/ManagerUI.jar*   #runs manager client
 
