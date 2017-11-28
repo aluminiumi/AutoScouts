@@ -5,7 +5,7 @@
     <id>UMLActor</id>
     <coordinates>
       <x>435</x>
-      <y>160</y>
+      <y>75</y>
       <w>40</w>
       <h>55</h>
     </coordinates>
@@ -16,7 +16,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>675</x>
-      <y>370</y>
+      <y>285</y>
       <w>70</w>
       <h>20</h>
     </coordinates>
@@ -28,7 +28,7 @@ _:InventoryManager_</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>475</x>
-      <y>175</y>
+      <y>90</y>
       <w>175</w>
       <h>15</h>
     </coordinates>
@@ -39,7 +39,7 @@ _:InventoryManager_</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>705</x>
-      <y>185</y>
+      <y>100</y>
       <w>15</w>
       <h>100</h>
     </coordinates>
@@ -50,7 +50,7 @@ _:InventoryManager_</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>505</x>
-      <y>100</y>
+      <y>15</y>
       <w>80</w>
       <h>70</h>
     </coordinates>
@@ -69,7 +69,7 @@ M9: Quantity
     <id>Relation</id>
     <coordinates>
       <x>650</x>
-      <y>210</y>
+      <y>125</y>
       <w>65</w>
       <h>45</h>
     </coordinates>
@@ -84,7 +84,7 @@ M10: Quantity</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>500</x>
-      <y>180</y>
+      <y>95</y>
       <w>95</w>
       <h>70</h>
     </coordinates>
@@ -103,7 +103,7 @@ M14: New Quantity</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>720</x>
-      <y>210</y>
+      <y>125</y>
       <w>80</w>
       <h>45</h>
     </coordinates>
@@ -117,7 +117,7 @@ M13: New quantity</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>645</x>
-      <y>275</y>
+      <y>190</y>
       <w>135</w>
       <h>55</h>
     </coordinates>
@@ -133,7 +133,7 @@ manager classes</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>640</x>
-      <y>90</y>
+      <y>5</y>
       <w>145</w>
       <h>100</h>
     </coordinates>
@@ -156,7 +156,7 @@ system to fulfill the restock use case</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>705</x>
-      <y>325</y>
+      <y>240</y>
       <w>15</w>
       <h>55</h>
     </coordinates>
@@ -168,7 +168,7 @@ system to fulfill the restock use case</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>650</x>
-      <y>325</y>
+      <y>240</y>
       <w>60</w>
       <h>55</h>
     </coordinates>
@@ -185,7 +185,7 @@ lt=&lt;-
     <id>Relation</id>
     <coordinates>
       <x>720</x>
-      <y>320</y>
+      <y>235</y>
       <w>80</w>
       <h>65</h>
     </coordinates>
@@ -203,7 +203,7 @@ M12: New quantity
     <id>UMLNote</id>
     <coordinates>
       <x>825</x>
-      <y>85</y>
+      <y>0</y>
       <w>200</w>
       <h>150</h>
     </coordinates>
@@ -230,7 +230,7 @@ Postcondition: Inventory has been restocked.
     <id>UMLActor</id>
     <coordinates>
       <x>435</x>
-      <y>495</y>
+      <y>410</y>
       <w>40</w>
       <h>55</h>
     </coordinates>
@@ -241,7 +241,7 @@ Postcondition: Inventory has been restocked.
     <id>UMLClass</id>
     <coordinates>
       <x>675</x>
-      <y>725</y>
+      <y>640</y>
       <w>70</w>
       <h>20</h>
     </coordinates>
@@ -253,7 +253,7 @@ _:InventoryManager_</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>475</x>
-      <y>510</y>
+      <y>425</y>
       <w>210</w>
       <h>15</h>
     </coordinates>
@@ -264,7 +264,7 @@ _:InventoryManager_</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>705</x>
-      <y>520</y>
+      <y>435</y>
       <w>15</w>
       <h>100</h>
     </coordinates>
@@ -275,7 +275,7 @@ _:InventoryManager_</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>505</x>
-      <y>470</y>
+      <y>385</y>
       <w>70</w>
       <h>45</h>
     </coordinates>
@@ -291,7 +291,7 @@ item info
     <id>Relation</id>
     <coordinates>
       <x>655</x>
-      <y>545</y>
+      <y>460</y>
       <w>55</w>
       <h>45</h>
     </coordinates>
@@ -306,7 +306,7 @@ item info
     <id>Relation</id>
     <coordinates>
       <x>500</x>
-      <y>515</y>
+      <y>430</y>
       <w>75</w>
       <h>70</h>
     </coordinates>
@@ -325,7 +325,7 @@ for item details
     <id>Relation</id>
     <coordinates>
       <x>720</x>
-      <y>545</y>
+      <y>460</y>
       <w>65</w>
       <h>45</h>
     </coordinates>
@@ -340,7 +340,7 @@ item details
     <id>UMLClass</id>
     <coordinates>
       <x>645</x>
-      <y>610</y>
+      <y>525</y>
       <w>135</w>
       <h>55</h>
     </coordinates>
@@ -356,8 +356,8 @@ manager classes</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>675</x>
-      <y>425</y>
-      <w>125</w>
+      <y>340</y>
+      <w>150</w>
       <h>100</h>
     </coordinates>
     <panel_attributes>&lt;&lt;user interface&gt;&gt;
@@ -379,7 +379,7 @@ system to fulfill the restock use case</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>705</x>
-      <y>660</y>
+      <y>575</y>
       <w>15</w>
       <h>75</h>
     </coordinates>
@@ -391,7 +391,7 @@ system to fulfill the restock use case</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>655</x>
-      <y>670</y>
+      <y>585</y>
       <w>65</w>
       <h>45</h>
     </coordinates>
@@ -407,7 +407,7 @@ item
     <id>Relation</id>
     <coordinates>
       <x>715</x>
-      <y>635</y>
+      <y>550</y>
       <w>70</w>
       <h>120</h>
     </coordinates>
@@ -432,7 +432,7 @@ name
     <id>UMLNote</id>
     <coordinates>
       <x>835</x>
-      <y>425</y>
+      <y>340</y>
       <w>170</w>
       <h>150</h>
     </coordinates>
@@ -451,7 +451,7 @@ Postcondition: Inventory has been restocked.
     <id>Relation</id>
     <coordinates>
       <x>330</x>
-      <y>395</y>
+      <y>310</y>
       <w>795</w>
       <h>20</h>
     </coordinates>

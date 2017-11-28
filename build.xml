@@ -282,7 +282,7 @@ includeantruntime="false">
 
     <!-- Copy application resources -->
     <copy  todir="${build.home}">
-      <fileset dir="${src.home}" excludes="**/*.java"/>
+      <fileset dir="${src.home}" excludes="**/*.java,**/*/"/>
     </copy>
 
   </target>
