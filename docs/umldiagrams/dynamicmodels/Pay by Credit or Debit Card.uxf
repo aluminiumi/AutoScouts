@@ -68,7 +68,7 @@ Authorization interface
       <w>350</w>
       <h>35</h>
     </coordinates>
-    <panel_attributes>Pay by credit card(Approved) use case.
+    <panel_attributes>Pay by credit card (Approved) use case.
 style=wordwrap</panel_attributes>
     <additional_attributes/>
   </element>
@@ -449,7 +449,7 @@ CustomerInterface
       <w>165</w>
       <h>35</h>
     </coordinates>
-    <panel_attributes>Pay by credit card(Declined) use case.
+    <panel_attributes>Pay by credit card (Declined) use case.
 style=wordwrap</panel_attributes>
     <additional_attributes/>
   </element>
