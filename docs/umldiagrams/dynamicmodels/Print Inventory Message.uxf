@@ -16,18 +16,6 @@
     <id>UMLClass</id>
     <coordinates>
       <x>130</x>
-      <y>120</y>
-      <w>210</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;control&gt;&gt;
-_:Timer_</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>130</x>
       <y>500</y>
       <w>210</w>
       <h>80</h>
@@ -41,12 +29,12 @@ _:InventoryManager_
     <id>Relation</id>
     <coordinates>
       <x>180</x>
-      <y>190</y>
+      <y>210</y>
       <w>30</w>
-      <h>130</h>
+      <h>110</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -75,7 +63,7 @@ Message</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>470</x>
+      <x>490</x>
       <y>300</y>
       <w>210</w>
       <h>110</h>
@@ -90,7 +78,7 @@ daily sales reports.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>330</x>
+      <x>340</x>
       <y>350</y>
       <w>160</w>
       <h>80</h>
@@ -165,12 +153,12 @@ message</panel_attributes>
     <coordinates>
       <x>330</x>
       <y>300</y>
-      <w>160</w>
+      <w>180</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=-
 </panel_attributes>
-    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
@@ -189,6 +177,17 @@ Description:
 at midnight.
 2. System prints daily inventory report on supermarket printer. 
 Postcondition:  Inventory messages have been printed</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>150</x>
+      <y>120</y>
+      <w>80</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>CMTimer</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

@@ -1,28 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
   <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>500</x>
-      <y>130</y>
-      <w>290</w>
-      <h>230</h>
+      <x>430</x>
+      <y>160</y>
+      <w>420</w>
+      <h>190</h>
     </coordinates>
     <panel_attributes>&lt;&lt;application logic&gt;&gt;
 InventoryManager
 --
-inventory: List&lt;InventoryItem&gt;
-inventoryLevels: List&lt;StockingLevel&gt;
-inventoryMessageReport:
-    List&lt;InventoryMessage&gt;
+-inventory: List&lt;InventoryItem&gt;
+-inventoryLevels: List&lt;StockingLevel&gt;
+-imr: InventoryMessageReport
 --
-PrintDailyReport(): void
-UpdateInventory(): void
+#getInventoryMessageReport(): inventoryMessageReport
+#resetInventoryMessageReport(): void
+#updateInventory(): void
 --
-Keeps track of the items carried
-by the store, how many of each
-have been sold, and how many
-of each remain.</panel_attributes>
+Keeps track of the items carried by the store, how many
+of each have been sold, and how many of each remain.</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -52,13 +51,58 @@ carried by the store.</panel_attributes>
     <coordinates>
       <x>680</x>
       <y>470</y>
+      <w>240</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;entity&gt;&gt;
+InventoryMessageReport
+--
+-report: List&lt;InventoryMessage&gt;
+--
+#reset(): void
+#add(InventoryMessage): void
+--
+Denotes all items with low stock</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>340</y>
+      <w>170</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2=1
+sends &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0;150.0;80.0;150.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>340</y>
+      <w>180</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+&lt; includes</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;80.0;160.0;80.0;160.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1050</x>
+      <y>470</y>
       <w>160</w>
       <h>120</h>
     </coordinates>
     <panel_attributes>&lt;&lt;entity&gt;&gt;
 InventoryMessage
 --
-itemId: int
+-itemId: int
 --
 Denotes an item
 whose stock is
@@ -68,27 +112,15 @@ getting low.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>630</x>
-      <y>350</y>
-      <w>190</w>
-      <h>140</h>
+      <x>910</x>
+      <y>500</y>
+      <w>160</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=-
-m2=0..*
-sends &gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0;150.0;70.0;150.0;120.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>480</x>
-      <y>350</y>
-      <w>180</w>
-      <h>140</h>
-    </coordinates>
-    <panel_attributes>lt=-
-m1=0..*
-&lt; includes</panel_attributes>
-    <additional_attributes>10.0;120.0;10.0;70.0;160.0;70.0;160.0;10.0</additional_attributes>
+m1=1
+m2=0..n
+contains &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
   </element>
 </diagram>

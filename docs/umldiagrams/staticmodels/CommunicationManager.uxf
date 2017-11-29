@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
   <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
@@ -6,10 +7,14 @@
       <x>500</x>
       <y>210</y>
       <w>270</w>
-      <h>110</h>
+      <h>200</h>
     </coordinates>
     <panel_attributes>&lt;&lt;control&gt;&gt;
 _:CommunicationManager_
+--
+#Print(): void
+#PrintDailyReport(): void
+#PrintInventoryMessage(): void
 --
 Facilitates communication 
 across all interfaces and 
@@ -31,5 +36,33 @@ from the interfaces to complete
 this model.
 </panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>200</x>
+      <y>260</y>
+      <w>210</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;output device interface&gt;&gt;
+ReportPrinter
+--
+Print reports for manager</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>270</y>
+      <w>120</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+&lt; has</panel_attributes>
+    <additional_attributes>10.0;20.0;100.0;20.0</additional_attributes>
   </element>
 </diagram>
