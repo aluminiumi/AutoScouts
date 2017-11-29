@@ -104,15 +104,16 @@ sends v</panel_attributes>
       <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;entity&gt;&gt;
-InventoryMessage
+InventoryMessageReport
 --
 -itemId: int
 --
 #getId(): int
 --
-Denotes an item
-whose stock is
-getting low.</panel_attributes>
+#reset(): void
+#add(InventoryMessage): void
+--
+Denotes all items with low stock</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
