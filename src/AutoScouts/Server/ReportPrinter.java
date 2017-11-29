@@ -15,6 +15,7 @@ class ReportPrinter extends Printer {
 	}
 
 	public int print(TransactionLog tl) {
+
 		String header = "######################\n"+
 				"# BEGIN DAILY REPORT #\n"+
 				"######################\n";
