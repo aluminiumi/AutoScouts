@@ -141,17 +141,4 @@ class CommunicationManager implements Runnable {
 		im.resetInventoryMessageReport();
 	}
 
-	//this is called by CMTimer
-	public void PrintDailyReport() {
-		System.out.println("CommMan: PrintDailyReport()");
-		rprinter.print(tm.getDailyReport());
-		tm.resetDailyReport();
-	}
-
-	//this is called by CMTimer
-	public void PrintInventoryMessage() {
-		System.out.println("CommMan: PrintInventoryMessage()");
-		rprinter.print(im.getInventoryMessageReport());
-		im.resetInventoryMessageReport();
-	}
 }
