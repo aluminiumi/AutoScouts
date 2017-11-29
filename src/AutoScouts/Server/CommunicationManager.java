@@ -11,6 +11,7 @@ class CommunicationManager implements Runnable {
 	TransactionManager tm;
 	InventoryManager im;
 	Socket clientSocket;
+	ReportPrinter rprinter;
 
 	public static void main(String args[]) {
 		if(args.length == 1) {
@@ -19,17 +20,22 @@ class CommunicationManager implements Runnable {
 		CommunicationManager cm = new CommunicationManager();
 	}
 
+	//initial server startup uses this constructor
 	CommunicationManager() {
 		System.out.println("CommunicationManager");
 		tm = new TransactionManager();
 		im = new InventoryManager();
+		rprinter = new ReportPrinter();
+		new CMTimer(this);
 		startServer();
 
 	}
 
-	CommunicationManager(TransactionManager newtm, InventoryManager newim, Socket newclientSocket) {
+	//new threads launched use this constructor
+	CommunicationManager(TransactionManager newtm, InventoryManager newim, ReportPrinter newrprinter, Socket newclientSocket) {
 		tm = newtm;
 		im = newim;
+		rprinter = newrprinter;
 		clientSocket = newclientSocket;
 	}
 
@@ -42,7 +48,7 @@ class CommunicationManager implements Runnable {
 			) {
 				System.out.println("Listening on port "+portNum);
 				while(workToDo)
-					new Thread(new CommunicationManager(tm, im, serverSocket.accept())).start();
+					new Thread(new CommunicationManager(tm, im, rprinter, serverSocket.accept())).start();
 			} catch (IOException e) {
 				System.out.println("startServer(): Exception: "+e);
 				portNum++;
@@ -87,5 +93,19 @@ class CommunicationManager implements Runnable {
 			for(String line : dumplines)
 				out.println(line);
 		}
+	}
+
+	//this is called by CMTimer
+	public void PrintDailyReport() {
+		System.out.println("CommMan: PrintDailyReport()");
+		rprinter.print(tm.getDailyReport());
+		tm.resetDailyReport();
+	}
+
+	//this is called by CMTimer
+	public void PrintInventoryMessage() {
+		System.out.println("CommMan: PrintInventoryMessage()");
+		rprinter.print(im.getInventoryMessageReport());
+		im.resetInventoryMessageReport();
 	}
 }

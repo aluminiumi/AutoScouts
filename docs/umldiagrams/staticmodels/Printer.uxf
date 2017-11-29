@@ -12,7 +12,7 @@
     <panel_attributes>&lt;&lt;abstract&gt;&gt;
 Printer
 --
-#Print(s: string): int
+/+print(s: string): int/
 
 --
 Printer object sends signal
@@ -25,11 +25,14 @@ returns success/error code</panel_attributes>
     <coordinates>
       <x>270</x>
       <y>350</y>
-      <w>210</w>
-      <h>70</h>
+      <w>280</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>&lt;&lt;output device interface&gt;&gt;
 ReportPrinter
+--
+#print(TransactionLog): int
+#print(InventoryMessageReport): int
 --
 Print reports for manager</panel_attributes>
     <additional_attributes/>

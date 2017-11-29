@@ -16,18 +16,6 @@
     <id>UMLClass</id>
     <coordinates>
       <x>80</x>
-      <y>60</y>
-      <w>210</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;control&gt;&gt;
-_:Timer_</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>80</x>
       <y>440</y>
       <w>210</w>
       <h>80</h>
@@ -41,12 +29,12 @@ _:TransactionManager_
     <id>Relation</id>
     <coordinates>
       <x>130</x>
-      <y>130</y>
+      <y>150</y>
       <w>30</w>
-      <h>130</h>
+      <h>110</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -191,6 +179,17 @@ total revenue for the day.
 3. System prints report on supermarket printer.
 
 Postcondition: The daily reports have been completed</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>100</x>
+      <y>60</y>
+      <w>80</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>CMTimer</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

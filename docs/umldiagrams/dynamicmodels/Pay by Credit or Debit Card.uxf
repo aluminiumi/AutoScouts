@@ -88,7 +88,7 @@ style=wordwrap</panel_attributes>
     <coordinates>
       <x>410</x>
       <y>180</y>
-      <w>60</w>
+      <w>70</w>
       <h>35</h>
     </coordinates>
     <panel_attributes>M2a:PIN prompt.
@@ -100,7 +100,7 @@ style=wordwrap</panel_attributes>
     <coordinates>
       <x>625</x>
       <y>155</y>
-      <w>50</w>
+      <w>60</w>
       <h>35</h>
     </coordinates>
     <panel_attributes>M4:Card info
@@ -133,9 +133,9 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>735</x>
+      <x>730</x>
       <y>280</y>
-      <w>65</w>
+      <w>70</w>
       <h>35</h>
     </coordinates>
     <panel_attributes>M5:Authorization 
@@ -148,7 +148,7 @@ style=wordwrap</panel_attributes>
     <coordinates>
       <x>820</x>
       <y>280</y>
-      <w>60</w>
+      <w>75</w>
       <h>35</h>
     </coordinates>
     <panel_attributes>M6:Authorization granted
@@ -182,7 +182,7 @@ style=wordwrap</panel_attributes>
     <coordinates>
       <x>635</x>
       <y>215</y>
-      <w>55</w>
+      <w>60</w>
       <h>35</h>
     </coordinates>
     <panel_attributes>M7:Finalization
@@ -296,8 +296,8 @@ M3:PIN entry
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>510</x>
-      <y>90</y>
+      <x>435</x>
+      <y>75</y>
       <w>60</w>
       <h>80</h>
     </coordinates>
@@ -316,9 +316,9 @@ card
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>450</x>
+      <x>430</x>
       <y>55</y>
-      <w>85</w>
+      <w>105</w>
       <h>35</h>
     </coordinates>
     <panel_attributes>&lt;&lt;input device interface&gt;&gt;
@@ -332,7 +332,7 @@ Reads credit card number</panel_attributes>
     <coordinates>
       <x>545</x>
       <y>55</y>
-      <w>95</w>
+      <w>110</w>
       <h>35</h>
     </coordinates>
     <panel_attributes>&lt;&lt;input device interface&gt;&gt;
@@ -346,7 +346,7 @@ Accepts PIN from customer</panel_attributes>
     <coordinates>
       <x>490</x>
       <y>300</y>
-      <w>95</w>
+      <w>120</w>
       <h>35</h>
     </coordinates>
     <panel_attributes>&lt;&lt;output device interface&gt;&gt;
@@ -697,8 +697,8 @@ m1=M6a.4:PIN\nrequest</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>995</x>
-      <y>425</y>
+      <x>915</x>
+      <y>415</y>
       <w>320</w>
       <h>85</h>
     </coordinates>

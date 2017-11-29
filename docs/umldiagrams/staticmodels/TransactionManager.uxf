@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
   <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>30</x>
+      <x>100</x>
       <y>20</y>
-      <w>390</w>
+      <w>320</w>
       <h>150</h>
     </coordinates>
     <panel_attributes>&lt;&lt;application logic&gt;&gt;
@@ -13,10 +14,10 @@ TransactionManager
 --
 -transLog: TransactionLog
 --
-#GenerateAndPrintTransactionReport(s: string): int
-
+#getDailyReport(): TransactionLog
+#resetDailyReport(): void
 --
-Generates and prints transaction reports.</panel_attributes>
+Generates and sends transaction reports.</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -24,12 +25,16 @@ Generates and prints transaction reports.</panel_attributes>
     <coordinates>
       <x>540</x>
       <y>20</y>
-      <w>210</w>
-      <h>90</h>
+      <w>220</w>
+      <h>140</h>
     </coordinates>
-    <panel_attributes>_object: TransactionLog_
+    <panel_attributes>&lt;&lt;entity&gt;&gt;
+_:TransactionLog_
 --
-id: Date
+-id: Date
+-transList: List&lt;Transaction&gt;
+--
+#add(Transaction): void
 --
 Daily list of all customer 
 transactions.</panel_attributes>
@@ -39,15 +44,16 @@ transactions.</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>540</x>
-      <y>220</y>
-      <w>210</w>
-      <h>150</h>
+      <y>300</y>
+      <w>220</w>
+      <h>190</h>
     </coordinates>
-    <panel_attributes>_object: Transaction_
+    <panel_attributes>&lt;&lt;entity&gt;&gt;
+_:Transaction_
 --
-item:int
-price:float
-quantity:int
+-item:int
+-price:float
+-quantity:int
 --
 Historic record of a customer
 transaction, including items
@@ -73,15 +79,15 @@ has &gt;</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>640</x>
-      <y>100</y>
+      <y>150</y>
       <w>100</w>
-      <h>140</h>
+      <h>170</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0..n
 m2=1
 contains v
 </panel_attributes>
-    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

@@ -12,7 +12,7 @@
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 AuthorizationCenterServiceInterface
 --
-authorizeCard(cardNumber: long, pin: int, cost: double): int
+#authorizeCard(cardNumber: long, pin: int, cost: double): int
 --
 Authorizes card transactions requested by the
 transaction manager.</panel_attributes>
