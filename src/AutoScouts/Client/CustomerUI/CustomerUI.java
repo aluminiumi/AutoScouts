@@ -65,8 +65,9 @@ class CustomerUI extends Client {
 						}
 						InventoryItem item = new InventoryItem(
 							id, desc, price, discount, 0, 0);
-						co.add(Item);
+						co.add(item);
 						System.out.println("Item scanned: "+item);
+						System.out.println("New subtotal: "+co.getSubtotal());
 
 					} catch (Exception e) {
 						System.out.println("Server sent malformed item information. "+e);
@@ -96,12 +97,39 @@ class CustomerUI extends Client {
 	}
 
 	public void NewScreen() {
-		co = new CustomerOrder;
+		co = new CustomerOrder();
 	}
 
 	public void ReportToTransManager() {
-		for(InventoryItem item : co) {
+		for(InventoryItem item : co.getOrder()) {
 			send("sold "+item.getId());
+		}
+	}
+
+	class CustomerOrder {
+		List<InventoryItem> order;
+
+		CustomerOrder() {
+			order = new ArrayList<InventoryItem>();
+		}
+		
+		public void add(InventoryItem i) {
+			order.add(i);
+		}
+
+		public double getSubtotal() {
+			double p = 0;
+			for(InventoryItem i : order)
+				p += i.getPrice();
+			return p;
+		}
+
+		public int size() {
+			return order.size();
+		}
+
+		public List<InventoryItem> getOrder() {
+			return order;
 		}
 	}
 }

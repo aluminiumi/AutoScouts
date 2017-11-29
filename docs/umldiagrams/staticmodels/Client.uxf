@@ -49,6 +49,7 @@ _-ClassAttribute: List&lt;InventoryItem&gt;_
 #getItemAtIndex(i: int): InventoryItem
 #size(): int
 #getSubtotal(): double
+#getOrder(): List&lt;InventoryItem&gt;
 --
 This class is a list of type InventoryItem
 whose contents are used throughout 
