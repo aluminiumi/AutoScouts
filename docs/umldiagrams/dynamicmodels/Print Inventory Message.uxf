@@ -166,16 +166,18 @@ message</panel_attributes>
       <x>820</x>
       <y>120</y>
       <w>490</w>
-      <h>160</h>
+      <h>210</h>
     </coordinates>
     <panel_attributes>Use Case Name:  Print Inventory Message 
 Summary:  Buffered inventory messages are printed periodically. 
 Actor:  Timer 
 Precondition:  Inventory messages have been stored by system. 
+
 Description:   
 1. Timer signals to the system to prepare daily inventory report 
 at midnight.
 2. System prints daily inventory report on supermarket printer. 
+
 Postcondition:  Inventory messages have been printed</panel_attributes>
     <additional_attributes/>
   </element>

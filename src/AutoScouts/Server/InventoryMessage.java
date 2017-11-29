@@ -2,7 +2,7 @@ package AutoScouts;
 
 public class InventoryMessage {
 
-    int id;
+    private int id;
 
     InventoryMessage(int newId) {
         id = newId;

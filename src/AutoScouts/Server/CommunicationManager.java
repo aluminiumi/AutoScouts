@@ -8,8 +8,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 class CommunicationManager implements Runnable {
-	TransactionManager tm;
 	InventoryManager im;
+	TransactionManager tm;
 	Socket clientSocket;
 	ReportPrinter rprinter;
 
@@ -23,8 +23,8 @@ class CommunicationManager implements Runnable {
 	//initial server startup uses this constructor
 	CommunicationManager() {
 		System.out.println("CommunicationManager");
-		tm = new TransactionManager();
 		im = new InventoryManager();
+		tm = new TransactionManager(im);
 		rprinter = new ReportPrinter();
 		new CMTimer(this);
 		startServer();
@@ -39,6 +39,7 @@ class CommunicationManager implements Runnable {
 		clientSocket = newclientSocket;
 	}
 
+	//this is called during initialization
 	public void startServer() {
 		boolean workToDo = true;
 		int portNum = 41114;
@@ -56,6 +57,7 @@ class CommunicationManager implements Runnable {
 		}
 	}
 
+	//this method is run in a new thread every time a new client connects to the server
 	public void run() {
 		System.out.println("New socket thread started.");
 		try {
@@ -77,22 +79,52 @@ class CommunicationManager implements Runnable {
 						processClientInput(inputLine, out);
 					}
 				}
-				System.out.println("Client closed connection.");
+				System.out.println("CommMan: Client closed connection.");
+		} catch(NullPointerException e) {
+			System.out.println("CommMan: run(): NullPointerException:");
 		} catch(Exception e) {
-			System.out.println("run(): Exception: "+e);
+			System.out.println("CommMan: run(): Exception: "+e);
 		}
-		System.out.println("Exiting socket thread.");
+		System.out.println("CommMan: run(): Exiting socket thread.");
 	}
 
+	//this method handles data sent by clients (CustomerUI, ManagerUI, RestockerUI)
 	public void processClientInput(String input, PrintWriter out) {
 		System.out.println("Client: "+input);
-		if(input.equals("dump")) {
-			String dump = im.getDBDump();
-			System.out.println(dump);
-			String dumplines[] = dump.split("\n");
-			for(String line : dumplines)
-				out.println(line);
+		String chunks[] = input.split(" ");
+		switch(chunks[0]) {
+			case "dump":
+				String dump = im.getDBDump();
+				System.out.println(dump);
+				String dumplines[] = dump.split("\n");
+				for(String line : dumplines)
+					out.println(line);
+				break;
+			case "printreports":
+				PrintDailyReport();
+				PrintInventoryMessage();
+				out.println("Okay.");
+				break;
+			case "getitem":
+				try{
+					int i = Integer.parseInt(chunks[1]);
+					out.println("item "+im.getInventoryItem(i));
+				} catch (Exception e) {
+					System.out.println("CommMan: "+e);
+				}
+				break;
+			case "sold":
+				try{
+					int i = Integer.parseInt(chunks[1]);
+					tm.processSaleOfItem(i);
+				} catch (Exception e) {
+					System.out.println("CommMan: "+e);
+				}
+				break;
+			default:
+				System.out.println("CommMan: Unexpected input from client.");
 		}
+
 	}
 
 	//this is called by CMTimer

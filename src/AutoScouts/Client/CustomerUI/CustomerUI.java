@@ -3,6 +3,9 @@ package AutoScouts;
 import java.util.Scanner;
 
 class CustomerUI extends Client {
+	private CustomerOrder co;
+	private boolean expectingItem = false;
+
 	public static void main(String args[]) {
 		System.out.println("CustomerUI");
 		if(args.length == 0)
@@ -31,6 +34,7 @@ class CustomerUI extends Client {
 	private void go() {
 		connect();
 
+		co = new CustomerOrder();
 		boolean workToDo = true;
 		while(workToDo) {
 			Scanner kbd = new Scanner(System.in);
@@ -38,6 +42,66 @@ class CustomerUI extends Client {
 			if(command != null) {
 				send(command);
 			}
+		}
+	}
+	
+	protected void receive(String message) {
+		System.out.println("Server: "+message);
+		String chunks[] = message.split(" ");
+		switch(chunks[0]) {
+			case "item":
+				if(expectingItem) {
+					try{
+						int len = chunks.length;
+						int id = Integer.parseInt(chunks[1]);
+						double price = Double.parseDouble(chunks[len-4]);
+						double discount = Double.parseDouble(chunks[len-3]);
+						String desc = chunks[2];
+						int iter = 3;
+						while(len > 7) {
+							desc += " "+chunks[iter];
+							len--;
+							iter++;
+						}
+						InventoryItem item = new InventoryItem(
+							id, desc, price, discount, 0, 0);
+						co.add(Item);
+						System.out.println("Item scanned: "+item);
+
+					} catch (Exception e) {
+						System.out.println("Server sent malformed item information. "+e);
+					}
+					expectingItem = false;
+				} else {
+					System.out.println("Server sent unexpected item information.");
+				}
+				break;
+			case "Hello.":
+			case "Okay.":
+				break;
+			default:
+				System.out.println("Unexpected response from server.");
+		}
+	}
+
+	protected void send(String message) {
+		if(message.startsWith("getitem "))
+			expectingItem = true;
+		super.send(message);
+	}
+
+	private void ScanItem(int i) {
+		send("getitem "+i);
+		expectingItem = true;
+	}
+
+	public void NewScreen() {
+		co = new CustomerOrder;
+	}
+
+	public void ReportToTransManager() {
+		for(InventoryItem item : co) {
+			send("sold "+item.getId());
 		}
 	}
 }

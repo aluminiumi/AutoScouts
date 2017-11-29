@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>10</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>430</x>
-      <y>160</y>
-      <w>420</w>
-      <h>190</h>
+      <x>329</x>
+      <y>112</y>
+      <w>301</w>
+      <h>161</h>
     </coordinates>
     <panel_attributes>&lt;&lt;application logic&gt;&gt;
 InventoryManager
@@ -16,6 +16,7 @@ InventoryManager
 -inventoryLevels: List&lt;StockingLevel&gt;
 -imr: InventoryMessageReport
 --
+#getInventoryItem(int): InventoryItem
 #getInventoryMessageReport(): inventoryMessageReport
 #resetInventoryMessageReport(): void
 #updateInventory(): void
@@ -27,20 +28,35 @@ of each have been sold, and how many of each remain.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
-      <y>470</y>
-      <w>210</w>
-      <h>180</h>
+      <x>994</x>
+      <y>112</y>
+      <w>147</w>
+      <h>294</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;entity&gt;&gt;
+    <panel_attributes>&lt;&lt;database wrapper&gt;&gt;
 InventoryItem
 --
-id: int
-name: String
-price: float
-discount: float
-qty: int
-msgThresh: int
+-id: int
+-name: String
+-price: float
+-discount: float
+-qty: int
+-msgThresh: int
+--
+#getId(): int
+#getName(): String
+#getPrice(): float
+#getDiscount(): float
+#getQty(): int
+#getMessageThresh(): int
+#setId(int): void
+#setName(String): void
+#setPrice(float): void
+#setDiscount(float): void
+#setQty(int): void
+#setMessageThresh(int): void
+#subtractQty(int): void
+#addQty(int): void
 --
 Describes an item
 carried by the store.</panel_attributes>
@@ -49,10 +65,10 @@ carried by the store.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>680</x>
-      <y>470</y>
-      <w>240</w>
-      <h>120</h>
+      <x>329</x>
+      <y>329</y>
+      <w>168</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;entity&gt;&gt;
 InventoryMessageReport
@@ -68,41 +84,31 @@ Denotes all items with low stock</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>630</x>
-      <y>340</y>
-      <w>170</w>
-      <h>150</h>
+      <x>392</x>
+      <y>266</y>
+      <w>56</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=-
+m1=1
 m2=1
-sends &gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;80.0;150.0;80.0;150.0;130.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>480</x>
-      <y>340</y>
-      <w>180</w>
-      <h>150</h>
-    </coordinates>
-    <panel_attributes>lt=-
-m1=0..n
-&lt; includes</panel_attributes>
-    <additional_attributes>10.0;130.0;10.0;80.0;160.0;80.0;160.0;10.0</additional_attributes>
+sends v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1050</x>
-      <y>470</y>
-      <w>160</w>
-      <h>120</h>
+      <x>588</x>
+      <y>329</y>
+      <w>112</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;entity&gt;&gt;
 InventoryMessage
 --
 -itemId: int
+--
+#getId(): int
 --
 Denotes an item
 whose stock is
@@ -112,15 +118,92 @@ getting low.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>910</x>
-      <y>500</y>
-      <w>160</w>
-      <h>50</h>
+      <x>490</x>
+      <y>350</y>
+      <w>112</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=0..n
 contains &gt;</panel_attributes>
     <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>679</x>
+      <y>112</y>
+      <w>203</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+DBManager
+--
+#getInventoryItem(int): InventoryItem
+--
+Executes SQL queries</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>756</x>
+      <y>315</y>
+      <w>210</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;entity&gt;&gt;
+ConnectionProvider
+--
+-con: Connection
+--
+#getCon(): Connection
+#setCredFile(String): void
+--
+Provides SQL Connection to DBManager</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>798</x>
+      <y>196</y>
+      <w>49</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+uses v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>623</x>
+      <y>154</y>
+      <w>70</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+uses &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;80.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>875</x>
+      <y>154</y>
+      <w>133</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..n
+provides &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
   </element>
 </diagram>

@@ -26,12 +26,12 @@ class Client {
 		this.portNum = portNum;
 	}
 	
-	public void send(String message) {
+	protected void send(String message) {
 		System.out.println("Sending: "+message);
 		sout.println(message);
 	}
 
-	public void receive(String message) {
+	protected void receive(String message) {
 		System.out.println("Received: "+message);
 		if (message.equals("Bye."))
 			System.exit(0);

@@ -42,6 +42,23 @@ public final class DBManager {
 		return output;
 	}
 
+	public static InventoryItem getInventoryItem(int i) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			con = ConnectionProvider.getCon();
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM Inventory WHERE id=?;");
+			ps.setInt(1, i);
+			ResultSet rs=ps.executeQuery();
+			if(rs.next()) {
+				return new InventoryItem(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getDouble(4), rs.getInt(5), rs.getInt(6));
+			}
+
+		} catch (Exception e) {
+			System.out.println("readAccountInfo() Exception: "+e);
+		}
+		return null;
+	}
+
 /*
 	public static customer readAccountInfo(String accountID, String password) {
 		try {

@@ -15,14 +15,34 @@ class ReportPrinter extends Printer {
 	}
 
 	public int print(TransactionLog tl) {
+		String header = "######################\n"+
+				"# BEGIN DAILY REPORT #\n"+
+				"######################\n";
+		String footer = "\n######################\n"+
+				"#  END DAILY REPORT  #\n"+
+				"######################\n";
 		System.out.println("ReportPrinter: print(TransactionLog)");
-		print(tl.toString());
+		if(tl != null) {
+			print(header+tl.toString()+footer);
+		} else {
+			print(header+"No transactions."+footer);
+		}
 		return 0;
 	}
 
 	public int print(InventoryMessageReport imr) {
+		String header = "##############################\n"+
+				"# BEGIN INVENTORY MSG REPORT #\n"+
+				"##############################\n";
+		String footer = "\n##############################\n"+
+				"#  END INVENTORY MSG REPORT  #\n"+
+				"##############################\n";
 		System.out.println("ReportPrinter: print(InventoryMessageReport)");
-		print(imr.toString());
+		if(imr != null) {
+			print(header+imr.toString()+footer);
+		} else {
+			print(header+"Inventory levels sufficient."+footer);
+		}
 		return 0;
 	}
 }
