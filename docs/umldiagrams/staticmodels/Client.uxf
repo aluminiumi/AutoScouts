@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
   <zoom_level>6</zoom_level>
   <element>
     <id>UMLClass</id>
@@ -25,11 +26,9 @@ CustomerUI
 #ShowSubtotal(): void
 #SendAuthorizationRequest()
 #NewScreen(): void
-#ReportToTransManager(CustomerOrder: List&lt;Item&gt;): void
+#ReportToTransManager(): void
 --
-This class resides on the checkout 
-station itself, and communicates 
-with the CustomerInterface.</panel_attributes>
+This class resides on the checkout station itself.</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -38,7 +37,7 @@ with the CustomerInterface.</panel_attributes>
       <x>6</x>
       <y>192</y>
       <w>174</w>
-      <h>138</h>
+      <h>150</h>
     </coordinates>
     <panel_attributes>&lt;&lt;entity&gt;&gt;
 CustomerOrder
@@ -46,13 +45,14 @@ CustomerOrder
 --
 _-ClassAttribute: List&lt;InventoryItem&gt;_
 --
+#add(InventoryItem): void
 #getItemAtIndex(i: int): InventoryItem
 #size(): int
 #getSubtotal(): double
 --
 This class is a list of type InventoryItem
 whose contents are used throughout 
-the system for inventory management 
+CustomerUI for inventory management 
 and receipt printing. Reset for each 
 customer.</panel_attributes>
     <additional_attributes/>

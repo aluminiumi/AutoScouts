@@ -213,6 +213,7 @@ Information about each product being restocked
 is entered into the system. 
 Actor:  Restocker 
 Precondition:  Menu is displayed to restocker. 
+
 Description:   
 1. Restocker selects Restock from menu. 
 2. The system prompts restocker to enter items. 
@@ -442,6 +443,7 @@ Alternatives:   If the scanned item is new
 then the system prompts and the restocker
 enters the item description, price, discount 
 information, and quantity. 
+
 Postcondition: Inventory has been restocked. 
  
  </panel_attributes>

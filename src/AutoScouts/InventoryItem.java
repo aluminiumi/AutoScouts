@@ -2,12 +2,12 @@ package AutoScouts;
 
 public class InventoryItem {
 
-    int id;
-    String name;
-    double price;
-    double discount;
-    int qty;
-    int messageThresh;
+    private int id;
+    private String name;
+    private double price;
+    private double discount;
+    private int qty;
+    private int messageThresh;
 
     InventoryItem(int i, String n, double p, double d, int q, int t) {
         id = i;
@@ -46,35 +46,35 @@ public class InventoryItem {
         return messageThresh;
     }
 
-    void setId(int newId) {
+    public void setId(int newId) {
         id = newId;
     }
 
-    void setName(String newName) {
+    public void setName(String newName) {
         name = newName;
     }
 
-    void setPrice(double newPrice) {
+    public void setPrice(double newPrice) {
         price = newPrice;
     }
 
-    void setDiscount(double newDiscount) {
+    public void setDiscount(double newDiscount) {
         discount = newDiscount;
     }
 
-    void setQty(int newQty) {
+    public void setQty(int newQty) {
         qty = newQty;
     }
 
-    void setMessageThresh(int newMessageThresh) {
+    public void setMessageThresh(int newMessageThresh) {
         messageThresh = newMessageThresh;
     }
 
-    void subtractQty(int itemsTaken) {
+    public void subtractQty(int itemsTaken) {
         qty -= itemsTaken;
     }
 
-    void addQty(int itemsAdded) {
+    public void addQty(int itemsAdded) {
         qty += itemsAdded;
     }
 }
