@@ -40,7 +40,7 @@ class CommunicationManager implements Runnable {
 	}
 
 	//this is called during initialization
-	public void startServer() {
+	private void startServer() {
 		boolean workToDo = true;
 		int portNum = 41114;
 		while(portNum < 65535) {
