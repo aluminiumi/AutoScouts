@@ -122,7 +122,7 @@ class CustomerUI extends Client {
 		public double getSubtotal() {
 			double p = 0;
 			for(InventoryItem i : order)
-				p += i.getPrice();
+				p += i.getPriceWithDiscount();
 			return p;
 		}
 

@@ -36,4 +36,8 @@ class Transaction {
 	public void addToPrice(double p) {
 		price += p;
 	}
+
+	public String toString() {
+		return "ID:"+item+" QTYSOLD:"+quantity+" REVENUE:"+String.format("%1$,.2f",price);
+	}
 }

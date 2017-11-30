@@ -39,9 +39,9 @@ _:TransactionLog_
 #getSize(): int
 #getTotalRevenue(): float
 #consolidateTransactions(): TransactionLog
+#getTransactionList(): List&lt;Transaction&gt;
 --
-Daily list of all customer 
-transactions.</panel_attributes>
+Daily list of all customer transactions.</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

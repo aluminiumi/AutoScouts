@@ -37,7 +37,7 @@ public final class DBManager {
 			}
 
 		} catch (Exception e) {
-			System.out.println("readAccountInfo() Exception: "+e);
+			System.out.println("getDBDump() Exception: "+e);
 		}
 		return output;
 	}
@@ -54,9 +54,22 @@ public final class DBManager {
 			}
 
 		} catch (Exception e) {
-			System.out.println("readAccountInfo() Exception: "+e);
+			System.out.println("getInventoryItem() Exception: "+e);
 		}
 		return null;
+	}
+
+	public static void updateItemQty(int itemid, int qty) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			con = ConnectionProvider.getCon();
+			PreparedStatement ps = con.prepareStatement("UPDATE Inventory SET Qty=? WHERE id=?;");
+			ps.setInt(1, qty);
+			ps.setInt(2, itemid);
+			ps.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("updateItemQty() Exception: "+e);
+		}
 	}
 
 /*
