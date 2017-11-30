@@ -71,8 +71,6 @@ class CommunicationManager implements Runnable {
 		
 				while ((inputLine = in.readLine()) != null) {
 					//System.out.println("Client: "+inputLine);
-					//outputLine = inputLine; //TODO: remove this, when done
-					//out.println(outputLine); //TODO: remove this, when done
 					if (inputLine.equals("Bye."))
 						break;
 					else {
@@ -98,7 +96,7 @@ class CommunicationManager implements Runnable {
 				System.out.println(dump);
 				String dumplines[] = dump.split("\n");
 				for(String line : dumplines)
-					out.println(line);
+					out.println("dump "+line);
 				break;
 			case "printreports": //not used, just for debugging
 				PrintDailyReport();
@@ -130,7 +128,58 @@ class CommunicationManager implements Runnable {
 					System.out.println("CommMan: "+e);
 				}
 				break;
-			case "updateitemqty": //used by ManagerUI
+			case "updateitem": //used by ManagerUI
+				int id = 0;
+				try {
+					id = Integer.parseInt(chunks[2]);
+				} catch (Exception e) {
+					System.out.println(e);
+				}
+				switch(chunks[1]) {
+					case "name":
+						int iter;
+						String name = "";
+						for(iter = 3; iter < chunks.length-1; iter++) {
+							name += chunks[iter]+" ";
+						}
+						name += chunks[iter];
+						im.setItemName(id, name);
+						break;
+					case "price":
+						try {
+							Double price = Double.parseDouble(chunks[3]);
+							im.setItemPrice(id, price);
+						} catch (Exception e) {
+							System.out.println(e);
+						}
+						break;
+					case "discount":
+						try {
+							Double discount = Double.parseDouble(chunks[3]);
+							im.setItemDiscount(id, discount);
+						} catch (Exception e) {
+							System.out.println(e);
+						}
+						break;
+					case "qty":
+						try {
+							int qty = Integer.parseInt(chunks[3]);
+							im.setItemQty(id, qty);
+						} catch (Exception e) {
+							System.out.println(e);
+						}
+						break;
+					case "threshold":
+						try {
+							int thresh = Integer.parseInt(chunks[3]);
+							im.setItemThresh(id, thresh);
+						} catch (Exception e) {
+							System.out.println(e);
+						}
+						break;
+					default:
+						System.out.println("CommMan: Bad updateitem argument from client.");
+				}
 				break;
 			default:
 				System.out.println("CommMan: Unexpected input from client.");

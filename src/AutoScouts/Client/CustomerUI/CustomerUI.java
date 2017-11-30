@@ -34,6 +34,7 @@ class CustomerUI extends Client {
 	}
 
 	private void go() {
+		setQuietMode(false);
 		connect();
 
 		co = new CustomerOrder();
@@ -69,7 +70,7 @@ class CustomerUI extends Client {
 							id, desc, price, discount, 0, 0);
 						co.add(item);
 						System.out.println("Item scanned: "+item);
-						System.out.println("New subtotal: "+co.getSubtotal());
+						System.out.println("New subtotal: "+String.format("%1$,.2f", co.getSubtotal()));
 
 					} catch (Exception e) {
 						System.out.println("Server sent malformed item information. "+e);

@@ -29,6 +29,7 @@ class RestockerUI extends Client {
 	}
 
 	private void go() {
+		setQuietMode(false);
 		connect();
 		
 		boolean workToDo = true;

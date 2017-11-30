@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>8</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>336</x>
-      <y>280</y>
-      <w>368</w>
-      <h>264</h>
+      <x>378</x>
+      <y>266</y>
+      <w>322</w>
+      <h>231</h>
     </coordinates>
     <panel_attributes>Use Case Name:  View/Update Product Inventory 
 Summary:  Information about a product is viewed/updated 
@@ -20,7 +20,8 @@ Description:
 2. System prompts and manager selects an item to 
 view/update. 
 3. System displays the price, description, and discount 
-information of the item. 4. Manager updates any information 
+information of the item. 
+4. Manager updates any information 
 by typing over if necessary and enters when done 
 (OK, SUBMIT, ENTER key or graphical user interface button). 
 5. System updates information if necessary and displays new 
@@ -32,10 +33,10 @@ Postcondition:  Product inventory is viewed/updated. </panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>112</x>
-      <y>152</y>
-      <w>64</w>
-      <h>96</h>
+      <x>210</x>
+      <y>126</y>
+      <w>56</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>Manager
 </panel_attributes>
@@ -44,10 +45,10 @@ Postcondition:  Product inventory is viewed/updated. </panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>320</x>
-      <y>120</y>
-      <w>264</w>
-      <h>136</h>
+      <x>392</x>
+      <y>98</y>
+      <w>189</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>&lt;&lt;user interface&gt;&gt;
 ManagerUI
@@ -60,10 +61,10 @@ in the Manager class</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>184</x>
-      <y>176</y>
-      <w>152</w>
-      <h>32</h>
+      <x>273</x>
+      <y>147</y>
+      <w>133</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=-
 </panel_attributes>
@@ -72,10 +73,10 @@ in the Manager class</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>720</x>
-      <y>112</y>
-      <w>200</w>
-      <h>96</h>
+      <x>798</x>
+      <y>91</y>
+      <w>175</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;business logic&gt;&gt;
 _:CommunicationManager_
@@ -88,45 +89,47 @@ manager classes</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>728</x>
-      <y>368</y>
-      <w>256</w>
-      <h>56</h>
+      <x>735</x>
+      <y>308</y>
+      <w>301</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>&lt;&lt;application logic&gt;&gt;
 _:InventoryManager_
-</panel_attributes>
+--
+Keeps track of the items carried by the store, how many
+of each have been sold, and how many of each remain.</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
+      <x>574</x>
+      <y>140</y>
+      <w>238</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;20.0;320.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>875</x>
       <y>168</y>
-      <w>160</w>
-      <h>32</h>
+      <w>21</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>lt=-
 </panel_attributes>
-    <additional_attributes>10.0;20.0;180.0;20.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>848</x>
-      <y>200</y>
-      <w>24</w>
-      <h>184</h>
-    </coordinates>
-    <panel_attributes>lt=-
-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;210.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>208</x>
-      <y>72</y>
+      <x>280</x>
+      <y>161</y>
       <w>112</w>
       <h>112</h>
     </coordinates>
@@ -136,30 +139,30 @@ lt=&lt;-
 M1: Select 
 view/update
 
-M3: Item choice
+M9: Item choice
 
-M9: Item update</panel_attributes>
-    <additional_attributes>100.0;20.0;30.0;20.0</additional_attributes>
+M17: Updated item
+details</panel_attributes>
+    <additional_attributes>110.0;20.0;40.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>200</x>
-      <y>200</y>
-      <w>120</w>
-      <h>168</h>
+      <x>280</x>
+      <y>42</y>
+      <w>105</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-M2: Prompt 
-for item
+M8: Prompt for
+item choice
 
-M8: Display price, 
-description and 
-discount
+M16: Display details
+and prompt to edit
 
-M14: Display 
+M24: Display 
 updated details
 </panel_attributes>
     <additional_attributes>30.0;20.0;110.0;20.0</additional_attributes>
@@ -167,63 +170,133 @@ updated details
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>584</x>
-      <y>104</y>
-      <w>120</w>
-      <h>72</h>
+      <x>630</x>
+      <y>161</y>
+      <w>112</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-M4: Item ID
+M2: Retrieve item list
 
-M10: Item update</panel_attributes>
-    <additional_attributes>110.0;20.0;30.0;20.0</additional_attributes>
+M10: Item ID
+
+M18: Item update</panel_attributes>
+    <additional_attributes>120.0;20.0;30.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>720</x>
-      <y>280</y>
-      <w>120</w>
-      <h>72</h>
+      <x>763</x>
+      <y>203</y>
+      <w>126</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-M5: Item info 
+
+M3: Retrieve item list
+
+M11: Item info 
 request
 
-M11: Item update
+M19: Item update
 </panel_attributes>
-    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;110.0;10.0;30.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>880</x>
-      <y>280</y>
-      <w>112</w>
-      <h>64</h>
+      <x>889</x>
+      <y>217</y>
+      <w>126</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-M6: Item details
+M6: Return item list
 
-M12 New details</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+M14: Return item info
+
+M22: New details</panel_attributes>
+    <additional_attributes>10.0;20.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>592</x>
-      <y>192</y>
-      <w>104</w>
-      <h>72</h>
+      <x>637</x>
+      <y>56</y>
+      <w>119</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-M7: Item details
+M7: Return item list
 
-M13: New details</panel_attributes>
-    <additional_attributes>20.0;20.0;100.0;20.0</additional_attributes>
+M15: Return item info
+
+M23: New details</panel_attributes>
+    <additional_attributes>40.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>784</x>
+      <y>469</y>
+      <w>203</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+DBManager
+--
+Executes SQL queries</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>756</x>
+      <y>364</y>
+      <w>126</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+M4: Retrieve item list
+
+M12: Item info 
+request
+
+M20: Item update
+</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>875</x>
+      <y>364</y>
+      <w>21</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>889</x>
+      <y>378</y>
+      <w>126</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+M5: Return item list
+
+M13: Return item info
+
+M21: New details</panel_attributes>
+    <additional_attributes>10.0;20.0;10.0;70.0</additional_attributes>
   </element>
 </diagram>

@@ -243,19 +243,18 @@ m2=1
       <x>546</x>
       <y>174</y>
       <w>198</w>
-      <h>144</h>
+      <h>114</h>
     </coordinates>
     <panel_attributes>&lt;&lt;user interface&gt;&gt;
 ManagerUI
 --
 #ViewOrUpdate(): void
-#requestInventoryItem(id: int): InventoryItem
-#displayInventoryItem(): void
-#updateInventoryItem(i: InventoryItem): int
+#requestInventoryItem(id: int): void
+#displayInventoryItem(): boolean
+#updateInventoryItem(i: InventoryItem): void
 --
-This class interacts with the
-system to perform the functions
-in the Manager class</panel_attributes>
+This class interacts with the store manager
+actor and the CommunicationManager.</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
