@@ -306,7 +306,9 @@ includeantruntime="false">
 -->
 
   <property name="serverclasses" value="**/ConnectionProvider.class,**/DBManager.class,
-	**/InventoryManager.class,**/InventoryMessage.class,**/TransactionManager.class"/>
+	**/InventoryManager.class,**/InventoryMessage.class,**/TransactionManager.class,
+	**/CMTimer*.class,**/InventoryMessageReport.class,**/ReportPrinter.class,
+	**/Transaction.class,**/TransactionLog.class"/>
   <!-- target name="dist" depends="compile" -->
   <target name="dist" depends="compile,javadoc"
    description="Create binary distribution">
@@ -324,7 +326,7 @@ includeantruntime="false">
     <!-- Create application JAR file -->
     <!-- jar jarfile="${dist.home}/${app.name}-${app.version}.jar" -->
     <jar jarfile="${dist.home}/${app.name}.jar" basedir="${build.home}" 
-	excludes="**/RestockerUI.class,**/ManagerUI.class,**/CustomerUI.class">
+	excludes="**/RestockerUI.class,**/ManagerUI.class,**/CustomerUI*.class,**/Client*.class,**/ReceiptPrinter.class">
 	<zipgroupfileset dir="${lib.home}" includes="*.jar" />
         <manifest>
 		<attribute name = "Main-Class" value = "AutoScouts.CommunicationManager"/>
@@ -332,14 +334,14 @@ includeantruntime="false">
     </jar>
 
     <jar jarfile="${dist.home}/RestockerUI.jar" basedir="${build.home}" 
-	excludes="**/CommunicationManager.class,**/ManagerUI.class,**/CustomerUI.class,${serverclasses}">
+	excludes="**/CommunicationManager.class,**/ManagerUI.class,**/CustomerUI*.class,**/*Printer.class,${serverclasses}">
         <manifest>
 		<attribute name = "Main-Class" value = "AutoScouts.RestockerUI"/>
         </manifest>
     </jar>
 
     <jar jarfile="${dist.home}/ManagerUI.jar" basedir="${build.home}"
-	excludes="**/CommunicationManager.class,**/RestockerUI.class,**/CustomerUI.class,${serverclasses}">
+	excludes="**/CommunicationManager.class,**/RestockerUI.class,**/CustomerUI*.class,**/*Printer.class,${serverclasses}">
         <manifest>
 		<attribute name = "Main-Class" value = "AutoScouts.ManagerUI"/>
         </manifest>
