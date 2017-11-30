@@ -5,9 +5,9 @@
     <id>UMLClass</id>
     <coordinates>
       <x>329</x>
-      <y>112</y>
+      <y>91</y>
       <w>301</w>
-      <h>161</h>
+      <h>182</h>
     </coordinates>
     <panel_attributes>&lt;&lt;application logic&gt;&gt;
 InventoryManager
@@ -19,6 +19,9 @@ InventoryManager
 #getInventoryItem(int): InventoryItem
 #getInventoryMessageReport(): inventoryMessageReport
 #resetInventoryMessageReport(): void
+#decrementItemQty(int): void
+#incrementItemQty(int, int): void
+#setItemQty(int, int): void
 #updateInventory(): void
 --
 Keeps track of the items carried by the store, how many
@@ -30,8 +33,8 @@ of each have been sold, and how many of each remain.</panel_attributes>
     <coordinates>
       <x>994</x>
       <y>112</y>
-      <w>147</w>
-      <h>294</h>
+      <w>168</w>
+      <h>308</h>
     </coordinates>
     <panel_attributes>&lt;&lt;database wrapper&gt;&gt;
 InventoryItem
@@ -46,6 +49,7 @@ InventoryItem
 #getId(): int
 #getName(): String
 #getPrice(): float
+#getPriceWithDiscount(): float
 #getDiscount(): float
 #getQty(): int
 #getMessageThresh(): int
@@ -98,13 +102,13 @@ sends v</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>588</x>
+      <x>567</x>
       <y>329</y>
-      <w>112</w>
+      <w>161</w>
       <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;entity&gt;&gt;
-InventoryMessageReport
+InventoryMessage
 --
 -itemId: int
 --
@@ -121,14 +125,14 @@ Denotes all items with low stock</panel_attributes>
     <coordinates>
       <x>490</x>
       <y>350</y>
-      <w>112</w>
+      <w>91</w>
       <h>35</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=0..n
 contains &gt;</panel_attributes>
-    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -142,6 +146,7 @@ contains &gt;</panel_attributes>
 DBManager
 --
 #getInventoryItem(int): InventoryItem
+#updateItemQty(int): void
 --
 Executes SQL queries</panel_attributes>
     <additional_attributes/>
@@ -150,7 +155,7 @@ Executes SQL queries</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>756</x>
-      <y>315</y>
+      <y>273</y>
       <w>210</w>
       <h>84</h>
     </coordinates>
@@ -171,13 +176,13 @@ Provides SQL Connection to DBManager</panel_attributes>
       <x>798</x>
       <y>196</y>
       <w>49</w>
-      <h>133</h>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=1
 uses v</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>

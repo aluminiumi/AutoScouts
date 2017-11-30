@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>5</zoom_level>
+  <zoom_level>6</zoom_level>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>550</x>
-      <y>630</y>
-      <w>80</w>
-      <h>35</h>
+      <x>438</x>
+      <y>756</y>
+      <w>96</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>Cancel Payment
 style=wordwrap</panel_attributes>
@@ -16,10 +16,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>485</x>
-      <y>315</y>
-      <w>575</w>
-      <h>20</h>
+      <x>360</x>
+      <y>378</y>
+      <w>690</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;1130.0;20.0</additional_attributes>
@@ -27,10 +27,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>775</x>
+      <x>708</x>
       <y>0</y>
-      <w>195</w>
-      <h>35</h>
+      <w>234</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>Common Checkout Order
 style=wordwrap</panel_attributes>
@@ -39,10 +39,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>905</x>
-      <y>380</y>
-      <w>60</w>
-      <h>25</h>
+      <x>864</x>
+      <y>456</y>
+      <w>72</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>Customer
 Interface</panel_attributes>
@@ -51,10 +51,10 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>690</x>
-      <y>375</y>
-      <w>225</w>
-      <h>20</h>
+      <x>606</x>
+      <y>450</y>
+      <w>270</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;430.0;20.0</additional_attributes>
@@ -62,10 +62,10 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>775</x>
-      <y>430</y>
-      <w>45</w>
-      <h>15</h>
+      <x>708</x>
+      <y>516</y>
+      <w>54</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
@@ -73,10 +73,10 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>775</x>
-      <y>410</y>
-      <w>35</w>
-      <h>15</h>
+      <x>708</x>
+      <y>492</y>
+      <w>42</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
@@ -84,10 +84,10 @@ Interface</panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>660</x>
-      <y>365</y>
-      <w>40</w>
-      <h>55</h>
+      <x>570</x>
+      <y>438</y>
+      <w>48</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>Customer</panel_attributes>
     <additional_attributes/>
@@ -95,10 +95,10 @@ Interface</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>790</x>
-      <y>515</y>
-      <w>75</w>
-      <h>40</h>
+      <x>726</x>
+      <y>618</y>
+      <w>90</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>3. Cancel
 style=wordwrap</panel_attributes>
@@ -107,10 +107,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>760</x>
-      <y>445</y>
-      <w>135</w>
-      <h>40</h>
+      <x>690</x>
+      <y>534</y>
+      <w>162</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>8. Return current total price and continue prompting for more item
 style=wordwrap</panel_attributes>
@@ -119,10 +119,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>480</x>
-      <y>470</y>
-      <w>580</w>
-      <h>20</h>
+      <x>354</x>
+      <y>564</y>
+      <w>696</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;1140.0;20.0</additional_attributes>
@@ -130,10 +130,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>890</x>
-      <y>545</y>
-      <w>60</w>
-      <h>25</h>
+      <x>846</x>
+      <y>654</y>
+      <w>72</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>Customer
 Interface</panel_attributes>
@@ -142,10 +142,10 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>735</x>
-      <y>540</y>
-      <w>165</w>
-      <h>20</h>
+      <x>660</x>
+      <y>648</y>
+      <w>198</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;310.0;20.0</additional_attributes>
@@ -153,10 +153,10 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>795</x>
-      <y>560</y>
-      <w>35</w>
-      <h>15</h>
+      <x>732</x>
+      <y>672</y>
+      <w>42</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
@@ -164,10 +164,10 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>795</x>
-      <y>530</y>
-      <w>35</w>
-      <h>15</h>
+      <x>732</x>
+      <y>636</y>
+      <w>42</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
@@ -175,10 +175,10 @@ Interface</panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>695</x>
-      <y>530</y>
-      <w>40</w>
-      <h>55</h>
+      <x>612</x>
+      <y>636</y>
+      <w>48</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>Customer</panel_attributes>
     <additional_attributes/>
@@ -186,10 +186,10 @@ Interface</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>550</x>
-      <y>380</y>
-      <w>90</w>
-      <h>35</h>
+      <x>438</x>
+      <y>456</y>
+      <w>108</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>Subtotal
 style=wordwrap</panel_attributes>
@@ -198,10 +198,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>760</x>
-      <y>395</y>
-      <w>75</w>
-      <h>40</h>
+      <x>690</x>
+      <y>474</y>
+      <w>90</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>7. Press subtotal
 style=wordwrap</panel_attributes>
@@ -210,10 +210,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>760</x>
-      <y>575</y>
-      <w>110</w>
-      <h>40</h>
+      <x>690</x>
+      <y>690</y>
+      <w>132</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>4. Return to the idle state
 style=wordwrap</panel_attributes>
@@ -222,10 +222,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>475</x>
-      <y>590</y>
-      <w>585</w>
-      <h>20</h>
+      <x>348</x>
+      <y>708</y>
+      <w>702</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;1150.0;20.0</additional_attributes>
@@ -233,10 +233,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>550</x>
-      <y>515</y>
-      <w>100</w>
-      <h>35</h>
+      <x>438</x>
+      <y>618</y>
+      <w>120</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>Cancel Checkout
 style=wordwrap</panel_attributes>
@@ -245,10 +245,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>890</x>
-      <y>655</y>
-      <w>60</w>
-      <h>25</h>
+      <x>846</x>
+      <y>786</y>
+      <w>72</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>Customer
 Interface</panel_attributes>
@@ -257,10 +257,10 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>625</x>
-      <y>655</y>
-      <w>275</w>
-      <h>20</h>
+      <x>528</x>
+      <y>786</y>
+      <w>330</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;530.0;20.0</additional_attributes>
@@ -268,10 +268,10 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>780</x>
-      <y>675</y>
-      <w>45</w>
-      <h>15</h>
+      <x>714</x>
+      <y>810</y>
+      <w>54</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
@@ -279,10 +279,10 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>775</x>
-      <y>645</y>
-      <w>45</w>
-      <h>15</h>
+      <x>708</x>
+      <y>774</y>
+      <w>54</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
@@ -290,10 +290,10 @@ Interface</panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>690</x>
-      <y>645</y>
-      <w>40</w>
-      <h>55</h>
+      <x>606</x>
+      <y>774</y>
+      <w>48</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>Customer</panel_attributes>
     <additional_attributes/>
@@ -301,10 +301,10 @@ Interface</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>760</x>
-      <y>630</y>
-      <w>75</w>
-      <h>40</h>
+      <x>690</x>
+      <y>756</y>
+      <w>90</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>9. Cancel Payment
 style=wordwrap</panel_attributes>
@@ -313,10 +313,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>745</x>
-      <y>690</y>
-      <w>115</w>
-      <h>40</h>
+      <x>672</x>
+      <y>828</y>
+      <w>138</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>10. Prompt Payment again
 style=wordwrap</panel_attributes>
@@ -325,10 +325,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>480</x>
-      <y>740</y>
-      <w>575</w>
-      <h>20</h>
+      <x>354</x>
+      <y>888</y>
+      <w>690</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;1130.0;20.0</additional_attributes>
@@ -336,10 +336,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>550</x>
-      <y>770</y>
-      <w>95</w>
-      <h>30</h>
+      <x>438</x>
+      <y>924</y>
+      <w>114</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>Send Inventory Message
 style=wordwrap</panel_attributes>
@@ -348,10 +348,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>645</x>
-      <y>795</y>
-      <w>40</w>
-      <h>55</h>
+      <x>552</x>
+      <y>954</y>
+      <w>48</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>Customer</panel_attributes>
     <additional_attributes/>
@@ -359,10 +359,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>710</x>
-      <y>775</y>
-      <w>65</w>
-      <h>25</h>
+      <x>630</x>
+      <y>930</y>
+      <w>78</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>M3. Scan item
 style=wordwrap</panel_attributes>
@@ -371,10 +371,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>705</x>
-      <y>840</y>
-      <w>90</w>
-      <h>40</h>
+      <x>624</x>
+      <y>1008</y>
+      <w>108</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>M7. Display item info and prompt more item
 style=wordwrap</panel_attributes>
@@ -383,10 +383,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>720</x>
-      <y>825</y>
-      <w>45</w>
-      <h>15</h>
+      <x>642</x>
+      <y>990</y>
+      <w>54</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
@@ -394,10 +394,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>685</x>
-      <y>805</y>
-      <w>175</w>
-      <h>20</h>
+      <x>600</x>
+      <y>966</y>
+      <w>210</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;330.0;20.0</additional_attributes>
@@ -405,10 +405,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>720</x>
-      <y>790</y>
-      <w>45</w>
-      <h>15</h>
+      <x>642</x>
+      <y>948</y>
+      <w>54</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
@@ -416,10 +416,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>850</x>
-      <y>805</y>
-      <w>60</w>
-      <h>25</h>
+      <x>798</x>
+      <y>966</y>
+      <w>72</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>Customer
 Interface</panel_attributes>
@@ -428,10 +428,10 @@ Interface</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>795</x>
-      <y>885</y>
-      <w>80</w>
-      <h>25</h>
+      <x>732</x>
+      <y>1062</y>
+      <w>96</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>M6. Return item info
 style=wordwrap</panel_attributes>
@@ -440,10 +440,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>885</x>
-      <y>855</y>
-      <w>15</w>
-      <h>50</h>
+      <x>840</x>
+      <y>1026</y>
+      <w>18</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
@@ -451,10 +451,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>865</x>
-      <y>865</y>
-      <w>15</w>
-      <h>45</h>
+      <x>816</x>
+      <y>1038</y>
+      <w>18</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -462,10 +462,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>895</x>
-      <y>870</y>
-      <w>80</w>
-      <h>25</h>
+      <x>852</x>
+      <y>1044</y>
+      <w>96</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>M4. Request Item Info
 style=wordwrap</panel_attributes>
@@ -474,10 +474,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>855</x>
-      <y>925</y>
-      <w>80</w>
-      <h>15</h>
+      <x>804</x>
+      <y>1110</y>
+      <w>96</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>Transaction Manager</panel_attributes>
     <additional_attributes/>
@@ -485,10 +485,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>875</x>
-      <y>825</y>
-      <w>15</w>
-      <h>110</h>
+      <x>828</x>
+      <y>990</y>
+      <w>18</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
@@ -496,10 +496,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>965</x>
-      <y>925</y>
-      <w>50</w>
-      <h>15</h>
+      <x>936</x>
+      <y>1110</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>Printer</panel_attributes>
     <additional_attributes/>
@@ -507,10 +507,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>850</x>
-      <y>1010</y>
-      <w>60</w>
-      <h>25</h>
+      <x>798</x>
+      <y>1212</y>
+      <w>72</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>System
 Message Buffer</panel_attributes>
@@ -519,10 +519,10 @@ Message Buffer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>875</x>
-      <y>935</y>
-      <w>15</w>
-      <h>85</h>
+      <x>828</x>
+      <y>1122</y>
+      <w>18</w>
+      <h>102</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
@@ -530,10 +530,10 @@ Message Buffer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>930</x>
-      <y>920</y>
-      <w>45</w>
-      <h>20</h>
+      <x>894</x>
+      <y>1104</y>
+      <w>54</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;70.0;20.0</additional_attributes>
@@ -541,10 +541,10 @@ Message Buffer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>865</x>
-      <y>955</y>
-      <w>15</w>
-      <h>50</h>
+      <x>816</x>
+      <y>1146</y>
+      <w>18</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
@@ -552,10 +552,10 @@ Message Buffer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>910</x>
-      <y>945</y>
-      <w>55</w>
-      <h>15</h>
+      <x>870</x>
+      <y>1134</y>
+      <w>66</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
@@ -563,10 +563,10 @@ Message Buffer</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>910</x>
-      <y>960</y>
-      <w>75</w>
-      <h>25</h>
+      <x>870</x>
+      <y>1152</y>
+      <w>90</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>M5b5. Send message
 style=wordwrap</panel_attributes>
@@ -575,10 +575,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>795</x>
-      <y>965</y>
-      <w>70</w>
-      <h>25</h>
+      <x>732</x>
+      <y>1158</y>
+      <w>84</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>M5a. Send message
 style=wordwrap</panel_attributes>
@@ -587,16 +587,17 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>955</x>
-      <y>45</y>
-      <w>345</w>
-      <h>135</h>
+      <x>924</x>
+      <y>54</y>
+      <w>414</w>
+      <h>174</h>
     </coordinates>
     <panel_attributes>
 Use Case Name: Checkout Order
 Summary: Customer checks out items.
 Actors: Customer
 Precondition: Self-Checkout Station is ready for use and displaying welcome message.
+
 Description:
 1. Customer presses the Start Checkout key.
 2. System displays a prompt "please scan items".
@@ -612,10 +613,10 @@ Postcondition: Customer has been checked out.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>810</x>
-      <y>130</y>
-      <w>105</w>
-      <h>85</h>
+      <x>750</x>
+      <y>156</y>
+      <w>126</w>
+      <h>102</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 CustomerUI
@@ -625,10 +626,10 @@ CustomerUI
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>665</x>
-      <y>145</y>
-      <w>40</w>
-      <h>60</h>
+      <x>576</x>
+      <y>174</y>
+      <w>48</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>Customer
 </panel_attributes>
@@ -637,10 +638,10 @@ CustomerUI
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>700</x>
-      <y>155</y>
-      <w>120</w>
-      <h>20</h>
+      <x>618</x>
+      <y>186</y>
+      <w>144</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=-
 </panel_attributes>
@@ -649,10 +650,10 @@ CustomerUI
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>710</x>
-      <y>170</y>
-      <w>80</w>
-      <h>80</h>
+      <x>630</x>
+      <y>204</y>
+      <w>96</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
@@ -669,10 +670,10 @@ presses TOTAL key.
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>705</x>
-      <y>50</y>
-      <w>90</w>
-      <h>130</h>
+      <x>624</x>
+      <y>60</y>
+      <w>108</w>
+      <h>156</h>
     </coordinates>
     <panel_attributes>
 
@@ -695,10 +696,10 @@ to select payment type
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>810</x>
-      <y>55</y>
-      <w>105</w>
-      <h>45</h>
+      <x>750</x>
+      <y>66</y>
+      <w>126</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>&lt;&lt;input device interface&gt;&gt;
 BarCodeScanner
@@ -710,10 +711,10 @@ presented for purchase.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>815</x>
-      <y>95</y>
-      <w>15</w>
-      <h>45</h>
+      <x>756</x>
+      <y>114</y>
+      <w>18</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=-
 </panel_attributes>
@@ -722,10 +723,10 @@ presented for purchase.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>840</x>
-      <y>100</y>
-      <w>65</w>
-      <h>35</h>
+      <x>786</x>
+      <y>120</y>
+      <w>78</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 M3: Customer 
@@ -735,10 +736,10 @@ scans items</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>805</x>
-      <y>270</y>
-      <w>110</w>
-      <h>35</h>
+      <x>744</x>
+      <y>324</y>
+      <w>132</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>&lt;&lt;output device interface&gt;&gt;
 ReceiptPrinter
@@ -749,10 +750,10 @@ Prints receipt for customer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>830</x>
-      <y>210</y>
-      <w>15</w>
-      <h>70</h>
+      <x>774</x>
+      <y>252</y>
+      <w>18</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=-
 </panel_attributes>
@@ -761,10 +762,10 @@ Prints receipt for customer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>845</x>
-      <y>220</y>
-      <w>65</w>
-      <h>50</h>
+      <x>792</x>
+      <y>264</y>
+      <w>78</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 M4b: Print 
@@ -777,10 +778,10 @@ amount due</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1065</x>
-      <y>330</y>
-      <w>195</w>
-      <h>245</h>
+      <x>1056</x>
+      <y>396</y>
+      <w>234</w>
+      <h>294</h>
     </coordinates>
     <panel_attributes>Alternatives:
  If customer selects PAY BY CREDIT/DEBIT CARD, 

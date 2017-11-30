@@ -38,6 +38,11 @@ public class InventoryItem {
         return discount;
     }
 
+    //we assume discounts are percentage based
+    public double getPriceWithDiscount() {
+        return price*(1-discount);
+    }
+
     public int getQty() {
         return qty;
     }

@@ -22,7 +22,7 @@ class CommunicationManager implements Runnable {
 
 	//initial server startup uses this constructor
 	CommunicationManager() {
-		System.out.println("CommunicationManager");
+		System.out.println("CommunicationManager: started");
 		im = new InventoryManager();
 		tm = new TransactionManager(im);
 		rprinter = new ReportPrinter();
@@ -47,7 +47,7 @@ class CommunicationManager implements Runnable {
 			try (
 				ServerSocket serverSocket = new ServerSocket(portNum);
 			) {
-				System.out.println("Listening on port "+portNum);
+				System.out.println("Listening for connections on port "+portNum+"...");
 				while(workToDo)
 					new Thread(new CommunicationManager(tm, im, rprinter, serverSocket.accept())).start();
 			} catch (IOException e) {
@@ -59,7 +59,7 @@ class CommunicationManager implements Runnable {
 
 	//this method is run in a new thread every time a new client connects to the server
 	public void run() {
-		System.out.println("New socket thread started.");
+		System.out.println("CommMan: New socket thread started.");
 		try {
 				PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
 				BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
@@ -71,9 +71,9 @@ class CommunicationManager implements Runnable {
 		
 				while ((inputLine = in.readLine()) != null) {
 					//System.out.println("Client: "+inputLine);
-					outputLine = inputLine;
-					out.println(outputLine);
-					if (outputLine.equals("Bye."))
+					//outputLine = inputLine; //TODO: remove this, when done
+					//out.println(outputLine); //TODO: remove this, when done
+					if (inputLine.equals("Bye."))
 						break;
 					else {
 						processClientInput(inputLine, out);
@@ -93,19 +93,19 @@ class CommunicationManager implements Runnable {
 		System.out.println("Client: "+input);
 		String chunks[] = input.split(" ");
 		switch(chunks[0]) {
-			case "dump":
+			case "dump": //not used, just for debugging
 				String dump = im.getDBDump();
 				System.out.println(dump);
 				String dumplines[] = dump.split("\n");
 				for(String line : dumplines)
 					out.println(line);
 				break;
-			case "printreports":
+			case "printreports": //not used, just for debugging
 				PrintDailyReport();
 				PrintInventoryMessage();
 				out.println("Okay.");
 				break;
-			case "getitem":
+			case "getitem": //used by CustomerUI, RestockerUI, ManagerUI
 				try{
 					int i = Integer.parseInt(chunks[1]);
 					out.println("item "+im.getInventoryItem(i));
@@ -113,13 +113,24 @@ class CommunicationManager implements Runnable {
 					System.out.println("CommMan: "+e);
 				}
 				break;
-			case "sold":
+			case "sold": //used by CustomerUI after purchase
 				try{
 					int i = Integer.parseInt(chunks[1]);
 					tm.processSaleOfItem(i);
 				} catch (Exception e) {
 					System.out.println("CommMan: "+e);
 				}
+				break;
+			case "incitemqty": //used by RestockerUI
+				try{
+					int i = Integer.parseInt(chunks[1]);
+					int q = Integer.parseInt(chunks[2]);
+					im.incrementItemQty(i, q);
+				} catch (Exception e) {
+					System.out.println("CommMan: "+e);
+				}
+				break;
+			case "updateitemqty": //used by ManagerUI
 				break;
 			default:
 				System.out.println("CommMan: Unexpected input from client.");
@@ -129,14 +140,14 @@ class CommunicationManager implements Runnable {
 
 	//this is called by CMTimer
 	public void PrintDailyReport() {
-		System.out.println("CommMan: PrintDailyReport()");
+		//System.out.println("CommMan: PrintDailyReport()");
 		rprinter.print(tm.getDailyReport());
 		tm.resetDailyReport();
 	}
 
 	//this is called by CMTimer
 	public void PrintInventoryMessage() {
-		System.out.println("CommMan: PrintInventoryMessage()");
+		//System.out.println("CommMan: PrintInventoryMessage()");
 		rprinter.print(im.getInventoryMessageReport());
 		im.resetInventoryMessageReport();
 	}

@@ -128,13 +128,14 @@ pay by cash</panel_attributes>
       <x>830</x>
       <y>90</y>
       <w>480</w>
-      <h>240</h>
+      <h>270</h>
     </coordinates>
     <panel_attributes>Use Case Name:  Pay by Cash 
 Summary:  Customer pays by cash. 
 Dependency:  Extension of Checkout Order use case. 
 Actor:  Customer 
 Precondition:  Total has been computed. 
+
 Description: 
 1. Customer selects Pay by Cash. 
 2. The system prompts for cash. 
@@ -142,6 +143,7 @@ Description:
 4. If the system determines sufficient payment is made by cash, 
 it dispenses change if necessary and prints receipt. 
 5. System displays welcome menu. 
+
 Postcondition:  Payment has been made with cash. 
  
  ..

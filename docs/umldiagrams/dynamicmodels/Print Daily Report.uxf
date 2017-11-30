@@ -170,6 +170,7 @@ Summary: Daily Reports are provided periodically.
 They are sent to a printer for the manager.
 Actor: Timer
 Precondition: The transaction log is stored.
+
 Description:
 1. Timer signals to the system to prepare daily
 reports at midnight.

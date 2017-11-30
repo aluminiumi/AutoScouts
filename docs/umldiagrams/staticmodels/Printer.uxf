@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>150</x>
-      <y>70</y>
+      <x>350</x>
+      <y>60</y>
       <w>210</w>
       <h>140</h>
     </coordinates>
@@ -22,8 +22,8 @@ returns success/error code</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>270</x>
-      <y>350</y>
+      <x>470</x>
+      <y>340</y>
       <w>280</w>
       <h>130</h>
     </coordinates>
@@ -39,8 +39,8 @@ Print reports for manager</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>240</x>
-      <y>200</y>
+      <x>440</x>
+      <y>190</y>
       <w>30</w>
       <h>110</h>
     </coordinates>
@@ -50,8 +50,8 @@ Print reports for manager</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>120</x>
-      <y>270</y>
+      <x>320</x>
+      <y>260</y>
       <w>270</w>
       <h>40</h>
     </coordinates>
@@ -62,8 +62,8 @@ Print reports for manager</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>120</x>
-      <y>280</y>
+      <x>320</x>
+      <y>270</y>
       <w>30</w>
       <h>90</h>
     </coordinates>
@@ -74,8 +74,8 @@ Print reports for manager</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>280</y>
+      <x>560</x>
+      <y>270</y>
       <w>30</w>
       <h>90</h>
     </coordinates>
@@ -86,8 +86,8 @@ Print reports for manager</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
-      <y>350</y>
+      <x>220</x>
+      <y>340</y>
       <w>220</w>
       <h>70</h>
     </coordinates>

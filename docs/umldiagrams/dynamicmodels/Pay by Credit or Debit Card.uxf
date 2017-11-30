@@ -368,6 +368,7 @@ Summary: Customer pays with credit/debit card authorized by Authorization Center
 Dependency: Extension of Checkout Order use case.
 Actor: Customer, Authorization Center
 Precondition: Total has been computed.
+
 Description:
 1. Customer selects Pay by Credit/Debit card.
 2. System reads the card.

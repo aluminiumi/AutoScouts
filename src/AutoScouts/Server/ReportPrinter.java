@@ -22,11 +22,11 @@ class ReportPrinter extends Printer {
 		String footer = "\n######################\n"+
 				"#  END DAILY REPORT  #\n"+
 				"######################\n";
-		System.out.println("ReportPrinter: print(TransactionLog)");
+		//System.out.println("ReportPrinter: print(TransactionLog)");
 		if(tl != null) {
 			print(header+tl.toString()+footer);
 		} else {
-			print(header+"No transactions."+footer);
+			print(header+"NO TRANSACTIONS"+footer);
 		}
 		return 0;
 	}
@@ -38,11 +38,11 @@ class ReportPrinter extends Printer {
 		String footer = "\n##############################\n"+
 				"#  END INVENTORY MSG REPORT  #\n"+
 				"##############################\n";
-		System.out.println("ReportPrinter: print(InventoryMessageReport)");
+		//System.out.println("ReportPrinter: print(InventoryMessageReport)");
 		if(imr != null) {
 			print(header+imr.toString()+footer);
 		} else {
-			print(header+"Inventory levels sufficient."+footer);
+			print(header+"NO NEW INVENTORY MESSAGES"+footer);
 		}
 		return 0;
 	}
