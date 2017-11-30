@@ -4,10 +4,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>329</x>
-      <y>91</y>
+      <x>56</x>
+      <y>56</y>
       <w>301</w>
-      <h>182</h>
+      <h>231</h>
     </coordinates>
     <panel_attributes>&lt;&lt;application logic&gt;&gt;
 InventoryManager
@@ -21,8 +21,11 @@ InventoryManager
 #resetInventoryMessageReport(): void
 #decrementItemQty(int): void
 #incrementItemQty(int, int): void
+#setItemName(int, String): void
 #setItemQty(int, int): void
-#updateInventory(): void
+#setItemThresh(int, int): void
+#setItemPrice(int, float): void
+#setItemDiscount(int, float): void
 --
 Keeps track of the items carried by the store, how many
 of each have been sold, and how many of each remain.</panel_attributes>
@@ -31,8 +34,8 @@ of each have been sold, and how many of each remain.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>994</x>
-      <y>112</y>
+      <x>721</x>
+      <y>126</y>
       <w>168</w>
       <h>308</h>
     </coordinates>
@@ -69,8 +72,8 @@ carried by the store.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>329</x>
-      <y>329</y>
+      <x>56</x>
+      <y>343</y>
       <w>168</w>
       <h>84</h>
     </coordinates>
@@ -88,8 +91,8 @@ Denotes all items with low stock</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>392</x>
-      <y>266</y>
+      <x>119</x>
+      <y>280</y>
       <w>56</w>
       <h>77</h>
     </coordinates>
@@ -102,8 +105,8 @@ sends v</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>567</x>
-      <y>329</y>
+      <x>294</x>
+      <y>343</y>
       <w>161</w>
       <h>84</h>
     </coordinates>
@@ -123,8 +126,8 @@ Denotes all items with low stock</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>490</x>
-      <y>350</y>
+      <x>217</x>
+      <y>364</y>
       <w>91</w>
       <h>35</h>
     </coordinates>
@@ -137,16 +140,20 @@ contains &gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>679</x>
-      <y>112</y>
+      <x>406</x>
+      <y>91</y>
       <w>203</w>
-      <h>91</h>
+      <h>126</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 DBManager
 --
 #getInventoryItem(int): InventoryItem
-#updateItemQty(int): void
+#updateItemQty(int, int): void
+#updateItemName(int, String): void
+#updateItemThresh(int, int): void
+#updateItemPrice(int, float): void
+#updateItemDiscount(int, float): void
 --
 Executes SQL queries</panel_attributes>
     <additional_attributes/>
@@ -154,8 +161,8 @@ Executes SQL queries</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>756</x>
-      <y>273</y>
+      <x>483</x>
+      <y>287</y>
       <w>210</w>
       <h>84</h>
     </coordinates>
@@ -173,8 +180,8 @@ Provides SQL Connection to DBManager</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>798</x>
-      <y>196</y>
+      <x>525</x>
+      <y>210</y>
       <w>49</w>
       <h>91</h>
     </coordinates>
@@ -187,8 +194,8 @@ uses v</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>623</x>
-      <y>154</y>
+      <x>350</x>
+      <y>168</y>
       <w>70</w>
       <h>35</h>
     </coordinates>
@@ -201,8 +208,8 @@ uses &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>875</x>
-      <y>154</y>
+      <x>602</x>
+      <y>168</y>
       <w>133</w>
       <h>35</h>
     </coordinates>

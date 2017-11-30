@@ -72,6 +72,60 @@ public final class DBManager {
 		}
 	}
 
+	public static void updateItemName(int itemid, String name) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			con = ConnectionProvider.getCon();
+			PreparedStatement ps = con.prepareStatement("UPDATE Inventory SET ItemName=? WHERE id=?;");
+			ps.setString(1, name);
+			ps.setInt(2, itemid);
+			ps.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("updateItemName() Exception: "+e);
+		}
+	}
+
+	public static void updateItemThresh(int itemid, int thresh) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			con = ConnectionProvider.getCon();
+			PreparedStatement ps = con.prepareStatement("UPDATE Inventory SET Threshold=? WHERE id=?;");
+			ps.setInt(1, thresh);
+			ps.setInt(2, itemid);
+			ps.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("updateItemThresh() Exception: "+e);
+		}
+	}
+
+	public static void updateItemPrice(int itemid, double price) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			con = ConnectionProvider.getCon();
+			PreparedStatement ps = con.prepareStatement("UPDATE Inventory SET Price=? WHERE id=?;");
+			ps.setFloat(1, (float)price);
+			ps.setInt(2, itemid);
+			ps.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("updateItemPrice() Exception: "+e);
+		}
+	}
+
+	public static void updateItemDiscount(int itemid, double discount) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			con = ConnectionProvider.getCon();
+			PreparedStatement ps = con.prepareStatement("UPDATE Inventory SET Discount=? WHERE id=?;");
+			ps.setFloat(1, (float)discount);
+			ps.setInt(2, itemid);
+			ps.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("updateItemDiscount() Exception: "+e);
+		}
+	}
+
+
+//TODO: cleanup
 /*
 	public static customer readAccountInfo(String accountID, String password) {
 		try {

@@ -13,6 +13,7 @@ class Client {
 	PrintWriter sout;
 	String sendBuffer;
 	boolean workToDo = true;
+	boolean quietMode = true;
 
 	Client() {
 	}
@@ -27,12 +28,14 @@ class Client {
 	}
 	
 	protected void send(String message) {
-		System.out.println("Sending: "+message);
+		if(!quietMode)
+			System.out.println("Sending: "+message);
 		sout.println(message);
 	}
 
 	protected void receive(String message) {
-		System.out.println("Received: "+message);
+		if(!quietMode)
+			System.out.println("Received: "+message);
 		if (message.equals("Bye."))
 			System.exit(0);
 	}
@@ -45,6 +48,10 @@ class Client {
 
 	public void die() {
 		workToDo = false;
+	}
+
+	public void setQuietMode(boolean val) {
+		quietMode = val;
 	}
 
 	class ConnectionHandler implements Runnable {
@@ -104,7 +111,7 @@ class Client {
 		}
 
 		ClientSenderThread(Socket cSocket) {
-			System.out.println("ClientSenderThread: starting");
+			//System.out.println("ClientSenderThread: starting");
 			this.cSocket = cSocket;
 		}
 	}
@@ -126,7 +133,8 @@ class Client {
 		}
 
 		ClientListenerThread(Socket cSocket) {
-			System.out.println("ClientListenerThread: starting");
+			//System.out.println("ClientListenerThread: starting");
+			System.out.println("Connection established with server.");
 			this.cSocket = cSocket;
 		}
 	}
