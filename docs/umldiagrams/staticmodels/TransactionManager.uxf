@@ -10,7 +10,7 @@
       <h>150</h>
     </coordinates>
     <panel_attributes>&lt;&lt;application logic&gt;&gt;
-TransactionManager
+_:TransactionManager_
 --
 -transLog: TransactionLog
 --

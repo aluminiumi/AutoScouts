@@ -1,12 +1,13 @@
 package AutoScouts;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
-class CustomerUI extends ApplicationLayerClient {
+class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 	private CustomerOrder co;
-	private boolean expectingItem = false;
+	BarCodeScanner bs;
+	Scanner kbd;
+	int scannerInput;
+	int screenInput;
 
 	public static void main(String args[]) {
 		System.out.println("CustomerUI");
@@ -34,19 +35,194 @@ class CustomerUI extends ApplicationLayerClient {
 	}
 
 	private void go() {
-		//setQuietMode(false);
-		//connect();
-
+		//setQuietMode(true);
+		bs = new BarCodeScanner(this);
+		kbd = new Scanner(System.in);
 		co = new CustomerOrder();
 		boolean workToDo = true;
 		while(workToDo) {
-			Scanner kbd = new Scanner(System.in);
-			String command = kbd.nextLine();
-			if(command != null) {
-				send(command);
-			}
+			initialScreen();
 		}
 	}
+
+	private void clearScreen() {
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"+
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"+
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"+
+					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+	}
+
+	private void initialScreen() {
+		targetItem = null;
+		co = new CustomerOrder();
+		clearScreen();
+		System.out.println("Welcome!");
+		System.out.println("------------");
+		System.out.println();
+		System.out.println("To Start Checkout, Press ENTER");
+		System.out.println();
+		String command = kbd.nextLine();
+		PromptToScan();
+	}
+
+	private void printMenu(int i) {
+		switch(i) {
+			case 0:
+				System.out.println("[1. CANCEL CHECKOUT] [2. SUBTOTAL] [3. TOTAL]");
+				break;
+			case 1:
+				System.out.println("[1. CANCEL CHECKOUT]"); 
+				System.out.println("[2. PAY BY CREDIT/DEBIT CARD] [3. PAY BY CASH]");
+				break;
+			case 2:
+				System.out.println("[1. CANCEL CHECKOUT] [2. CANCEL PAYMENT]");
+				break;
+			default:
+				break;
+		}
+	}
+
+	//called by PromptToScan()
+	//This method allows us to pretend we have multiple input devices
+	private void simulateMultipleDevices() {
+		String input = kbd.nextLine();
+		if(input.startsWith("scan ")) {
+			String stripped = input.substring(input.indexOf("scan ")+5, input.length());
+			System.out.println(stripped);
+			bs.simulateBufferedScan(stripped); 
+			//expect result back in scannerInput
+		} else {
+			screenInput = Integer.parseInt(input);
+		}
+	}
+
+	private void PromptToScan() {
+		boolean cancelPressed = false;
+		boolean totalPressed = false;
+		boolean subtotalPressed = false;
+		String specialMessage = "";
+		while(!cancelPressed && !totalPressed) {
+			clearScreen();
+			System.out.println("Please scan items.");
+			System.out.println("(Note: In lieu of actual scanner device, precede input");
+			System.out.println(" with 'scan ' to simulate barcode scanning)");
+			System.out.println();
+			String price = "";
+			for(InventoryItem item : co.getOrder()) {
+				price = String.format("%1$,.2f", item.getPriceWithDiscount());
+				System.out.format("%-40s%10s\n", item.getName(), price);
+			}
+			System.out.println();
+			if(subtotalPressed) {
+				PrintSubtotal();
+				System.out.println();
+				subtotalPressed = false;
+			}
+			if(!(specialMessage == null) && !specialMessage.equals("")) {
+				System.out.println(specialMessage);
+				specialMessage = "";
+			}
+			printMenu(0);
+			try {
+				simulateMultipleDevices(); //necessary when physical barcode scanner absent
+
+				//check for barcode scanner input
+				if(scannerInput != 0) { //scanner input happened
+					if(processBarcodeScannedInput(scannerInput) != 0) {
+						//error happened
+						specialMessage = "Unrecognized item. See store associate.\n";
+					}
+					scannerInput = 0;
+				}
+				//check for button/key presses
+				if(screenInput != 0) { //screen input happened
+					switch(screenInput) {
+						case 1: //cancel checkout pressed
+							cancelPressed = true;
+							break;
+						case 2: //subtotal pressed
+							subtotalPressed = true;
+							break;
+						case 3: //total pressed
+							totalPressed = true;
+							break;
+					}
+					screenInput = 0;
+				}
+				Thread.sleep(150);
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+		}
+		if(cancelPressed) { 
+			return; //return to the welcome screen
+		} else if(totalPressed) {
+			PrintSubtotal();
+			PromptForPaymentType();
+		}
+
+	}
+
+	//This method is called by PromptToScan() every time a product is 
+	//scanned by the barcode scanner
+	private int processBarcodeScannedInput(int scannerInput) {
+		if(itemExists(scannerInput)) {
+			co.add(targetItem);
+			return 0;
+		} else {
+			return 1; //flag error to caller
+		}
+	}
+
+	private void PrintSubtotal() {
+		String subtotal = String.format("%1$,.2f",co.getSubtotal());
+		String tax = String.format("%1$,.2f",co.getTaxTotal());
+		String total = String.format("%1$,.2f",co.getTotal());
+		System.out.println();
+		System.out.format("%-9s:%8s\n", "Subtotal", subtotal);
+		System.out.format("%-9s:%8s\n", "Tax", tax);
+		System.out.format("%-9s:%8s\n", "Total", total);
+		System.out.println();
+	}
+
+	private void PromptForPaymentType() {
+		//TODO: implement
+		System.out.println("Select a payment method.");
+		printMenu(1);
+		int input;
+		try {
+			String input = kbd.nextLine();
+			input = Integer.parseInt(input);
+		} catch (Exception e) {
+			System.out.println(e);
+			PromptForPaymentType();
+			return;
+		}
+		switch(input) {
+			case 1: //cancel checkout
+				return; //return to welcome screen
+			case 2: //pay by card
+				PayByCardScreen();
+				break;
+			case 3: //pay by cash
+				PayByCashScreen();
+				break;
+			default:
+				PromptForPaymentType();
+				return;
+		}
+	}
+
+	private void PayByCardScreen() {
+		//TODO: implement
+		printMenu(2);
+	}
+
+	private void PayByCashScreen() {
+		//TODO: implement
+		printMenu(2);
+	}
+
 	/*
 	protected void receive(String message) {
 		System.out.println("Server: "+message);
@@ -87,20 +263,16 @@ class CustomerUI extends ApplicationLayerClient {
 				System.out.println("Unexpected response from server.");
 		}
 	}*/
-
+/*
 	protected void send(String message) {
 		if(message.startsWith("getitem "))
 			expectingItem = true;
 		super.send(message);
 	}
-
+*/
 	private void ScanItem(int i) {
 		send("getitem "+i);
 		expectingItem = true;
-	}
-
-	public void NewScreen() {
-		co = new CustomerOrder();
 	}
 
 	public void ReportToTransManager() {
@@ -109,30 +281,11 @@ class CustomerUI extends ApplicationLayerClient {
 		}
 	}
 
-	class CustomerOrder {
-		List<InventoryItem> order;
-
-		CustomerOrder() {
-			order = new ArrayList<InventoryItem>();
-		}
-		
-		public void add(InventoryItem i) {
-			order.add(i);
-		}
-
-		public double getSubtotal() {
-			double p = 0;
-			for(InventoryItem i : order)
-				p += i.getPriceWithDiscount();
-			return p;
-		}
-
-		public int size() {
-			return order.size();
-		}
-
-		public List<InventoryItem> getOrder() {
-			return order;
-		}
+	//satisfies ScannerHost interface
+	//buffers inputs from physical scanner device
+	//useful when multiple input devices are present
+	public void receiveBufferedScan(int in) {
+		scannerInput = in;
+		//System.out.println("Scanned: "+in);
 	}
 }
