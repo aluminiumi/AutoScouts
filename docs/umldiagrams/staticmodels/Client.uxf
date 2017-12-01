@@ -210,32 +210,17 @@ m2=1</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>78</x>
-      <y>552</y>
-      <w>138</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;input device interface&gt;&gt;
-BarCodeScanner
---
-Reads ID barcodes from items 
-presented for purchase.</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>84</x>
+      <x>828</x>
       <y>456</y>
       <w>18</w>
-      <h>108</h>
+      <h>54</h>
     </coordinates>
     <panel_attributes>
 m2=1
 </panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -284,12 +269,16 @@ system to fulfill the restock use case</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>804</x>
-      <y>378</y>
+      <y>498</y>
       <w>174</w>
-      <h>48</h>
+      <h>72</h>
     </coordinates>
     <panel_attributes>&lt;&lt;input device interface&gt;&gt;
 BarCodeScanner
+--
+-reader: Scanner
+--
+#scan(): int
 --
 Reads bar codes from inventory items</panel_attributes>
     <additional_attributes/>
@@ -300,36 +289,36 @@ Reads bar codes from inventory items</panel_attributes>
       <x>882</x>
       <y>312</y>
       <w>42</w>
-      <h>78</h>
+      <h>198</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=1
 has v</panel_attributes>
-    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;310.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>84</x>
+      <x>210</x>
       <y>408</y>
-      <w>294</w>
+      <w>168</w>
       <h>66</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=black</panel_attributes>
-    <additional_attributes>470.0;10.0;470.0;90.0;10.0;90.0</additional_attributes>
+    <additional_attributes>260.0;10.0;260.0;90.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>360</x>
       <y>450</y>
-      <w>246</w>
+      <w>486</w>
       <h>24</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;20.0;390.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;790.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>

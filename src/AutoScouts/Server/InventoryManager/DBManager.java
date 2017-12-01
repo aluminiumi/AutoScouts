@@ -1,5 +1,10 @@
+/* This class does no-frills database operations. You tell it to do it, it
+does it. The InventoryManager class should be the only class which should
+call the DBManager, and should make sure operation queries are safe. */
+
 package AutoScouts;
 
+//import AutoScouts.ConnectionProvider;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
@@ -8,7 +13,6 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.HashMap;
 import java.util.Map;
-import AutoScouts.ConnectionProvider;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,11 +24,13 @@ public final class DBManager {
 	private DBManager() {
 	}
 
+	//this method exists for testing/debugging purposes
 	public static void printDB() {
 		System.out.println("printDB(): ");
 		System.out.println(getDBDump());
 	}
 
+	//returns entire contents of Inventory table
 	public static String getDBDump() {
 		String output = "";
 		try {
@@ -42,6 +48,7 @@ public final class DBManager {
 		return output;
 	}
 
+	//returns one specific row from Inventory table
 	public static InventoryItem getInventoryItem(int i) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -59,6 +66,7 @@ public final class DBManager {
 		return null;
 	}
 
+	//updates quantity of one item in table
 	public static void updateItemQty(int itemid, int qty) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -72,6 +80,7 @@ public final class DBManager {
 		}
 	}
 
+	//updates name/desc of one item in table
 	public static void updateItemName(int itemid, String name) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -85,6 +94,7 @@ public final class DBManager {
 		}
 	}
 
+	//updates threshold of one item in table
 	public static void updateItemThresh(int itemid, int thresh) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -98,6 +108,7 @@ public final class DBManager {
 		}
 	}
 
+	//updates price of one item in table
 	public static void updateItemPrice(int itemid, double price) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -111,6 +122,7 @@ public final class DBManager {
 		}
 	}
 
+	//updates discount of one item in table
 	public static void updateItemDiscount(int itemid, double discount) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -124,90 +136,24 @@ public final class DBManager {
 		}
 	}
 
-
-//TODO: cleanup
-/*
-	public static customer readAccountInfo(String accountID, String password) {
-		try {
-			System.out.println("readAccountInfo(): ");
-			Class.forName("com.mysql.jdbc.Driver");
-			con = ConnectionProvider.getCon();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM Accounts WHERE AccountID=? AND Password=MD5(CONCAT('secretsalt',?));");
-			ps.setString(1, accountID);
-			ps.setString(2, password);
-			ResultSet rs=ps.executeQuery();
-			boolean status = rs.next();
-			if(status) {
-				return new customer(rs.getString(1), rs.getLong(3), rs.getString(4));
-
-			}
-		} catch (Exception e) {
-			System.out.println("readAccountInfo() Exception: "+e);
-		}
-		return null;
-	}
-	public static customer createAccount(String accountID, String password, long cardNum, String email) {
+	//adds new row to Inventory table
+	public static InventoryItem createItem(int id, String name, double price, double discount, int qty, int threshold) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = ConnectionProvider.getCon();
 			PreparedStatement ps = con.prepareStatement
-			("INSERT INTO Accounts (AccountID,Password,CardNo,CustomerEmail) VALUES (?, MD5(CONCAT('secretsalt',?)), ?, ?);");
-			ps.setString(1, accountID);
-			ps.setString(2, password);
-			ps.setLong(3, cardNum);
-			ps.setString(4, email);
+			("INSERT INTO Inventory (id,ItemName,Price,Discount,Qty,Threshold) VALUES (?,?,?,?,?,?);");
+			ps.setInt(1, id);
+			ps.setString(2, name);
+			ps.setFloat(3, (float)price);
+			ps.setFloat(4, (float)discount);
+			ps.setInt(5, qty);
+			ps.setInt(6, threshold);
 			ps.executeUpdate();
 		} catch (Exception e) {
-			System.out.println(e);
+			System.out.println("createItem() Exception: "+e);
 		}
-		return readAccountInfo(accountID,password);
-	}
-	public static customer updateCardNo(String accountID, String password, long cardNum) {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			con = ConnectionProvider.getCon();
-			PreparedStatement ps = con.prepareStatement
-			("UPDATE Accounts SET CardNo = ? WHERE AccountID = ? AND Password = MD5(CONCAT('secretsalt',?));");
+		return getInventoryItem(id);
 
-			ps.setLong(1, cardNum);
-			ps.setString(2, accountID);
-			ps.setString(3, password);
-			ps.executeUpdate();
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-		return readAccountInfo(accountID,password);
 	}
-	
-	public static boolean accountExists(String accountID) {
-		boolean status = false;
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			con = ConnectionProvider.getCon();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM Accounts WHERE AccountID=?;");
-			ps.setString(1, accountID);
-			ResultSet rs=ps.executeQuery();
-			status = rs.next();
-		} catch (Exception e) {
-			System.out.println("Exception: "+e);
-		}
-		return status;
-	}
-	public static boolean accountExistsWithPassword(String accountID, String pass) {
-		boolean status = false;
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			con = ConnectionProvider.getCon();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM Accounts WHERE AccountID=? AND Password=MD5(CONCAT('secretsalt',?));");
-			ps.setString(1, accountID);
-			ps.setString(2, pass);
-			ResultSet rs=ps.executeQuery();
-			status = rs.next();
-		} catch (Exception e) {
-			System.out.println("Exception: "+e);
-		}
-		return status;
-	}
-*/
-
 }	

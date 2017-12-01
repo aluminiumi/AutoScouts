@@ -114,7 +114,38 @@ class InventoryManager {
 		}
 	}
 
-	//This method is for testing purposes.
+	//This method is used by RestockerUI via CommunicationManager
+	//It must sanitize all variables before forwarding to DBManager
+	public InventoryItem createItem(int id, String name, double price, double discount, int qty, int threshold) {
+		//prevent invalid ID numbers
+		if(id < 0)
+			return null;
+
+		//prevent writing if ID already exists in DB
+		if(getInventoryItem(id) != null)
+			return null;
+		
+		//prevent negative prices
+		if(price < 0)
+			return null;
+
+		//prevent discounts above 100%
+		if(discount > 1)
+			return null;
+
+		//prevent negative quantities
+		if(qty < 0)
+			return null;
+
+		//prevent negative thresholds
+		if(threshold < 0)
+			return null;
+
+		return DBManager.createItem(id, name, price, discount, qty, threshold);
+	}
+
+	//This method is used by ManagerUI via CommunicationManager 
+	//when a list of items is being retrieved.
 	public String getDBDump() {
 		return DBManager.getDBDump();
 	}

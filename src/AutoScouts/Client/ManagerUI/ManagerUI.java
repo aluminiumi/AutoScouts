@@ -32,14 +32,22 @@ class ManagerUI extends Client {
 		go();
 	}
 
+	//this method is not used, but implemented anyway
 	private void editIDScreen() {
+		//TODO: make sure values are sane
 		System.out.println("\nID: "+targetItem.getId());
 		System.out.println("New ID: (or enter to leave unchanged)");
 		String command = kbd.nextLine();
 		if(!command.equals("")) {
 			try {
 				int id = Integer.parseInt(command);
-				targetItem.setId(id);
+				if(id > 0)
+					targetItem.setId(id);
+				else {
+					System.out.println("ID must be positive.");
+					editIDScreen();
+					return;
+				}
 			} catch (Exception e) {
 				System.out.println(e);
 				editIDScreen();
@@ -70,7 +78,13 @@ class ManagerUI extends Client {
 		if(!command.equals("")) {
 			try {
 				double price = Double.parseDouble(command);
-				targetItem.setPrice(price);
+				if(price >= 0)
+					targetItem.setPrice(price);
+				else {
+					System.out.println("Price must be non-negative.");
+					editPriceScreen();
+					return;
+				}
 			} catch (Exception e) {
 				System.out.println(e);
 				editPriceScreen();
@@ -86,7 +100,13 @@ class ManagerUI extends Client {
 		if(!command.equals("")) {
 			try {
 				double discount = Double.parseDouble(command);
-				targetItem.setDiscount(discount);
+				if(discount <= 1)
+					targetItem.setDiscount(discount);
+				else {
+					System.out.println("Discount must be less than or equal to 1");
+					editDiscountScreen();
+					return;
+				}
 			} catch (Exception e) {
 				System.out.println(e);
 				editDiscountScreen();
@@ -102,7 +122,13 @@ class ManagerUI extends Client {
 		if(!command.equals("")) {
 			try {
 				int qty = Integer.parseInt(command);
-				targetItem.setQty(qty);
+				if(qty >= 0)
+					targetItem.setQty(qty);
+				else {
+					System.out.println("Quantity cannot be negative.");
+					editQtyScreen();
+					return;
+				}
 			} catch (Exception e) {
 				System.out.println(e);
 				editQtyScreen();
@@ -118,7 +144,13 @@ class ManagerUI extends Client {
 		if(!command.equals("")) {
 			try {
 				int thresh = Integer.parseInt(command);
-				targetItem.setMessageThresh(thresh);
+				if(thresh >= 0)
+					targetItem.setMessageThresh(thresh);
+				else {
+					System.out.println("Threshold cannot be negative.");
+					editThreshScreen();
+					return;
+				}
 			} catch (Exception e) {
 				System.out.println(e);
 				editThreshScreen();
@@ -199,6 +231,7 @@ class ManagerUI extends Client {
 	}
 
 	public void requestInventoryItem(int id) {
+		targetItem = null;
 		expectingItem = true;
 		send("getitem "+id);
 	}
@@ -247,7 +280,6 @@ class ManagerUI extends Client {
 			option = Integer.parseInt(command);
 		} catch (Exception e) {
 			System.out.println(e);
-			//initialScreen();
 			return;
 		}
 		switch(option) {
@@ -256,32 +288,32 @@ class ManagerUI extends Client {
 				break;
 			default:
 				System.out.println("Invalid option.");
-				//initialScreen();
 				return;
 		}
-		//if(command != null) {
-		//}
-
 	}
 
 	private void formItem(String chunks[]) {
-		try{
-			int len = chunks.length;
-			int id = Integer.parseInt(chunks[1]);
-			double price = Double.parseDouble(chunks[len-4]);
-			double discount = Double.parseDouble(chunks[len-3]);
-			int qty = Integer.parseInt(chunks[len-2]);
-			int threshold = Integer.parseInt(chunks[len-1]);
-			String desc = chunks[2];
-			int iter = 3;
-			while(len > 7) {
-				desc += " "+chunks[iter];
-				len--;
-				iter++;
+		if(chunks[1].equals("null"))
+			targetItem = null;
+		else {
+			try{
+				int len = chunks.length;
+				int id = Integer.parseInt(chunks[1]);
+				double price = Double.parseDouble(chunks[len-4]);
+				double discount = Double.parseDouble(chunks[len-3]);
+				int qty = Integer.parseInt(chunks[len-2]);
+				int threshold = Integer.parseInt(chunks[len-1]);
+				String desc = chunks[2];
+				int iter = 3;
+				while(len > 7) {
+					desc += " "+chunks[iter];
+					len--;
+					iter++;
+				}
+				targetItem = new InventoryItem(id, desc, price, discount, qty, threshold);
+			} catch (Exception e) {
+				System.out.println("Server sent malformed item information. "+e);
 			}
-			targetItem = new InventoryItem(id, desc, price, discount, qty, threshold);
-		} catch (Exception e) {
-			System.out.println("Server sent malformed item information. "+e);
 		}
 	}
 

@@ -128,6 +128,22 @@ class CommunicationManager implements Runnable {
 					System.out.println("CommMan: "+e);
 				}
 				break;
+			case "newitem": //used by RestockerUI
+				try {
+					int id = Integer.parseInt(chunks[1]);
+					int threshold = Integer.parseInt(chunks[2]);
+					int qty = Integer.parseInt(chunks[3]);
+					double price = Double.parseDouble(chunks[4]);
+					double discount = Double.parseDouble(chunks[5]);
+					String name = "";
+					for(int x = 6; x < chunks.length-1; x++)
+						name += chunks[x]+" ";
+					name += chunks[chunks.length-1];
+					im.createItem(id, name, price, discount, qty, threshold);
+				} catch (Exception e) {
+					System.out.println("CommMan: "+e);
+				}
+				break;
 			case "updateitem": //used by ManagerUI
 				int id = 0;
 				try {
