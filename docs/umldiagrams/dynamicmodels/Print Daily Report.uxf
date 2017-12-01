@@ -55,7 +55,7 @@ _:TransactionManager_
       <w>100</w>
       <h>70</h>
     </coordinates>
-    <panel_attributes>M1: Signal
+    <panel_attributes>T1: Signal
 Daily Report</panel_attributes>
     <additional_attributes/>
   </element>
@@ -76,14 +76,14 @@ _:ReportPrinter_
     <id>Relation</id>
     <coordinates>
       <x>450</x>
-      <y>340</y>
+      <y>320</y>
       <w>120</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-M4: Print daily 
+T4: Print daily 
 report</panel_attributes>
     <additional_attributes>90.0;20.0;20.0;20.0</additional_attributes>
   </element>
@@ -122,7 +122,7 @@ _:CommunicationManager_
     </coordinates>
     <panel_attributes>lt=&lt;-
 
-M2: Prepare 
+T2: Prepare 
 daily report
 </panel_attributes>
     <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
@@ -136,7 +136,7 @@ daily report
       <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-M3: Return 
+T3: Return 
 daily report</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
   </element>

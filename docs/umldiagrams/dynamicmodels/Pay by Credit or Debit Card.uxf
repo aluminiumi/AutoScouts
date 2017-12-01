@@ -296,14 +296,15 @@ M3:PIN entry
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>435</x>
-      <y>75</y>
+      <x>425</x>
+      <y>80</y>
       <w>60</w>
-      <h>80</h>
+      <h>85</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
+C14A.1
 
 M2b:Eject 
 unrecognized 
@@ -311,7 +312,7 @@ card
 
 
 </panel_attributes>
-    <additional_attributes>10.0;50.0;10.0;90.0</additional_attributes>
+    <additional_attributes>10.0;60.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>

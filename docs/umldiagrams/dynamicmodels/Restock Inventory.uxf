@@ -4,8 +4,8 @@
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>160</x>
-      <y>235</y>
+      <x>175</x>
+      <y>205</y>
       <w>40</w>
       <h>55</h>
     </coordinates>
@@ -15,8 +15,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>230</x>
-      <y>280</y>
+      <x>245</x>
+      <y>250</y>
       <w>140</w>
       <h>15</h>
     </coordinates>
@@ -26,8 +26,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>500</x>
-      <y>260</y>
+      <x>515</x>
+      <y>230</y>
       <w>130</w>
       <h>15</h>
     </coordinates>
@@ -37,61 +37,61 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>525</x>
-      <y>275</y>
+      <x>540</x>
+      <y>245</y>
       <w>85</w>
       <h>65</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-M5: Scanned item ID
+R5: Scanned item ID
 
-M13: Quantity update
+R13: Quantity update
 
-M16: Request item</panel_attributes>
+R16: Request item</panel_attributes>
     <additional_attributes>120.0;20.0;40.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>265</x>
-      <y>215</y>
-      <w>85</w>
+      <x>285</x>
+      <y>185</y>
+      <w>80</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-M2: Prompt to scan
+R2: Prompt to scan
 
-M11: Item name and
+R11: Item name and
 prompt for quantity
 
-M22: New Quantity</panel_attributes>
-    <additional_attributes>30.0;20.0;130.0;20.0</additional_attributes>
+R22: New Quantity</panel_attributes>
+    <additional_attributes>20.0;20.0;120.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>515</x>
-      <y>210</y>
-      <w>105</w>
+      <x>530</x>
+      <y>180</y>
+      <w>100</w>
       <h>45</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-M10: Item details
+R10: Item details
 
-M21: Updated item details</panel_attributes>
+R21: Updated item details</panel_attributes>
     <additional_attributes>70.0;20.0;130.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>620</x>
-      <y>230</y>
+      <x>635</x>
+      <y>200</y>
       <w>100</w>
       <h>55</h>
     </coordinates>
@@ -103,8 +103,8 @@ _:CommunicationManager_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>360</x>
-      <y>240</y>
+      <x>375</x>
+      <y>210</y>
       <w>145</w>
       <h>70</h>
     </coordinates>
@@ -116,8 +116,8 @@ RestockerUI
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>715</x>
-      <y>245</y>
+      <x>730</x>
+      <y>215</y>
       <w>120</w>
       <h>20</h>
     </coordinates>
@@ -128,18 +128,18 @@ RestockerUI
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>740</x>
-      <y>270</y>
+      <x>755</x>
+      <y>240</y>
       <w>85</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>
 
-M6: Item ID
+R6: Item ID
 
-M14: Quantity update
+R14: Quantity update
 
-M17: Item ID
+R17: Item ID
 
 lt=&lt;-
 </panel_attributes>
@@ -148,8 +148,8 @@ lt=&lt;-
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>935</x>
-      <y>60</y>
+      <x>950</x>
+      <y>30</y>
       <w>200</w>
       <h>140</h>
     </coordinates>
@@ -176,8 +176,8 @@ Postcondition: Inventory has been restocked.
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>960</x>
-      <y>415</y>
+      <x>975</x>
+      <y>385</y>
       <w>170</w>
       <h>85</h>
     </coordinates>
@@ -196,8 +196,8 @@ Postcondition: Inventory has been restocked.
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>130</x>
-      <y>380</y>
+      <x>145</x>
+      <y>350</y>
       <w>1250</w>
       <h>25</h>
     </coordinates>
@@ -207,8 +207,8 @@ Postcondition: Inventory has been restocked.
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1040</x>
-      <y>240</y>
+      <x>1055</x>
+      <y>210</y>
       <w>100</w>
       <h>45</h>
     </coordinates>
@@ -220,27 +220,27 @@ DBManager
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>270</x>
-      <y>285</y>
+      <x>285</x>
+      <y>255</y>
       <w>80</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-M1: Select Restock
+R1: Select Restock
 
-M3: Scanned item ID
+R3: Scanned item ID
 
-M12: Quantity
+R12: Quantity
 </panel_attributes>
     <additional_attributes>130.0;20.0;20.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>825</x>
-      <y>230</y>
+      <x>840</x>
+      <y>200</y>
       <w>120</w>
       <h>60</h>
     </coordinates>
@@ -252,8 +252,8 @@ InventoryManager
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>940</x>
-      <y>260</y>
+      <x>955</x>
+      <y>230</y>
       <w>110</w>
       <h>20</h>
     </coordinates>
@@ -264,8 +264,8 @@ InventoryManager
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>300</x>
-      <y>90</y>
+      <x>315</x>
+      <y>60</y>
       <w>145</w>
       <h>60</h>
     </coordinates>
@@ -277,25 +277,25 @@ BarCodeScanner
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>185</x>
-      <y>105</y>
+      <x>200</x>
+      <y>75</y>
       <w>60</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-M3: Scan item
+R3: Scan item
 
-M9: Quantity
+R9: Quantity
 </panel_attributes>
     <additional_attributes>100.0;10.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>200</x>
-      <y>120</y>
+      <x>215</x>
+      <y>90</y>
       <w>110</w>
       <h>100</h>
     </coordinates>
@@ -305,8 +305,8 @@ M9: Quantity
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>425</x>
-      <y>145</y>
+      <x>440</x>
+      <y>115</y>
       <w>15</w>
       <h>105</h>
     </coordinates>
@@ -316,14 +316,14 @@ M9: Quantity
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>440</x>
-      <y>160</y>
+      <x>455</x>
+      <y>130</y>
       <w>85</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
-M4: Scanned item ID
+R4: Scanned item ID
 
 </panel_attributes>
     <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
@@ -331,18 +331,18 @@ M4: Scanned item ID
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>965</x>
-      <y>275</y>
+      <x>980</x>
+      <y>245</y>
       <w>55</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>
 
-M7: Item ID
+R7: Item ID
 
-M15: Quantity
+R15: Quantity
 
-M18: Item ID
+R18: Item ID
 
 lt=&lt;-
 </panel_attributes>
@@ -351,17 +351,17 @@ lt=&lt;-
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>955</x>
-      <y>210</y>
+      <x>970</x>
+      <y>180</y>
       <w>75</w>
       <h>65</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-M8: Item 
+R8: Item 
 
-M19: Updated item
+R19: Updated item
 
 </panel_attributes>
     <additional_attributes>30.0;20.0;110.0;20.0</additional_attributes>
@@ -369,8 +369,8 @@ M19: Updated item
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>170</x>
-      <y>550</y>
+      <x>185</x>
+      <y>520</y>
       <w>40</w>
       <h>55</h>
     </coordinates>
@@ -380,8 +380,8 @@ M19: Updated item
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>240</x>
-      <y>595</y>
+      <x>255</x>
+      <y>565</y>
       <w>140</w>
       <h>15</h>
     </coordinates>
@@ -391,8 +391,8 @@ M19: Updated item
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>510</x>
-      <y>575</y>
+      <x>525</x>
+      <y>545</y>
       <w>130</w>
       <h>15</h>
     </coordinates>
@@ -402,58 +402,58 @@ M19: Updated item
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>525</x>
-      <y>590</y>
+      <x>540</x>
+      <y>560</y>
       <w>105</w>
       <h>45</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-M8A.5: Create item request
+R8A.5: Create item request
 
-M8A.8: Request new item</panel_attributes>
+R8A.8: Request new item</panel_attributes>
     <additional_attributes>140.0;20.0;60.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>285</x>
-      <y>530</y>
+      <x>300</x>
+      <y>500</y>
       <w>95</w>
       <h>65</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-M8A.3: Prompt for
+R8A.3: Prompt for
 item details
 
-M8A.14: New item
+R8A.14: New item
 details</panel_attributes>
     <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>535</x>
-      <y>525</y>
+      <x>550</x>
+      <y>495</y>
       <w>95</w>
       <h>45</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-M8A.2: null
+R8A.2: null
 
-M8A.13: New item details</panel_attributes>
+R8A.13: New item details</panel_attributes>
     <additional_attributes>60.0;20.0;120.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>630</x>
-      <y>545</y>
+      <x>645</x>
+      <y>515</y>
       <w>100</w>
       <h>55</h>
     </coordinates>
@@ -465,8 +465,8 @@ _:CommunicationManager_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>370</x>
-      <y>555</y>
+      <x>385</x>
+      <y>525</y>
       <w>145</w>
       <h>70</h>
     </coordinates>
@@ -478,8 +478,8 @@ RestockerUI
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>725</x>
-      <y>560</y>
+      <x>740</x>
+      <y>530</y>
       <w>120</w>
       <h>20</h>
     </coordinates>
@@ -490,16 +490,16 @@ RestockerUI
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>740</x>
-      <y>585</y>
+      <x>755</x>
+      <y>555</y>
       <w>95</w>
       <h>65</h>
     </coordinates>
     <panel_attributes>
 
-M8A.6: New item details
+R8A.6: New item details
 
-M8A.9: New item ID
+R8A.9: New item ID
 
 lt=&lt;-
 </panel_attributes>
@@ -508,17 +508,17 @@ lt=&lt;-
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>755</x>
-      <y>515</y>
+      <x>770</x>
+      <y>485</y>
       <w>75</w>
       <h>65</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-M8A.1: Null Item
+R8A.1: Null Item
 
-M8A.12: New item
+R8A.12: New item
 
 </panel_attributes>
     <additional_attributes>30.0;20.0;110.0;20.0</additional_attributes>
@@ -526,8 +526,8 @@ M8A.12: New item
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1050</x>
-      <y>555</y>
+      <x>1065</x>
+      <y>525</y>
       <w>100</w>
       <h>45</h>
     </coordinates>
@@ -539,15 +539,15 @@ DBManager
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>600</y>
+      <x>295</x>
+      <y>570</y>
       <w>80</w>
       <h>45</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-M8A.4: Item details
+R8A.4: Item details
 
 </panel_attributes>
     <additional_attributes>130.0;20.0;20.0;20.0</additional_attributes>
@@ -555,8 +555,8 @@ M8A.4: Item details
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>835</x>
-      <y>545</y>
+      <x>850</x>
+      <y>515</y>
       <w>120</w>
       <h>60</h>
     </coordinates>
@@ -568,8 +568,8 @@ InventoryManager
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>950</x>
-      <y>575</y>
+      <x>965</x>
+      <y>545</y>
       <w>110</w>
       <h>20</h>
     </coordinates>
@@ -580,8 +580,8 @@ InventoryManager
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>310</x>
-      <y>405</y>
+      <x>325</x>
+      <y>375</y>
       <w>145</w>
       <h>60</h>
     </coordinates>
@@ -593,8 +593,8 @@ BarCodeScanner
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
-      <y>435</y>
+      <x>225</x>
+      <y>405</y>
       <w>110</w>
       <h>100</h>
     </coordinates>
@@ -604,8 +604,8 @@ BarCodeScanner
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>435</x>
-      <y>460</y>
+      <x>450</x>
+      <y>430</y>
       <w>15</w>
       <h>105</h>
     </coordinates>
@@ -615,16 +615,16 @@ BarCodeScanner
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>955</x>
-      <y>590</y>
+      <x>970</x>
+      <y>560</y>
       <w>95</w>
       <h>65</h>
     </coordinates>
     <panel_attributes>
 
-M8A.7: New item details
+R8A.7: New item details
 
-M8A.10: New item ID
+R8A.10: New item ID
 
 lt=&lt;-
 </panel_attributes>
@@ -633,17 +633,17 @@ lt=&lt;-
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>955</x>
-      <y>525</y>
+      <x>970</x>
+      <y>495</y>
       <w>95</w>
       <h>65</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-M8A: [Not available] Item 
+R8A: [Not available] Item 
 
-M8A.11: New item
+R8A.11: New item
 
 </panel_attributes>
     <additional_attributes>50.0;20.0;130.0;20.0</additional_attributes>
@@ -651,17 +651,17 @@ M8A.11: New item
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>740</x>
-      <y>205</y>
+      <x>755</x>
+      <y>175</y>
       <w>75</w>
       <h>65</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-M9: Item
+R9: Item
 
-M20: Updated item
+R20: Updated item
 
 </panel_attributes>
     <additional_attributes>30.0;20.0;110.0;20.0</additional_attributes>

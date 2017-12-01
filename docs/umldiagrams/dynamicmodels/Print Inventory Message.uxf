@@ -55,7 +55,7 @@ _:InventoryManager_
       <w>100</w>
       <h>70</h>
     </coordinates>
-    <panel_attributes>M1: Signal
+    <panel_attributes>I1: Signal
 Inventory 
 Message</panel_attributes>
     <additional_attributes/>
@@ -84,7 +84,7 @@ _:ReportPrinter_
     <panel_attributes>lt=&lt;-
 
 
-M4: Print 
+I4: Print 
 inventory message</panel_attributes>
     <additional_attributes>110.0;20.0;40.0;20.0</additional_attributes>
   </element>
@@ -118,12 +118,12 @@ _:CommunicationManager_
     <coordinates>
       <x>250</x>
       <y>400</y>
-      <w>110</w>
+      <w>100</w>
       <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
-M2: Prepare 
+I2: Prepare 
 inventory 
 message
 </panel_attributes>
@@ -138,7 +138,7 @@ message
       <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-M3: Return 
+I3: Return 
 inventory 
 message</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
