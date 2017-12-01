@@ -4,9 +4,9 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>56</x>
+      <x>49</x>
       <y>56</y>
-      <w>301</w>
+      <w>308</w>
       <h>231</h>
     </coordinates>
     <panel_attributes>&lt;&lt;application logic&gt;&gt;
@@ -26,6 +26,7 @@ InventoryManager
 #setItemThresh(int, int): void
 #setItemPrice(int, float): void
 #setItemDiscount(int, float): void
+#createItem(int, String, float, float, int, int): InventoryItem
 --
 Keeps track of the items carried by the store, how many
 of each have been sold, and how many of each remain.</panel_attributes>
@@ -34,7 +35,7 @@ of each have been sold, and how many of each remain.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>721</x>
+      <x>833</x>
       <y>126</y>
       <w>168</w>
       <h>308</h>
@@ -142,7 +143,7 @@ contains &gt;</panel_attributes>
     <coordinates>
       <x>406</x>
       <y>91</y>
-      <w>203</w>
+      <w>308</w>
       <h>126</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
@@ -154,6 +155,7 @@ DBManager
 #updateItemThresh(int, int): void
 #updateItemPrice(int, float): void
 #updateItemDiscount(int, float): void
+#createItem(int, String, float, float, int, int): InventoryItem
 --
 Executes SQL queries</panel_attributes>
     <additional_attributes/>
@@ -208,15 +210,15 @@ uses &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>602</x>
+      <x>707</x>
       <y>168</y>
-      <w>133</w>
+      <w>140</w>
       <h>35</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=0..n
 provides &gt;</panel_attributes>
-    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;180.0;20.0</additional_attributes>
   </element>
 </diagram>

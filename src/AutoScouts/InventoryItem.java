@@ -9,6 +9,10 @@ public class InventoryItem {
     private int qty;
     private int messageThresh;
 
+    InventoryItem() {
+
+    }
+
     InventoryItem(int i, String n, double p, double d, int q, int t) {
         id = i;
         name = n;
