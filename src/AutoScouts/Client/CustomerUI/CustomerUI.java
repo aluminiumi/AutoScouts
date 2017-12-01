@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-class CustomerUI extends Client {
+class CustomerUI extends ApplicationLayerClient {
 	private CustomerOrder co;
 	private boolean expectingItem = false;
 
@@ -34,8 +34,8 @@ class CustomerUI extends Client {
 	}
 
 	private void go() {
-		setQuietMode(false);
-		connect();
+		//setQuietMode(false);
+		//connect();
 
 		co = new CustomerOrder();
 		boolean workToDo = true;
@@ -47,7 +47,7 @@ class CustomerUI extends Client {
 			}
 		}
 	}
-	
+	/*
 	protected void receive(String message) {
 		System.out.println("Server: "+message);
 		String chunks[] = message.split(" ");
@@ -86,7 +86,7 @@ class CustomerUI extends Client {
 			default:
 				System.out.println("Unexpected response from server.");
 		}
-	}
+	}*/
 
 	protected void send(String message) {
 		if(message.startsWith("getitem "))

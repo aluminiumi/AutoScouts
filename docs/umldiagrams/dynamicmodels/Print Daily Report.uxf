@@ -4,8 +4,8 @@
   <element>
     <id>Text</id>
     <coordinates>
-      <x>40</x>
-      <y>20</y>
+      <x>190</x>
+      <y>70</y>
       <w>280</w>
       <h>40</h>
     </coordinates>
@@ -15,8 +15,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>80</x>
-      <y>440</y>
+      <x>230</x>
+      <y>490</y>
       <w>210</w>
       <h>80</h>
     </coordinates>
@@ -28,8 +28,8 @@ _:TransactionManager_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>130</x>
-      <y>150</y>
+      <x>280</x>
+      <y>200</y>
       <w>30</w>
       <h>110</h>
     </coordinates>
@@ -39,8 +39,8 @@ _:TransactionManager_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>170</x>
-      <y>170</y>
+      <x>320</x>
+      <y>220</y>
       <w>30</w>
       <h>70</h>
     </coordinates>
@@ -50,8 +50,8 @@ _:TransactionManager_
   <element>
     <id>Text</id>
     <coordinates>
-      <x>190</x>
-      <y>180</y>
+      <x>340</x>
+      <y>230</y>
       <w>100</w>
       <h>70</h>
     </coordinates>
@@ -62,23 +62,21 @@ Daily Report</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
-      <y>240</y>
+      <x>570</x>
+      <y>290</y>
       <w>210</w>
       <h>110</h>
     </coordinates>
     <panel_attributes>&lt;&lt;entity&gt;&gt;
 _:ReportPrinter_
---
-Prints inventory and 
-daily sales reports.</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>300</x>
-      <y>290</y>
+      <x>450</x>
+      <y>340</y>
       <w>120</w>
       <h>80</h>
     </coordinates>
@@ -92,24 +90,21 @@ report</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>70</x>
-      <y>240</y>
+      <x>220</x>
+      <y>290</y>
       <w>220</w>
       <h>110</h>
     </coordinates>
     <panel_attributes>&lt;&lt;control&gt;&gt;
 _:CommunicationManager_
---
-Facilitates communication 
-across all interfaces and 
-manager classes</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>170</x>
-      <y>340</y>
+      <x>320</x>
+      <y>390</y>
       <w>30</w>
       <h>120</h>
     </coordinates>
@@ -120,8 +115,8 @@ manager classes</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>80</x>
-      <y>350</y>
+      <x>230</x>
+      <y>400</y>
       <w>110</w>
       <h>90</h>
     </coordinates>
@@ -135,8 +130,8 @@ daily report
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>200</x>
-      <y>360</y>
+      <x>350</x>
+      <y>410</y>
       <w>110</w>
       <h>80</h>
     </coordinates>
@@ -148,8 +143,8 @@ daily report</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>240</y>
+      <x>430</x>
+      <y>290</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -160,10 +155,10 @@ daily report</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>660</x>
-      <y>50</y>
-      <w>410</w>
-      <h>260</h>
+      <x>440</x>
+      <y>60</y>
+      <w>490</w>
+      <h>220</h>
     </coordinates>
     <panel_attributes>Use Case Name: Print Daily Report
 Summary: Daily Reports are provided periodically.
@@ -172,11 +167,9 @@ Actor: Timer
 Precondition: The transaction log is stored.
 
 Description:
-1. Timer signals to the system to prepare daily
-reports at midnight.
-2. System reads transaction log to compute the 
-number of items sold for each product and the
-total revenue for the day.
+1. Timer signals to the system to prepare daily reports at midnight.
+2. System reads transaction log to compute the number of items 
+sold for each product and the total revenue for the day.
 3. System prints report on supermarket printer.
 
 Postcondition: The daily reports have been completed</panel_attributes>
@@ -185,8 +178,8 @@ Postcondition: The daily reports have been completed</panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>100</x>
-      <y>60</y>
+      <x>250</x>
+      <y>110</y>
       <w>80</w>
       <h>110</h>
     </coordinates>

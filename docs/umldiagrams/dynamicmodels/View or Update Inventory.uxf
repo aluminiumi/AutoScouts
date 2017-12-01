@@ -51,11 +51,8 @@ Postcondition:  Product inventory is viewed/updated. </panel_attributes>
       <h>91</h>
     </coordinates>
     <panel_attributes>&lt;&lt;user interface&gt;&gt;
-ManagerUI
---
-This class interacts with the
-system to perform the functions
-in the Manager class</panel_attributes>
+_:ManagerUI_
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -80,10 +77,7 @@ in the Manager class</panel_attributes>
     </coordinates>
     <panel_attributes>&lt;&lt;business logic&gt;&gt;
 _:CommunicationManager_
---
-Facilitates communication 
-across all interfaces and 
-manager classes</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -96,9 +90,7 @@ manager classes</panel_attributes>
     </coordinates>
     <panel_attributes>&lt;&lt;application logic&gt;&gt;
 _:InventoryManager_
---
-Keeps track of the items carried by the store, how many
-of each have been sold, and how many of each remain.</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -247,9 +239,8 @@ M23: New details</panel_attributes>
       <h>56</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
-DBManager
---
-Executes SQL queries</panel_attributes>
+_:DBManager_
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

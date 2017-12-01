@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>240</x>
-      <y>174</y>
+      <x>300</x>
+      <y>318</y>
       <w>264</w>
       <h>240</h>
     </coordinates>
@@ -34,8 +34,8 @@ This class resides on the checkout station itself.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>6</x>
-      <y>192</y>
+      <x>66</x>
+      <y>336</y>
       <w>174</w>
       <h>150</h>
     </coordinates>
@@ -61,8 +61,8 @@ customer.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>174</x>
-      <y>222</y>
+      <x>234</x>
+      <y>366</y>
       <w>78</w>
       <h>30</h>
     </coordinates>
@@ -75,8 +75,8 @@ m2=1
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>582</x>
-      <y>492</y>
+      <x>642</x>
+      <y>636</y>
       <w>126</w>
       <h>48</h>
     </coordinates>
@@ -89,8 +89,8 @@ Prints receipt for customer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>588</x>
-      <y>456</y>
+      <x>648</x>
+      <y>600</y>
       <w>18</w>
       <h>48</h>
     </coordinates>
@@ -103,8 +103,8 @@ m2=1
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>366</x>
-      <y>492</y>
+      <x>426</x>
+      <y>636</y>
       <w>132</w>
       <h>48</h>
     </coordinates>
@@ -117,8 +117,8 @@ Reads credit card number</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>258</x>
-      <y>552</y>
+      <x>318</x>
+      <y>696</y>
       <w>168</w>
       <h>48</h>
     </coordinates>
@@ -132,8 +132,8 @@ amount recieved to CustomerUI</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>438</x>
-      <y>552</y>
+      <x>498</x>
+      <y>696</y>
       <w>186</w>
       <h>48</h>
     </coordinates>
@@ -147,8 +147,8 @@ sends amount recieved to customerUI</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>138</x>
-      <y>492</y>
+      <x>198</x>
+      <y>636</y>
       <w>126</w>
       <h>48</h>
     </coordinates>
@@ -161,8 +161,8 @@ Accepts PIN from customer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>408</x>
-      <y>456</y>
+      <x>468</x>
+      <y>600</y>
       <w>18</w>
       <h>48</h>
     </coordinates>
@@ -174,8 +174,8 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
-      <y>456</y>
+      <x>270</x>
+      <y>600</y>
       <w>18</w>
       <h>48</h>
     </coordinates>
@@ -186,8 +186,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>522</x>
-      <y>456</y>
+      <x>582</x>
+      <y>600</y>
       <w>18</w>
       <h>108</h>
     </coordinates>
@@ -199,8 +199,8 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>342</x>
-      <y>456</y>
+      <x>402</x>
+      <y>600</y>
       <w>18</w>
       <h>108</h>
     </coordinates>
@@ -212,8 +212,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>828</x>
-      <y>456</y>
+      <x>888</x>
+      <y>600</y>
       <w>18</w>
       <h>54</h>
     </coordinates>
@@ -225,8 +225,8 @@ m2=1
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>546</x>
-      <y>174</y>
+      <x>606</x>
+      <y>318</y>
       <w>198</w>
       <h>114</h>
     </coordinates>
@@ -234,7 +234,6 @@ m2=1
 ManagerUI
 --
 #ViewOrUpdate(): void
-#requestInventoryItem(id: int): void
 #displayInventoryItem(): boolean
 #updateInventoryItem(i: InventoryItem): void
 --
@@ -245,17 +244,17 @@ actor and the CommunicationManager.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>780</x>
-      <y>174</y>
-      <w>216</w>
+      <x>840</x>
+      <y>318</y>
+      <w>174</w>
       <h>144</h>
     </coordinates>
     <panel_attributes>&lt;&lt;user interface&gt;&gt;
 RestockerUI
 --
+#displayInventoryItem(int): boolean
 #PromptForScan(): void
-#RestockItem(i: int): int
-#UpdateQuantity(i: int): void
+#UpdateQuantity(int, int): void
 #AddNewItem(i: InventoryItem): void
 --
 This class initiates the restock use
@@ -268,8 +267,8 @@ system to fulfill the restock use case</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>804</x>
-      <y>498</y>
+      <x>864</x>
+      <y>642</y>
       <w>174</w>
       <h>72</h>
     </coordinates>
@@ -286,8 +285,8 @@ Reads bar codes from inventory items</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>882</x>
-      <y>312</y>
+      <x>942</x>
+      <y>456</y>
       <w>42</w>
       <h>198</h>
     </coordinates>
@@ -300,8 +299,8 @@ has v</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
-      <y>408</y>
+      <x>270</x>
+      <y>552</y>
       <w>168</w>
       <h>66</h>
     </coordinates>
@@ -312,8 +311,8 @@ bg=black</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>450</y>
+      <x>420</x>
+      <y>594</y>
       <w>486</w>
       <h>24</h>
     </coordinates>
@@ -323,18 +322,21 @@ bg=black</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>540</x>
+      <x>606</x>
       <y>0</y>
       <w>186</w>
-      <h>114</h>
+      <h>138</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 Client
 --
 -destAddress: String
+-portNum: int
+-quietMode: boolean
 --
 #connect(): Thread
 #die(): void
+#setQuietMode(boolean): void
 /+send()/
 /+receive()/
 --
@@ -345,23 +347,55 @@ CommunicationManager</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>630</x>
-      <y>108</y>
+      <x>690</x>
+      <y>270</y>
       <w>18</w>
-      <h>78</h>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>366</x>
-      <y>120</y>
+      <x>426</x>
+      <y>288</y>
       <w>540</w>
-      <h>66</h>
+      <h>42</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;90.0;10.0;20.0;880.0;20.0;880.0;90.0</additional_attributes>
+    <additional_attributes>10.0;50.0;10.0;20.0;880.0;20.0;880.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>606</x>
+      <y>162</y>
+      <w>186</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+ApplicationLayerClient
+--
+-targetItem: InventoryItem
+-expectingItem: boolean
+--
+#requestInventoryItem(int): void
+#itemExists(int): void
+--
+This class handles clientside session to 
+CommunicationManager</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>690</x>
+      <y>132</y>
+      <w>18</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
   </element>
 </diagram>

@@ -4,7 +4,7 @@
   <element>
     <id>Text</id>
     <coordinates>
-      <x>438</x>
+      <x>354</x>
       <y>756</y>
       <w>96</w>
       <h>42</h>
@@ -16,7 +16,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
+      <x>276</x>
       <y>378</y>
       <w>690</w>
       <h>24</h>
@@ -27,7 +27,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>708</x>
+      <x>624</x>
       <y>0</y>
       <w>234</w>
       <h>42</h>
@@ -39,19 +39,20 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>864</x>
+      <x>780</x>
       <y>456</y>
       <w>72</w>
       <h>30</h>
     </coordinates>
-    <panel_attributes>Customer
-Interface</panel_attributes>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+_:CustomerUI_
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>606</x>
+      <x>522</x>
       <y>450</y>
       <w>270</w>
       <h>24</h>
@@ -62,7 +63,7 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>708</x>
+      <x>624</x>
       <y>516</y>
       <w>54</w>
       <h>18</h>
@@ -73,7 +74,7 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>708</x>
+      <x>624</x>
       <y>492</y>
       <w>42</w>
       <h>18</h>
@@ -84,7 +85,7 @@ Interface</panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>570</x>
+      <x>486</x>
       <y>438</y>
       <w>48</w>
       <h>66</h>
@@ -95,7 +96,7 @@ Interface</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>726</x>
+      <x>642</x>
       <y>618</y>
       <w>90</w>
       <h>48</h>
@@ -107,7 +108,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>690</x>
+      <x>606</x>
       <y>534</y>
       <w>162</w>
       <h>48</h>
@@ -119,7 +120,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>354</x>
+      <x>270</x>
       <y>564</y>
       <w>696</w>
       <h>24</h>
@@ -130,19 +131,20 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>846</x>
+      <x>762</x>
       <y>654</y>
       <w>72</w>
       <h>30</h>
     </coordinates>
-    <panel_attributes>Customer
-Interface</panel_attributes>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+_:CustomerUI_
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>660</x>
+      <x>576</x>
       <y>648</y>
       <w>198</w>
       <h>24</h>
@@ -153,7 +155,7 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>732</x>
+      <x>648</x>
       <y>672</y>
       <w>42</w>
       <h>18</h>
@@ -164,7 +166,7 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>732</x>
+      <x>648</x>
       <y>636</y>
       <w>42</w>
       <h>18</h>
@@ -175,7 +177,7 @@ Interface</panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>612</x>
+      <x>528</x>
       <y>636</y>
       <w>48</w>
       <h>66</h>
@@ -186,7 +188,7 @@ Interface</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>438</x>
+      <x>354</x>
       <y>456</y>
       <w>108</w>
       <h>42</h>
@@ -198,7 +200,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>690</x>
+      <x>606</x>
       <y>474</y>
       <w>90</w>
       <h>48</h>
@@ -210,7 +212,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>690</x>
+      <x>606</x>
       <y>690</y>
       <w>132</w>
       <h>48</h>
@@ -222,7 +224,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>348</x>
+      <x>264</x>
       <y>708</y>
       <w>702</w>
       <h>24</h>
@@ -233,7 +235,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>438</x>
+      <x>354</x>
       <y>618</y>
       <w>120</w>
       <h>42</h>
@@ -245,19 +247,20 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>846</x>
+      <x>762</x>
       <y>786</y>
       <w>72</w>
       <h>30</h>
     </coordinates>
-    <panel_attributes>Customer
-Interface</panel_attributes>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+_:CustomerUI_
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>528</x>
+      <x>444</x>
       <y>786</y>
       <w>330</w>
       <h>24</h>
@@ -268,7 +271,7 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>714</x>
+      <x>630</x>
       <y>810</y>
       <w>54</w>
       <h>18</h>
@@ -279,7 +282,7 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>708</x>
+      <x>624</x>
       <y>774</y>
       <w>54</w>
       <h>18</h>
@@ -290,7 +293,7 @@ Interface</panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>606</x>
+      <x>522</x>
       <y>774</y>
       <w>48</w>
       <h>66</h>
@@ -301,7 +304,7 @@ Interface</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>690</x>
+      <x>606</x>
       <y>756</y>
       <w>90</w>
       <h>48</h>
@@ -313,7 +316,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>672</x>
+      <x>588</x>
       <y>828</y>
       <w>138</w>
       <h>48</h>
@@ -325,7 +328,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>354</x>
+      <x>270</x>
       <y>888</y>
       <w>690</w>
       <h>24</h>
@@ -336,7 +339,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>438</x>
+      <x>354</x>
       <y>924</y>
       <w>114</w>
       <h>36</h>
@@ -348,7 +351,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>552</x>
+      <x>468</x>
       <y>954</y>
       <w>48</w>
       <h>66</h>
@@ -359,7 +362,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>630</x>
+      <x>546</x>
       <y>930</y>
       <w>78</w>
       <h>30</h>
@@ -371,7 +374,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>624</x>
+      <x>540</x>
       <y>1008</y>
       <w>108</w>
       <h>48</h>
@@ -383,7 +386,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>642</x>
+      <x>558</x>
       <y>990</y>
       <w>54</w>
       <h>18</h>
@@ -394,7 +397,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
+      <x>516</x>
       <y>966</y>
       <w>210</w>
       <h>24</h>
@@ -405,7 +408,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>642</x>
+      <x>558</x>
       <y>948</y>
       <w>54</w>
       <h>18</h>
@@ -416,19 +419,20 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>798</x>
+      <x>714</x>
       <y>966</y>
       <w>72</w>
       <h>30</h>
     </coordinates>
-    <panel_attributes>Customer
-Interface</panel_attributes>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+_:CustomerUI_
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>732</x>
+      <x>648</x>
       <y>1062</y>
       <w>96</w>
       <h>30</h>
@@ -440,7 +444,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>840</x>
+      <x>756</x>
       <y>1026</y>
       <w>18</w>
       <h>60</h>
@@ -451,7 +455,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>816</x>
+      <x>732</x>
       <y>1038</y>
       <w>18</w>
       <h>54</h>
@@ -462,7 +466,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>852</x>
+      <x>768</x>
       <y>1044</y>
       <w>96</w>
       <h>30</h>
@@ -474,7 +478,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>804</x>
+      <x>720</x>
       <y>1110</y>
       <w>96</w>
       <h>18</h>
@@ -485,7 +489,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>828</x>
+      <x>744</x>
       <y>990</y>
       <w>18</w>
       <h>132</h>
@@ -496,7 +500,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>936</x>
+      <x>852</x>
       <y>1110</y>
       <w>60</w>
       <h>18</h>
@@ -507,7 +511,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>798</x>
+      <x>714</x>
       <y>1212</y>
       <w>72</w>
       <h>30</h>
@@ -519,7 +523,7 @@ Message Buffer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>828</x>
+      <x>744</x>
       <y>1122</y>
       <w>18</w>
       <h>102</h>
@@ -530,7 +534,7 @@ Message Buffer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>894</x>
+      <x>810</x>
       <y>1104</y>
       <w>54</w>
       <h>24</h>
@@ -541,7 +545,7 @@ Message Buffer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>816</x>
+      <x>732</x>
       <y>1146</y>
       <w>18</w>
       <h>60</h>
@@ -552,7 +556,7 @@ Message Buffer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>870</x>
+      <x>786</x>
       <y>1134</y>
       <w>66</w>
       <h>18</h>
@@ -563,7 +567,7 @@ Message Buffer</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>870</x>
+      <x>786</x>
       <y>1152</y>
       <w>90</w>
       <h>30</h>
@@ -575,7 +579,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>732</x>
+      <x>648</x>
       <y>1158</y>
       <w>84</w>
       <h>30</h>
@@ -587,7 +591,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>924</x>
+      <x>840</x>
       <y>54</y>
       <w>414</w>
       <h>174</h>
@@ -613,20 +617,20 @@ Postcondition: Customer has been checked out.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>750</x>
+      <x>666</x>
       <y>156</y>
       <w>126</w>
       <h>102</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
-CustomerUI
+_:CustomerUI_
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>576</x>
+      <x>492</x>
       <y>174</y>
       <w>48</w>
       <h>72</h>
@@ -638,7 +642,7 @@ CustomerUI
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>618</x>
+      <x>534</x>
       <y>186</y>
       <w>144</w>
       <h>24</h>
@@ -650,7 +654,7 @@ CustomerUI
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>630</x>
+      <x>546</x>
       <y>204</y>
       <w>96</w>
       <h>96</h>
@@ -670,7 +674,7 @@ presses TOTAL key.
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>624</x>
+      <x>540</x>
       <y>60</y>
       <w>108</w>
       <h>156</h>
@@ -696,22 +700,20 @@ to select payment type
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>750</x>
+      <x>666</x>
       <y>66</y>
       <w>126</w>
       <h>54</h>
     </coordinates>
     <panel_attributes>&lt;&lt;input device interface&gt;&gt;
-BarCodeScanner
---
-Reads ID barcodes from items 
-presented for purchase.</panel_attributes>
+_:BarCodeScanner_
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>756</x>
+      <x>672</x>
       <y>114</y>
       <w>18</w>
       <h>54</h>
@@ -723,7 +725,7 @@ presented for purchase.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>786</x>
+      <x>702</x>
       <y>120</y>
       <w>78</w>
       <h>42</h>
@@ -736,21 +738,20 @@ scans items</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>744</x>
+      <x>660</x>
       <y>324</y>
       <w>132</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>&lt;&lt;output device interface&gt;&gt;
-ReceiptPrinter
---
-Prints receipt for customer</panel_attributes>
+_:ReceiptPrinter_
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>774</x>
+      <x>690</x>
       <y>252</y>
       <w>18</w>
       <h>84</h>
@@ -762,7 +763,7 @@ Prints receipt for customer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>792</x>
+      <x>708</x>
       <y>264</y>
       <w>78</w>
       <h>60</h>
@@ -778,7 +779,7 @@ amount due</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1056</x>
+      <x>972</x>
       <y>396</y>
       <w>234</w>
       <h>294</h>
