@@ -4,8 +4,8 @@
   <element>
     <id>Text</id>
     <coordinates>
-      <x>110</x>
-      <y>60</y>
+      <x>230</x>
+      <y>50</y>
       <w>280</w>
       <h>40</h>
     </coordinates>
@@ -15,8 +15,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>130</x>
-      <y>500</y>
+      <x>250</x>
+      <y>490</y>
       <w>210</w>
       <h>80</h>
     </coordinates>
@@ -28,8 +28,8 @@ _:InventoryManager_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>180</x>
-      <y>210</y>
+      <x>300</x>
+      <y>200</y>
       <w>30</w>
       <h>110</h>
     </coordinates>
@@ -39,8 +39,8 @@ _:InventoryManager_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>220</x>
-      <y>220</y>
+      <x>340</x>
+      <y>210</y>
       <w>30</w>
       <h>70</h>
     </coordinates>
@@ -50,8 +50,8 @@ _:InventoryManager_
   <element>
     <id>Text</id>
     <coordinates>
-      <x>240</x>
-      <y>220</y>
+      <x>360</x>
+      <y>210</y>
       <w>100</w>
       <h>70</h>
     </coordinates>
@@ -63,23 +63,21 @@ Message</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>490</x>
-      <y>300</y>
+      <x>610</x>
+      <y>290</y>
       <w>210</w>
       <h>110</h>
     </coordinates>
     <panel_attributes>&lt;&lt;entity&gt;&gt;
 _:ReportPrinter_
---
-Prints inventory and 
-daily sales reports.</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>340</x>
-      <y>350</y>
+      <x>460</x>
+      <y>310</y>
       <w>160</w>
       <h>80</h>
     </coordinates>
@@ -93,24 +91,21 @@ inventory message</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>120</x>
-      <y>300</y>
+      <x>240</x>
+      <y>290</y>
       <w>220</w>
       <h>110</h>
     </coordinates>
     <panel_attributes>&lt;&lt;control&gt;&gt;
 _:CommunicationManager_
---
-Facilitates communication 
-across all interfaces and 
-manager classes</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>220</x>
-      <y>400</y>
+      <x>340</x>
+      <y>390</y>
       <w>30</w>
       <h>120</h>
     </coordinates>
@@ -121,8 +116,8 @@ manager classes</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>130</x>
-      <y>410</y>
+      <x>250</x>
+      <y>400</y>
       <w>110</w>
       <h>90</h>
     </coordinates>
@@ -137,8 +132,8 @@ message
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>250</x>
-      <y>420</y>
+      <x>370</x>
+      <y>410</y>
       <w>100</w>
       <h>80</h>
     </coordinates>
@@ -151,8 +146,8 @@ message</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>330</x>
-      <y>300</y>
+      <x>450</x>
+      <y>290</y>
       <w>180</w>
       <h>40</h>
     </coordinates>
@@ -163,9 +158,9 @@ message</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>820</x>
-      <y>120</y>
-      <w>490</w>
+      <x>490</x>
+      <y>60</y>
+      <w>470</w>
       <h>210</h>
     </coordinates>
     <panel_attributes>Use Case Name:  Print Inventory Message 
@@ -184,8 +179,8 @@ Postcondition:  Inventory messages have been printed</panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>150</x>
-      <y>120</y>
+      <x>270</x>
+      <y>110</y>
       <w>80</w>
       <h>110</h>
     </coordinates>

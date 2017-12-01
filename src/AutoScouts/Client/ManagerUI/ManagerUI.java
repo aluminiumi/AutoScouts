@@ -2,10 +2,10 @@ package AutoScouts;
 
 import java.util.Scanner;
 
-class ManagerUI extends Client {
+class ManagerUI extends ApplicationLayerClient {
 	Scanner kbd;
-	InventoryItem targetItem;
-	boolean expectingItem = false;
+	//InventoryItem targetItem;
+	//boolean expectingItem = false;
 
 	public static void main(String args[]) {
 		System.out.println("ManagerUI: started");
@@ -179,7 +179,7 @@ class ManagerUI extends Client {
 		send("updateitem threshold "+id+" "+thresh);
 	}
 
-	private void updateInventoryItem(InventoryItem item) {
+	public void updateInventoryItem(InventoryItem item) {
 		int id = item.getId();
 		updateInventoryItemDesc(id, item.getName());
 		updateInventoryItemPrice(id, item.getPrice());
@@ -229,14 +229,14 @@ class ManagerUI extends Client {
 			return true;
 		}
 	}
-
+/*
 	public void requestInventoryItem(int id) {
 		targetItem = null;
 		expectingItem = true;
 		send("getitem "+id);
 	}
-
-	private void ViewOrUpdate() {
+*/
+	public void ViewOrUpdate() {
 		send("dump");
 		try{
 			Thread.sleep(1000);
@@ -291,7 +291,7 @@ class ManagerUI extends Client {
 				return;
 		}
 	}
-
+/*
 	private void formItem(String chunks[]) {
 		if(chunks[1].equals("null"))
 			targetItem = null;
@@ -316,7 +316,7 @@ class ManagerUI extends Client {
 			}
 		}
 	}
-
+*/
 	protected void receive(String message) {
 		String chunks[] = message.split(" ");
 		switch(chunks[0]) {
@@ -325,27 +325,18 @@ class ManagerUI extends Client {
 					System.out.print(chunks[x]+" ");
 				System.out.println();
 				break;
-			case "item":
-				if(expectingItem) {
-					expectingItem = false;
-					formItem(chunks);
-				} else {
-					System.out.println("Server sent unexpected item information.");
-				}
-			case "Hello.":
-				break;
 			default:
 				super.receive(message);
 		}
 	}
-
+/*
 	protected void send(String message) {
 		super.send(message);
 	}
-
+*/
 	private void go() {
-		setQuietMode(false);
-		connect();
+		//setQuietMode(false);
+		//connect();
 		kbd = new Scanner(System.in);
 
 		boolean workToDo = true;

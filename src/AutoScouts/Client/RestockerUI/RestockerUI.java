@@ -2,10 +2,10 @@ package AutoScouts;
 
 import java.util.Scanner;
 
-class RestockerUI extends Client {
+class RestockerUI extends ApplicationLayerClient {
 	Scanner kbd;
 	BarCodeScanner bs;
-	InventoryItem targetItem;
+	//InventoryItem targetItem;
 	boolean expectingItem = false;
 
 	public static void main(String args[]) {
@@ -204,7 +204,7 @@ class RestockerUI extends Client {
 		}
 		displayInventoryItem(id);
 	}
-
+/*
 	public void requestInventoryItem(int id) {
 		targetItem = null;
 		expectingItem = true;
@@ -227,11 +227,12 @@ class RestockerUI extends Client {
 		else
 			return true;
 	}
-
+*/
 	private void PromptForScan() {
 		System.out.print("Scan item now: ");
 		int id = bs.scan();
 		if(itemExists(id)) {
+			System.out.println("Item scanned: "+targetItem.getName());
 			PromptForQuantity(id);
 		} else { //is a new item or unknown id number
 			NewItemScreen(id);
@@ -263,7 +264,7 @@ class RestockerUI extends Client {
 				return;
 		}
 	}
-
+/*
 	private void formItem(String chunks[]) {
 		if(chunks[1].equals("null"))
 			targetItem = null;
@@ -288,7 +289,8 @@ class RestockerUI extends Client {
 			}
 		}
 	}
-
+*/
+/*
 	protected void receive(String message) {
 		String chunks[] = message.split(" ");
 		switch(chunks[0]) {
@@ -310,10 +312,10 @@ class RestockerUI extends Client {
 	protected void send(String message) {
 		super.send(message);
 	}
-
+*/
 	private void go() {
-		setQuietMode(false);
-		connect();
+		//setQuietMode(false);
+		//connect();
 		kbd = new Scanner(System.in);
 		bs = new BarCodeScanner();
 		
