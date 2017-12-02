@@ -3,7 +3,7 @@ package AutoScouts;
 import java.util.ArrayList;
 import java.util.List;
 
-class CustomerOrder {
+public class CustomerOrder {
 	List<InventoryItem> order;
 	double taxRate = .0825;
 

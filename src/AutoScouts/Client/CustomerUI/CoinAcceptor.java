@@ -1,6 +1,6 @@
 package AutoScouts;
 
-class CoinAcceptor extends NumberReaderDevice {
+public class CoinAcceptor extends NumberReaderDevice {
 	CoinAcceptor(Object caller) {
 		super(caller, "coin");
 	}

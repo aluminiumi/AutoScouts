@@ -1,6 +1,6 @@
 package AutoScouts;
 
-class ReportPrinter extends Printer {
+public class ReportPrinter extends Printer {
 	ReportPrinter() {
 
 	}

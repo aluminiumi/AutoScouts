@@ -1,14 +1,20 @@
 package AutoScouts;
 
-class ReceiptPrinter extends Printer {
-	private String header = ""+ 
+public class ReceiptPrinter extends Printer {
+	private final String header = ""+ 
 		"########################################\n"+
 		"##               Receipt              ##\n"+
 		"##                                    ##\n";
 
-	private String footer = ""+
+	private final String footer = ""+
 		"##                                    ##\n"+
 		"########################################\n";
+
+	private final String signature = "\n\n\nSignature: ____________\n";
+
+	private final String customercopy = "            Customer Copy\n";
+
+	private final String storecopy = "               Store Copy\n";
 
 	ReceiptPrinter() {
 
@@ -16,6 +22,12 @@ class ReceiptPrinter extends Printer {
 
 	public int print(CustomerOrder co) {
 		return print(co.toString());
+	}
+
+	public int print(CustomerOrder co, int cardno, int authnum) {
+		String headeradd = String.format("Card#:%-10s Auth#:%8s\n", cardno, authnum);
+		print(customercopy+headeradd+co+signature);
+		return print(storecopy+headeradd+co+signature);
 	}
 
 	public int print(String s) {

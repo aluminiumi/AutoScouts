@@ -1,6 +1,6 @@
 package AutoScouts;
 
-class TransactionManager {
+public class TransactionManager {
 	CommunicationManager cm;
 	InventoryManager im;
 	TransactionLog transLog;

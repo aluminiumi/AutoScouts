@@ -308,7 +308,8 @@ includeantruntime="false">
   <property name="serverclasses" value="**/ConnectionProvider.class,**/DBManager.class,
 	**/InventoryManager.class,**/InventoryMessage.class,**/TransactionManager.class,
 	**/CMTimer*.class,**/InventoryMessageReport.class,**/ReportPrinter.class,
-	**/Transaction.class,**/TransactionLog.class"/>
+	**/Transaction.class,**/TransactionLog.class,**/AuthorizationCenterServiceInterface.class"/>
+
   <!-- target name="dist" depends="compile" -->
   <target name="dist" depends="compile,javadoc"
    description="Create binary distribution">
@@ -326,7 +327,10 @@ includeantruntime="false">
     <!-- Create application JAR file -->
     <!-- jar jarfile="${dist.home}/${app.name}-${app.version}.jar" -->
     <jar jarfile="${dist.home}/${app.name}.jar" basedir="${build.home}" 
-	excludes="**/RestockerUI.class,**/ManagerUI.class,**/CustomerUI*.class,**/Client*.class,**/ReceiptPrinter.class">
+	excludes="**/RestockerUI.class,**/ManagerUI.class,**/CustomerUI*.class,**/Client*.class,**/ReceiptPrinter.class,
+		**/ApplicationLayerClient.class, **/BarCodeScanner.class, **/BillAcceptor.class, **/CardReader.class,
+		**/CashDispenser.class, **/CoinAcceptor.class, **/CustomerOrder.class, **/NumberReaderDevice.class,
+		**/PinPad.class, **/ScannerHost.class">
 	<zipgroupfileset dir="${lib.home}" includes="*.jar" />
         <manifest>
 		<attribute name = "Main-Class" value = "AutoScouts.CommunicationManager"/>
@@ -334,14 +338,19 @@ includeantruntime="false">
     </jar>
 
     <jar jarfile="${dist.home}/RestockerUI.jar" basedir="${build.home}" 
-	excludes="**/CommunicationManager.class,**/ManagerUI.class,**/CustomerUI*.class,**/*Printer.class,${serverclasses}">
+	excludes="**/CommunicationManager.class,**/ManagerUI.class,**/CustomerUI*.class,**/*Printer.class,${serverclasses},
+			**/BillAcceptor.class, **/CardReader.class, **/CashDispenser.class, **/CoinAcceptor.class,
+			**/CustomerOrder.class, **/PinPad.class">
         <manifest>
 		<attribute name = "Main-Class" value = "AutoScouts.RestockerUI"/>
         </manifest>
     </jar>
 
     <jar jarfile="${dist.home}/ManagerUI.jar" basedir="${build.home}"
-	excludes="**/CommunicationManager.class,**/RestockerUI.class,**/CustomerUI*.class,**/*Printer.class,${serverclasses}">
+	excludes="**/CommunicationManager.class,**/RestockerUI.class,**/CustomerUI*.class,**/*Printer.class,${serverclasses},
+			**/BillAcceptor.class, **/CardReader.class, **/CashDispenser.class, **/CoinAcceptor.class,
+			**/CustomerOrder.class, **/PinPad.class, **/ScannerHost.class, **/BarCodeScanner.class,
+			**/NumberReaderDevice.class">
         <manifest>
 		<attribute name = "Main-Class" value = "AutoScouts.ManagerUI"/>
         </manifest>
@@ -409,8 +418,8 @@ includeantruntime="false">
 
     <mkdir          dir="${dist.home}/docs/api"/>
     <javadoc sourcepath="${src.home}"
-                destdir="${dist.home}/docs/api"
-           packagenames="*">
+              classpath="${build.home}"
+                destdir="${dist.home}/docs/api">
       <classpath refid="compile.classpath"/>
     </javadoc>
 

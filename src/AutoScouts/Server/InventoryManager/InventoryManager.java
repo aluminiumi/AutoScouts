@@ -1,6 +1,6 @@
 package AutoScouts;
 
-class InventoryManager {
+public class InventoryManager {
 	InventoryMessageReport imr;
 
 	InventoryManager() {

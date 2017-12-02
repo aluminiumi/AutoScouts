@@ -1,6 +1,6 @@
 package AutoScouts;
 
-class BillAcceptor extends NumberReaderDevice {
+public class BillAcceptor extends NumberReaderDevice {
 	BillAcceptor(Object caller) {
 		super(caller, "bill");
 	}

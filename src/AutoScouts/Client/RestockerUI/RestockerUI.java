@@ -2,7 +2,7 @@ package AutoScouts;
 
 import java.util.Scanner;
 
-class RestockerUI extends ApplicationLayerClient implements ScannerHost {
+public class RestockerUI extends ApplicationLayerClient implements ScannerHost {
 	Scanner kbd;
 	BarCodeScanner bs;
 	//InventoryItem targetItem;
@@ -317,6 +317,10 @@ class RestockerUI extends ApplicationLayerClient implements ScannerHost {
 	//used to satisfy ScannerHost interface, but this class does
 	//not really require buffered scans
 	public void receiveBufferedScan(String device, int in) {
+
+	}
+
+	public void receiveBufferedScanLong(String device, long in) {
 
 	}
 
