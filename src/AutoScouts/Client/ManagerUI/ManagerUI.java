@@ -1,6 +1,7 @@
 package AutoScouts;
 
 import java.util.Scanner;
+import java.util.NoSuchElementException;
 
 public class ManagerUI extends ApplicationLayerClient {
 	Scanner kbd;
@@ -129,6 +130,7 @@ public class ManagerUI extends ApplicationLayerClient {
 					editQtyScreen();
 					return;
 				}
+			} catch (NoSuchElementException e) {
 			} catch (Exception e) {
 				System.out.println(e);
 				editQtyScreen();
@@ -277,6 +279,7 @@ public class ManagerUI extends ApplicationLayerClient {
 		System.out.println();
 		System.out.println("1. View/Update");
 		System.out.println("2. Print Reports (for demonstration purposes)");
+		System.out.println("3. Exit");
 		System.out.println();
 		System.out.print("Select menu option by number: ");
 		String command = kbd.nextLine();
@@ -293,6 +296,9 @@ public class ManagerUI extends ApplicationLayerClient {
 				break;
 			case 2:
 				printReports();
+				break;
+			case 3:
+				System.exit(0);
 				break;
 			default:
 				System.out.println("Invalid option.");
