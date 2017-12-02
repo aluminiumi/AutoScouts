@@ -339,7 +339,11 @@ public class RestockerUI extends ApplicationLayerClient implements ScannerHost {
 		
 		boolean workToDo = true;
 		while(workToDo) {
-			initialScreen();
+			try{
+				initialScreen();
+			} catch (Exception e) {
+				System.out.println("Go" + e);
+			}
 		}
 	}
 }
