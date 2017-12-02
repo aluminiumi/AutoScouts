@@ -1,6 +1,6 @@
 package AutoScouts;
 
-abstract class Printer {
+public abstract class Printer {
 	Printer() {
 
 	}

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-class ApplicationLayerClient extends Client {
+public class ApplicationLayerClient extends Client {
 	InventoryItem targetItem;
 	boolean expectingItem = false;
 
@@ -39,7 +39,7 @@ class ApplicationLayerClient extends Client {
 	}
 
 	private void go() {
-		setQuietMode(false);
+		setQuietMode(true);
 		connect();
 
 		/*boolean workToDo = true;

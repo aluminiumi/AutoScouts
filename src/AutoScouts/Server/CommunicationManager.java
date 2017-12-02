@@ -7,7 +7,8 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-class CommunicationManager implements Runnable {
+public class CommunicationManager implements Runnable {
+	AuthorizationCenterServiceInterface auth;
 	InventoryManager im;
 	TransactionManager tm;
 	Socket clientSocket;
@@ -27,14 +28,16 @@ class CommunicationManager implements Runnable {
 		tm = new TransactionManager(im);
 		rprinter = new ReportPrinter();
 		new CMTimer(this);
+		auth = new AuthorizationCenterServiceInterface();
 		startServer();
 
 	}
 
 	//new threads launched use this constructor
-	CommunicationManager(TransactionManager newtm, InventoryManager newim, ReportPrinter newrprinter, Socket newclientSocket) {
+	CommunicationManager(TransactionManager newtm, InventoryManager newim, AuthorizationCenterServiceInterface newauth, ReportPrinter newrprinter, Socket newclientSocket) {
 		tm = newtm;
 		im = newim;
+		auth = newauth;
 		rprinter = newrprinter;
 		clientSocket = newclientSocket;
 	}
@@ -49,7 +52,7 @@ class CommunicationManager implements Runnable {
 			) {
 				System.out.println("Listening for connections on port "+portNum+"...");
 				while(workToDo)
-					new Thread(new CommunicationManager(tm, im, rprinter, serverSocket.accept())).start();
+					new Thread(new CommunicationManager(tm, im, auth, rprinter, serverSocket.accept())).start();
 			} catch (IOException e) {
 				System.out.println("startServer(): Exception: "+e);
 				portNum++;
@@ -83,7 +86,7 @@ class CommunicationManager implements Runnable {
 		} catch(Exception e) {
 			System.out.println("CommMan: run(): Exception: "+e);
 		}
-		System.out.println("CommMan: run(): Exiting socket thread.");
+		//System.out.println("CommMan: run(): Exiting socket thread.");
 	}
 
 	//this method handles data sent by clients (CustomerUI, ManagerUI, RestockerUI)
@@ -91,7 +94,7 @@ class CommunicationManager implements Runnable {
 		System.out.println("Client: "+input);
 		String chunks[] = input.split(" ");
 		switch(chunks[0]) {
-			case "dump": //not used, just for debugging
+			case "dump": //used by ManagerUI to get list of items to edit
 				String dump = im.getDBDump();
 				System.out.println(dump);
 				String dumplines[] = dump.split("\n");
@@ -197,10 +200,47 @@ class CommunicationManager implements Runnable {
 						System.out.println("CommMan: Bad updateitem argument from client.");
 				}
 				break;
+			case "authdebit": //used by CustomerUI
+				try {
+					long cardno = Long.parseLong(chunks[1]);
+					int pin = Integer.parseInt(chunks[2]);
+					Double cost = Double.parseDouble(chunks[3]);
+					int result = auth.authorizeCard(cardno, pin, cost);
+					out.println(interpretAuthResult(result));
+				} catch (Exception e) {
+					System.out.println("CommMan: authdebit: "+e);
+				}
+				break;
+			case "authcredit": //used by CustomerUI
+				try {
+					long cardno = Long.parseLong(chunks[1]);
+					Double cost = Double.parseDouble(chunks[2]);
+					int result = auth.authorizeCard(cardno, cost);
+					out.println(interpretAuthResult(result));
+				} catch (Exception e) {
+					System.out.println("CommMan: authcredit: "+e);
+				}
+				break;
 			default:
 				System.out.println("CommMan: Unexpected input from client.");
 		}
+	}
 
+	//translates numeric codes from AuthorizationCenter
+	//into string format for clients
+	private String interpretAuthResult(int result) {
+		switch(result) {
+			case -1:
+				return "auth bad insuff";
+			case -2:
+				return "auth bad badpin";
+			case -3:
+				return "auth bad norecog";
+			case -4:
+				return "auth bad deactiv";
+			default:
+				return "auth ok "+result;
+		}
 	}
 
 	//this is called by CMTimer

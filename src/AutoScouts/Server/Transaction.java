@@ -1,6 +1,6 @@
 package AutoScouts;
 
-class Transaction {
+public class Transaction {
 	private int item;
 	private double price;
 	private int quantity;

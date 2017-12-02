@@ -111,10 +111,12 @@ m2=1
       <x>445</x>
       <y>530</y>
       <w>110</w>
-      <h>40</h>
+      <h>45</h>
     </coordinates>
     <panel_attributes>&lt;&lt;input device interface&gt;&gt;
 CardReader
+--
+#ejectCard(): void
 --
 Reads credit card number</panel_attributes>
     <additional_attributes/>
@@ -502,12 +504,12 @@ Reads numbers from physical devices</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>495</x>
-      <y>565</y>
+      <y>570</y>
       <w>15</w>
-      <h>35</h>
+      <h>30</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>

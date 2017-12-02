@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
-class CMTimer {
+public class CMTimer {
 	CommunicationManager cm;
 
 	CMTimer() {

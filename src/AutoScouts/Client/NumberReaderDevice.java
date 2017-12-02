@@ -2,7 +2,7 @@ package AutoScouts;
 
 import java.util.Scanner;
 
-class NumberReaderDevice {
+public class NumberReaderDevice {
 	Scanner reader;
 	Object caller;
 	String devicename;

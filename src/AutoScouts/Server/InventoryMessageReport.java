@@ -3,7 +3,7 @@ package AutoScouts;
 import java.util.List;
 import java.util.ArrayList;
 
-class InventoryMessageReport {
+public class InventoryMessageReport {
 	List<InventoryMessage> report;
 	InventoryManager imanager;
 
