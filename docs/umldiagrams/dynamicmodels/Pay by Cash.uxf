@@ -422,17 +422,17 @@ C14B.6: Coin value
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>456</x>
+      <x>462</x>
       <y>354</y>
-      <w>96</w>
+      <w>84</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-C14B.4: Coin value
+C14B.4: Bill value
 </panel_attributes>
-    <additional_attributes>100.0;10.0;50.0;40.0</additional_attributes>
+    <additional_attributes>90.0;10.0;40.0;40.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>

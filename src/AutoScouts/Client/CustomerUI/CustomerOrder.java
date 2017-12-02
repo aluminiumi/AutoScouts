@@ -31,6 +31,23 @@ class CustomerOrder {
 		return p;
 	}
 
+	private String getFormattedSubtotal() {
+		String subtotal = String.format("%1$,.2f",getSubtotal());
+		String tax = String.format("%1$,.2f",getTaxTotal());
+		String total = String.format("%1$,.2f",getTotal());
+		String output = 
+			"\n"+
+			String.format("%-9s:%8s\n", "Subtotal", subtotal)+
+			String.format("%-9s:%8s\n", "Tax", tax)+
+			String.format("%-9s:%8s\n", "Total", total)+
+			"\n";
+		return output;
+	}
+
+	private String format(double p) {
+		return String.format("%1$,.2f",p);
+	}
+
 	//returns total amount of taxes
 	public double getTaxTotal() {
 		return getSubtotal() * taxRate;
@@ -47,5 +64,17 @@ class CustomerOrder {
 
 	public List<InventoryItem> getOrder() {
 		return order;
+	}
+	
+	public String toString() {
+		String output = "";
+		for(InventoryItem i : order) {
+			output += String.format("ID#%-4s%-20s%7s", i.getId(), i.getName(), format(i.getPriceWithDiscount()));
+			output += "\n";
+		}
+		output += "\n";
+		output += "--------------------------------\n";
+		output += getFormattedSubtotal();
+		return output;
 	}
 }

@@ -316,7 +316,7 @@ class RestockerUI extends ApplicationLayerClient implements ScannerHost {
 
 	//used to satisfy ScannerHost interface, but this class does
 	//not really require buffered scans
-	public void receiveBufferedScan(int in) {
+	public void receiveBufferedScan(String device, int in) {
 
 	}
 
