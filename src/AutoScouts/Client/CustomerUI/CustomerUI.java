@@ -718,6 +718,7 @@ public class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 		boolean cashSufficient = false;
 		String specialMessage = "";
 		wipeInputs();
+		System.out.println("Entering while loop");
 		while(!cancelCheckoutPressed && !cancelPaymentPressed && !cashSufficient) {
 			clearScreen();
 			double amtdue = co.getTotal() - cashValueInserted;
@@ -779,6 +780,7 @@ public class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 				cashSufficient = true;
 			}
 		}
+		System.out.println("Leaving while loop);
 		if(cancelCheckoutPressed) { 
 			return; //return to the welcome screen
 		}
