@@ -16,7 +16,7 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 	private int barcodeInput;
 	private int billInput;
 	private int coinInput;
-	private int cardInput;
+	private long cardInput;
 	private int pinpadInput;
 	private double cashValueInserted = 0;
 
@@ -310,27 +310,28 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 		}
 	}
 
-	private boolean checkCardValidity(int card) {
-		//TODO: implement
-		return true;
+	//Assumtion: Every cards has 16 digits and card # padded with 0's are represented by int without the 0's
+	//eg. if card Number was "0000 0012 3456 7890", the card variable will be long "1234567890"
+	private boolean checkCardValidity(long card) {
+		return card < 10000000000000000;
 	}
 
 	//Assumption: card type can be deduced from the card #
 	//0 represents debit cards, 1 credit.
-	private int identifyCardType(int card) {
+	private int identifyCardType(long card) {
 		//TODO: implement
 		return 0;
 	}
 
-	//Assumption: the pin must be 4 digits and pins padded with 0's will already be removed,
-	//eg. if PIN inputted was "0037", pin variable will be integer representing 37.
+	//Assumption: the pin must be 4 digits and pins padded with 0's are represented by int without the 0's,
+	//eg. if PIN inputted was "0037", pin variable will be integer "37".
 	private boolean checkPinValidity(int pin) {
 		return pin < 10000;
 	}
 
-	private int SendAuthorizationRequest(int cost, int cardType, int cardNo, int pin) {
-		
-		return 1;
+	//Always returns a non-zero value for now to represent authorized card for now
+	private int SendAuthorizationRequest(int cost, int cardType, long cardNo, int pin) {
+		return 23;
 	}
 
 	private void PayByCardScreen() {
@@ -341,7 +342,7 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 		boolean isValidCard = false;
 		boolean isValidPin = false;
 
-		int cardNo = -1;
+		long cardNo = -1;
 		int pin = -1;
 		int cardType = -1;
 		int authNo = -1;
@@ -443,7 +444,7 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 		} while (authNo == 0);
 
 		//print receipt
-		rp.print(String.format("%s\%s", cardNo % 1000, authNo % 1000));
+		rp.print(String.format("%04d\%04d", cardNo % 1000, authNo % 1000));
 	}
 
 	private void PayByCashScreen() {
