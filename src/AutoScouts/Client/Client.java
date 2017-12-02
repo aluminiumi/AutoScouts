@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-class Client {
+public class Client {
 	String destAddress = "localhost";
 	int portNum = 41114;
 	PrintWriter sout;

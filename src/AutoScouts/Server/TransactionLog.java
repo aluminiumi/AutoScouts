@@ -3,7 +3,7 @@ package AutoScouts;
 import java.util.ArrayList;
 import java.util.List;
 
-class TransactionLog {
+public class TransactionLog {
 	private List<Transaction> transList;
 
 	TransactionLog() {

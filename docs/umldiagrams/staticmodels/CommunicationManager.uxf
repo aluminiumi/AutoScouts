@@ -95,6 +95,7 @@ m2=1
 AuthorizationCenterServiceInterface
 --
 #authorizeCard(cardNumber: long, pin: int, cost: double): int
+#authorizeCard(cardNumber: long, cost: double): int
 --
 Authorizes card transactions requested by the
 transaction manager.</panel_attributes>

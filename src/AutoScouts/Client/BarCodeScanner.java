@@ -1,6 +1,6 @@
 package AutoScouts;
 
-class BarCodeScanner extends NumberReaderDevice {
+public class BarCodeScanner extends NumberReaderDevice {
 	BarCodeScanner(Object caller) {
 		super(caller, "barcode");
 	}

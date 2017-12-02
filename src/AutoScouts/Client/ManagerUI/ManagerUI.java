@@ -2,7 +2,7 @@ package AutoScouts;
 
 import java.util.Scanner;
 
-class ManagerUI extends ApplicationLayerClient {
+public class ManagerUI extends ApplicationLayerClient {
 	Scanner kbd;
 	//InventoryItem targetItem;
 	//boolean expectingItem = false;
@@ -179,6 +179,10 @@ class ManagerUI extends ApplicationLayerClient {
 		send("updateitem threshold "+id+" "+thresh);
 	}
 
+	private void printReports() {
+		send("printreports");
+	}
+
 	public void updateInventoryItem(InventoryItem item) {
 		int id = item.getId();
 		updateInventoryItemDesc(id, item.getName());
@@ -272,6 +276,7 @@ class ManagerUI extends ApplicationLayerClient {
 		System.out.println("------------");
 		System.out.println();
 		System.out.println("1. View/Update");
+		System.out.println("2. Print Reports (for demonstration purposes)");
 		System.out.println();
 		System.out.print("Select menu option by number: ");
 		String command = kbd.nextLine();
@@ -285,6 +290,9 @@ class ManagerUI extends ApplicationLayerClient {
 		switch(option) {
 			case 1: //View/Update selected
 				ViewOrUpdate();
+				break;
+			case 2:
+				printReports();
 				break;
 			default:
 				System.out.println("Invalid option.");

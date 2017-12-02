@@ -2,7 +2,7 @@ package AutoScouts;
 
 import java.util.Scanner;
 
-class CustomerUI extends ApplicationLayerClient implements ScannerHost {
+public class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 	private CustomerOrder co;
 	private ReceiptPrinter rp;
 	private CashDispenser cd;
@@ -19,6 +19,7 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 	private long cardInput;
 	private int pinpadInput;
 	private double cashValueInserted = 0;
+	private int authResult = 0;
 
 	public static void main(String args[]) {
 		System.out.println("CustomerUI");
@@ -73,6 +74,8 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 	private void initialScreen() {
 		targetItem = null;
 		cashValueInserted = 0;
+		authResult = 0;
+		wipeInputs();
 		co = new CustomerOrder();
 		clearScreen();
 		System.out.println("Welcome!");
@@ -95,6 +98,8 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 				break;
 			case 2:
 				System.out.println("[1. CANCEL CHECKOUT] [2. CANCEL PAYMENT]");
+				break;
+			case 3: System.out.println("[1. YES] [2. NO]");
 				break;
 			default:
 				break;
@@ -119,7 +124,7 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 			//expect result back in coinInput
 		} else if(input.startsWith("card ")) {
 			String stripped = input.substring(input.indexOf("card ")+5, input.length());
-			cr.simulateBufferedScan(stripped); 
+			cr.simulateBufferedScanLong(stripped); 
 			//expect result back in cardInput
 		} else if(input.startsWith("pin ")) {
 			String stripped = input.substring(input.indexOf("pin ")+4, input.length());
@@ -131,13 +136,13 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 	}
 
 	private void PromptToScan() {
+		wipeInputs();
 		boolean cancelPressed = false;
 		boolean totalPressed = false;
 		boolean subtotalPressed = false;
 		String specialMessage = "";
 		while(!cancelPressed && !totalPressed) {
 			clearScreen();
-			System.out.println("Please scan items.");
 			System.out.println("(Note: In lieu of actual scanner device, precede input");
 			System.out.println(" with 'scan ' to simulate barcode scanning)");
 			System.out.println();
@@ -156,39 +161,37 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 				System.out.println(specialMessage);
 				specialMessage = "";
 			}
+			System.out.println("\nPlease scan items.");
+			System.out.println();
 			printMenu(0);
-			try {
-				simulateMultipleDevices(); //necessary when physical barcode scanner absent
+			simulateMultipleDevices(); //necessary when physical barcode scanner absent
 
-				//check for barcode scanner input
-				if(barcodeInput != 0) { //scanner input happened
-					if(processBarcodeScannedInput(barcodeInput) != 0) {
-						//error happened
-						specialMessage = "Unrecognized item. See store associate.\n";
-					}
-					barcodeInput = 0;
+			//check for barcode scanner input
+			if(barcodeInput != 0) { //scanner input happened
+				if(processBarcodeScannedInput(barcodeInput) != 0) {
+					//error happened
+					specialMessage = "Unrecognized item. See store associate.\n";
 				}
-				//check for button/key presses
-				if(screenInput != 0) { //screen input happened
-					switch(screenInput) {
-						case 1: //cancel checkout pressed
-							cancelPressed = true;
-							break;
-						case 2: //subtotal pressed
-							subtotalPressed = true;
-							break;
-						case 3: //total pressed
-							totalPressed = true;
-							break;
-						default:
-							break;
-					}
-					screenInput = 0;
-				}
-				Thread.sleep(150);
-			} catch (Exception e) {
-				System.out.println(e);
+				barcodeInput = 0;
 			}
+			//check for button/key presses
+			if(screenInput != 0) { //screen input happened
+				switch(screenInput) {
+					case 1: //cancel checkout pressed
+						cancelPressed = true;
+						break;
+					case 2: //subtotal pressed
+						subtotalPressed = true;
+						break;
+					case 3: //total pressed
+						totalPressed = true;
+						break;
+					default:
+						break;
+				}
+				screenInput = 0;
+			}
+			sleep(150);
 		}
 		if(cancelPressed) { 
 			return; //return to the welcome screen
@@ -267,7 +270,52 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 				return 1; //flag error to caller
 		}
 		return 0;
-	
+	}
+
+	private int processCardInput(long input) {
+		if(input > 0) {
+			return 0;
+		}
+		return 1; //error
+	}
+
+  //Assumption: card type can be deduced from the card #
+	//0 represents debit cards, 1 credit.
+	private int identifyCardType(long card) {
+		//TODO: implement
+		return 0;
+	}
+
+	//Assumption: the pin must be 4 digits and pins padded with 0's are represented by int without the 0's,
+	//eg. if PIN inputted was "0037", pin variable will be integer "37".
+	private boolean checkPinValidity(int pin) {
+		return pin < 10000;
+	}
+  
+  //like above but checks for negative
+	private int processPinInput(int input) {
+		if(input >= 0 && input <= 9999) { //ensure 4-digit PIN
+			return 0;
+		}
+		return 1; //error
+	}
+
+	private void processAuthResult(String chunks[]) {
+		if(chunks[1].equals("ok")) {
+			authResult = Integer.parseInt(chunks[2]);
+		} else {
+			switch(chunks[2]) {
+				case "insuff":
+					authResult = -1;
+				case "badpin":
+					authResult = -2;
+				case "norecog":
+					authResult = -3;
+				case "deactiv":
+					authResult = -4;
+				
+			}
+		}
 	}
 
 	private void PrintSubtotal() {
@@ -283,8 +331,9 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 
 	private void PromptForPaymentType() {
 		clearScreen();
+		wipeInputs();
 		PrintSubtotal();
-		System.out.println("Select a payment method.");
+		System.out.println("Select a payment method.\n");
 		printMenu(1);
 		int input;
 		try {
@@ -310,30 +359,14 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 		}
 	}
 
+
 	//Assumtion: Every cards has 16 digits and card # padded with 0's are represented by int without the 0's
 	//eg. if card Number was "0000 0012 3456 7890", the card variable will be long "1234567890"
 	private boolean checkCardValidity(long card) {
 		return card < 10000000000000000;
 	}
 
-	//Assumption: card type can be deduced from the card #
-	//0 represents debit cards, 1 credit.
-	private int identifyCardType(long card) {
-		//TODO: implement
-		return 0;
-	}
-
-	//Assumption: the pin must be 4 digits and pins padded with 0's are represented by int without the 0's,
-	//eg. if PIN inputted was "0037", pin variable will be integer "37".
-	private boolean checkPinValidity(int pin) {
-		return pin < 10000;
-	}
-
-	//Always returns a non-zero value for now to represent authorized card for now
-	private int SendAuthorizationRequest(int cost, int cardType, long cardNo, int pin) {
-		return 23;
-	}
-
+  /*
 	private void PayByCardScreen() {
 		//TODO: implement
 
@@ -445,14 +478,230 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 
 		//print receipt
 		rp.print(String.format("%04d\%04d", cardNo % 1000, authNo % 1000));
+    */
+
+	private void sleep(int time) {
+		try {
+			Thread.sleep(time);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+
+	private void PayByCardScreen() {
+		boolean cancelCheckoutPressed = false;
+		boolean cancelPaymentPressed = false;
+		long cardno = 0;
+		String specialMessage = "";
+		wipeInputs();
+
+		cardno = getCardNumber();
+		if(cardno == -1) {
+			cancelCheckoutPressed = true;
+			cardno = 0;
+		} else if(cardno == -2) {
+			cancelPaymentPressed = true;
+			cardno = 0;
+		}
+		if(cardno != 0) { //card was swiped/inserted
+			int pin;
+			if(isDebit()) {
+				pin = PromptForPin();
+				if(pin == -1) { //cancel checkout pressed
+					cancelCheckoutPressed = true;
+				} else if(pin == -2) { //cancel payment pressed
+					cancelPaymentPressed = true;
+				} else {
+					System.out.println("Authorizing...");
+					authDebit(cardno, pin); //expect result in authResult
+				}
+			} else { //credit, not debit
+				System.out.println("Authorizing...");
+				authCredit(cardno); //expect result in authResult
+			}
+		}
+		for(int x=0; x<60; x++) {
+			if(authResult != 0) { //response from server about card
+				String msg = "";
+				switch(authResult) {
+					case -1: //auth bad insuff
+						msg = "Insufficient funds on card.";
+						break;
+					case -2: //auth bad badpin
+						msg = "PIN incorrect.";
+						break;
+					case -3: //auth bad norecog
+						msg = "Card not recognized.";
+						break;
+					case -4: //auth bad deactiv
+						msg = "This card has been deactivated.";
+						break;
+					default: //auth ok ######
+						System.out.println("Approved.");
+						sleep(4000);
+						clearScreen();
+						completeCardTransaction(cardno, authResult);
+						return; //return to welcome screen
+				}
+				System.out.println(msg);
+				cr.ejectCard();
+				sleep(4000);
+				PayByCardScreen();
+			}
+			if(cancelCheckoutPressed) {
+				return; //return to the welcome screen
+			}
+			if(cancelPaymentPressed) {
+				PromptForPaymentType(); //return to payment type prompt
+				return;
+			}
+			sleep(100);
+		}
+
+		//authorization timed out
+		System.out.println("Authorization timed out.");
+		PayByCardScreen();
+	}
+
+	//called by PayByCardScreen()
+	private long getCardNumber() {
+		wipeInputs();
+		long cardno = 0;
+		String specialMessage = "";
+		while(cardno == 0) {
+			clearScreen();
+			System.out.println("(Note: In lieu of actual devices, precede input");
+			System.out.println(" with 'card ' to simulate inputting a card or");
+			System.out.println(" with 'pin ' to simulate inputting a PIN.)");
+			System.out.println();
+			PrintSubtotal();
+			System.out.println();
+			if(!(specialMessage == null) && !specialMessage.equals("")) {
+				System.out.println(specialMessage);
+				specialMessage = "";
+			}
+			System.out.println("INSERT CARD NOW\n");
+			printMenu(2);
+			try {
+				simulateMultipleDevices(); //necessary when physical barcode scanner absent
+
+				//check for card reader input
+				if(cardInput != 0) { //card inserted
+					if(processCardInput(cardInput) != 0) {
+						//error happened
+						specialMessage = "Unable to read card.\n";
+						cr.ejectCard();
+					} else {
+						cardno = cardInput;
+					}
+					cardInput = 0;
+					
+				}
+				//check for button/key presses
+				if(screenInput != 0) { //screen input happened
+					switch(screenInput) {
+						case 1: //cancel checkout pressed
+							return -1;
+						case 2: //subtotal pressed
+							return -2;
+						default:
+							break;
+					}
+					screenInput = 0;
+				}
+				sleep(150);
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+		}
+		return cardno;
+	}
+
+	//called by PayByCardScreen()
+	private boolean isDebit() {
+		wipeInputs();
+		clearScreen();
+		System.out.println("Is this a debit card?");
+		printMenu(3);
+		while(true) {
+			simulateMultipleDevices();
+
+			//check for button/key presses
+			if(screenInput != 0) { //screen input happened
+				switch(screenInput) {
+					case 1: //yes pressed
+						return true;
+					case 2: //no pressed
+						return false;
+					default:
+						break;
+				}
+				screenInput = 0;
+			}
+			sleep(150);
+		}
+	}
+	
+	private void wipeInputs() {
+		screenInput = 0;
+		cardInput = 0;
+		billInput = 0;
+		coinInput = 0;
+		barcodeInput = 0;
+		pinpadInput = 0;
+	}
+
+	//called by PayByCardScreen()
+	private int PromptForPin() {
+		wipeInputs();
+		clearScreen();
+		String specialMessage = "";
+		System.out.println("(Note: In lieu of actual devices, precede input");
+		System.out.println(" with 'card ' to simulate inputting a card or");
+		System.out.println(" with 'pin ' to simulate inputting a PIN.)");
+		System.out.println();
+		System.out.println("Enter 4-digit PIN: \n");
+		printMenu(2);
+		while(true) {
+			if(!(specialMessage == null) && !specialMessage.equals("")) {
+				System.out.println(specialMessage);
+				specialMessage = "";
+			}
+			simulateMultipleDevices();
+
+			//check for PIN pad input
+			if(pinpadInput != 0) { //PIN inserted
+				if(processPinInput(pinpadInput) != 0) {
+					//error happened
+					specialMessage = "Invalid PIN number. Try again.\n";
+				} else {
+					return pinpadInput;
+				}
+				pinpadInput = 0;
+			}
+
+			//check for button/key presses
+			if(screenInput != 0) { //screen input happened
+				switch(screenInput) {
+					case 1: //cancel checkout pressed
+						return -1;
+					case 2: //cancel payment pressed
+						return -2;
+					default:
+						break;
+				}
+				screenInput = 0;
+			}
+			sleep(150);
+		}
 	}
 
 	private void PayByCashScreen() {
-		//TODO: implement
 		boolean cancelCheckoutPressed = false;
 		boolean cancelPaymentPressed = false;
 		boolean cashSufficient = false;
 		String specialMessage = "";
+		wipeInputs();
 		while(!cancelCheckoutPressed && !cancelPaymentPressed && !cashSufficient) {
 			clearScreen();
 			if(cashValueInserted < co.getTotal()) {
@@ -473,45 +722,41 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 					specialMessage = "";
 				}
 				printMenu(2);
-				try {
-					simulateMultipleDevices(); //necessary when physical barcode scanner absent
+				simulateMultipleDevices(); //necessary when physical barcode scanner absent
 	
-					//check for bill scanner input
-					if(billInput != 0) { //bill inserted
-						if(processBillInput(billInput) != 0) {
-							//error happened
-							specialMessage = "Unrecognized bill..\n";
-						}
-						billInput = 0;
+				//check for bill scanner input
+				if(billInput != 0) { //bill inserted
+					if(processBillInput(billInput) != 0) {
+						//error happened
+						specialMessage = "Unrecognized bill..\n";
 					}
-	
-					//check for coin scanner input
-					if(coinInput != 0) { //coin inserted
-						if(processCoinInput(coinInput) != 0) {
-							//error happened
-							specialMessage = "Unrecognized coin.\n";
-						}
-						coinInput = 0;
-					}
-	
-					//check for button/key presses
-					if(screenInput != 0) { //screen input happened
-						switch(screenInput) {
-							case 1: //cancel checkout pressed
-								cancelCheckoutPressed = true;
-								break;
-							case 2: //subtotal pressed
-								cancelPaymentPressed = true;
-								break;
-							default:
-								break;
-						}
-						screenInput = 0;
-					}
-					Thread.sleep(150);
-				} catch (Exception e) {
-					System.out.println(e);
+					billInput = 0;
 				}
+	
+				//check for coin scanner input
+				if(coinInput != 0) { //coin inserted
+					if(processCoinInput(coinInput) != 0) {
+						//error happened
+						specialMessage = "Unrecognized coin.\n";
+					}
+					coinInput = 0;
+				}
+	
+				//check for button/key presses
+				if(screenInput != 0) { //screen input happened
+					switch(screenInput) {
+						case 1: //cancel checkout pressed
+							cancelCheckoutPressed = true;
+							break;
+						case 2: //subtotal pressed
+							cancelPaymentPressed = true;
+							break;
+						default:
+							break;
+					}
+					screenInput = 0;
+				}
+				sleep(150);
 			} else {
 				cashSufficient = true;
 			}
@@ -525,77 +770,69 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 		}
 		if(cashSufficient) {
 			clearScreen();
-			try {
-				if(cashValueInserted > co.getTotal()) { //dispense change
-					System.out.println("Change is being dispensed...");
-					if(cd.dispense(cashValueInserted-co.getTotal()) != 0) {
-						System.out.println("Unable to make change. See store associate.");
-						Thread.sleep(5000);
-					}
+			if(cashValueInserted > co.getTotal()) { //dispense change
+				System.out.println("Change is being dispensed...");
+				if(cd.dispense(cashValueInserted-co.getTotal()) != 0) {
+					System.out.println("Unable to make change. See store associate.");
+					sleep(5000);
 				}
-				System.out.println("Printing receipt...");
-				Thread.sleep(2000);
-				rp.print(co); //print receipt
-
-				Thread.sleep(11000);
-				clearScreen();
-				System.out.println("Please take your receipt.");
-				Thread.sleep(7000);
-				ReportToTransManager();
-				
-			} catch (Exception e) {
-				System.out.println(e);
 			}
+			completeCashTransaction();	
 			return; //return to welcome screen
 		}
 	}
 
-	/*
+
+	public void completeCashTransaction() {
+		System.out.println("Printing receipt...");
+		sleep(2000);
+		rp.print(co); //print receipt
+
+		sleep(8000);
+		clearScreen();
+		System.out.println("Please take your receipt.");
+		sleep(7000);
+		ReportToTransManager();
+	}
+
+	public void completeCardTransaction(long cardno, int authnum) {
+		
+		System.out.println("Printing receipts...");
+		sleep(2000);
+		rp.print(co, (int)(cardno%10000), authnum); //print receipt
+
+		sleep(8000);
+		clearScreen();
+		System.out.println("Please take your receipt.");
+		sleep(7000);
+		ReportToTransManager();
+	}
+
 	protected void receive(String message) {
-		System.out.println("Server: "+message);
 		String chunks[] = message.split(" ");
 		switch(chunks[0]) {
-			case "item":
-				if(expectingItem) {
-					try{
-						int len = chunks.length;
-						int id = Integer.parseInt(chunks[1]);
-						double price = Double.parseDouble(chunks[len-4]);
-						double discount = Double.parseDouble(chunks[len-3]);
-						String desc = chunks[2];
-						int iter = 3;
-						while(len > 7) {
-							desc += " "+chunks[iter];
-							len--;
-							iter++;
-						}
-						InventoryItem item = new InventoryItem(
-							id, desc, price, discount, 0, 0);
-						co.add(item);
-						System.out.println("Item scanned: "+item);
-						System.out.println("New subtotal: "+String.format("%1$,.2f", co.getSubtotal()));
-
-					} catch (Exception e) {
-						System.out.println("Server sent malformed item information. "+e);
-					}
-					expectingItem = false;
-				} else {
-					System.out.println("Server sent unexpected item information.");
-				}
-				break;
-			case "Hello.":
-			case "Okay.":
+			case "auth":
+				processAuthResult(chunks);
 				break;
 			default:
-				System.out.println("Unexpected response from server.");
+				super.receive(message);
 		}
-	}*/
+	}
 
 	public void ReportToTransManager() {
 		for(InventoryItem item : co.getOrder()) {
 			send("sold "+item.getId());
 		}
 	}
+
+	private void authDebit(long cardno, int pin) {
+			send("authdebit "+cardno+" "+pin+" "+co.getSubtotal());
+	}
+
+	private void authCredit(long cardno) {
+			send("authcredit "+cardno+" "+co.getSubtotal());
+	}
+
 
 	//Satisfies ScannerHost interface
 	//Buffers inputs from physical scanner devices
@@ -611,11 +848,18 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 			case "coin":
 				coinInput = in;
 				break;
-			case "card":
-				cardInput = in;
-				break;
 			case "pinpad":
 				pinpadInput = in;
+				break;
+			default:
+				break;
+		}
+	}
+
+	public void receiveBufferedScanLong(String device, long in) {
+		switch(device) {
+			case "card":
+				cardInput = in;
 				break;
 			default:
 				break;

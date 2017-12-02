@@ -1,6 +1,6 @@
 package AutoScouts;
 
-class PinPad extends NumberReaderDevice {
+public class PinPad extends NumberReaderDevice {
 	PinPad(Object caller) {
 		super(caller, "pinpad");
 	}

@@ -1,6 +1,6 @@
 package AutoScouts;
 
-class CashDispenser {
+public class CashDispenser {
 	int qtyOfPennies = 10;
 	int qtyOfNickels = 10;
 	int qtyOfDimes = 10;
