@@ -288,7 +288,7 @@ public class ManagerUI extends ApplicationLayerClient {
 			option = Integer.parseInt(command);
 		} catch (NoSuchElementException e) {
 		} catch (Exception e) {
-			System.out.println(e);
+			System.out.println("Initial screen" + e);
 			return;
 		}
 		switch(option) {
