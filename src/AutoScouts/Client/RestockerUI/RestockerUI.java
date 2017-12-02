@@ -254,8 +254,9 @@ public class RestockerUI extends ApplicationLayerClient implements ScannerHost {
 		try {   
 			option = Integer.parseInt(command);
 		} catch (NoSuchElementException e) {
+			System.exit(0);
 		} catch (Exception e) {
-			System.out.println(e);
+			System.out.println("Initial Screen" + e);
 			return;
 		}
 		switch(option) {
