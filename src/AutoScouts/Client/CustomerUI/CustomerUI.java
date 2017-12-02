@@ -310,9 +310,137 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 		}
 	}
 
+	private boolean checkCardValidity(int card) {
+		//TODO: implement
+		return true;
+	}
+
+	//Assumption: card type can be deduced from the card #
+	//0 represents debit cards, 1 credit.
+	private int identifyCardType(int card) {
+		//TODO: implement
+		return 0;
+	}
+
+	private boolean checkPinValidity(int pin) {
+		//TODO: implement
+		return true;
+	}
+
+	private int SendAuthorizationRequest(int cardType, int cardNo, int pin) {
+		//TODO: implement
+		return 1;
+	}
+
 	private void PayByCardScreen() {
 		//TODO: implement
-		printMenu(2);
+
+		boolean cancelCheckoutPressed = false;
+		boolean cancelPaymentPressed = false;
+		boolean isValidCard = false;
+		boolean isValidPin = false;
+
+		int cardNo = -1;
+		int pin = -1;
+		int cardType = -1;
+		int authNo = -1;
+
+		do {
+
+			//insert card to read until valid
+			while(!isValidCard) {
+				System.out.println("Insert the card");
+				System.out.println("(Note: In lieu of actual devices, precede input");
+				System.out.println(" with 'card ' to simulate inputting a card)");
+				System.out.println();
+
+				printMenu(2);
+				try {
+					simulateMultipleDevices();
+
+					if (cardInput != 0) {
+						isValidCard = checkCardValidity(cardNo);
+						if (isValidCard) {
+							cardNo = cardInput;
+						}
+						cardInput = 0;
+					}
+
+					if(screenInput != 0) {
+						switch(screenInput) {
+							case 1: //cancel checkout pressed
+								cancelCheckoutPressed = true;
+								break;
+							case 2: //cancel payment pressed
+								cancelPaymentPressed = true;
+								break;
+							default:
+								break;
+						}
+						screenInput = 0;
+					}
+				} catch (Exception e) {
+					System.out.println(e);
+				}
+				if(cancelCheckoutPressed) { 
+					return; //return to the welcome screen
+				}
+				if(cancelPaymentPressed) {
+					PromptForPaymentType(); //return to payment type prompt
+					return;
+				}
+			}
+			//debit or credit
+			cardType = identifyCardType(cardNo);
+
+			//pin # if debit
+			if (cardType == 0) {
+				while (!isValidPin) {
+					System.out.println("Input the pin");
+					System.out.println("(Note: In lieu of actual devices, precede input");
+					System.out.println(" with 'pin ' to simulate inputting a pin)");
+					System.out.println();
+
+					try {
+						simulateMultipleDevices();
+
+						if (pinpadInput != 0) {
+							isValidPin = checkPinValidity(pinpadInput);
+							if (isValidPin) {
+								pin = pinpadInput;
+							}
+
+							pinpadInput = 0;
+						}
+
+						//screen input happened
+						if(screenInput != 0) {
+							switch(screenInput) {
+								case 1: //cancel checkout pressed
+									cancelCheckoutPressed = true;
+									break;
+								case 2: //cancel payment pressed
+									cancelPaymentPressed = true;
+									break;
+								default:
+									break;
+							}
+							screenInput = 0;
+						}
+					} catch (Exception e) {
+						System.out.println(e);
+					}
+				}
+			}
+
+			//send to auth
+			authNo = SendAuthorizationRequest(cardType, cardNo, pin);
+
+		//Assumption: auth. number of 0 means the card was declined
+		} while (authNo == 0);
+
+		//print receipt
+
 	}
 
 	private void PayByCashScreen() {
