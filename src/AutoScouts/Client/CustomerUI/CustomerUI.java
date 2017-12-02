@@ -560,7 +560,9 @@ public class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 				System.out.println(msg);
 				cr.ejectCard();
 				sleep(4000);
+				authResult = 0;
 				PayByCardScreen();
+				return;
 			}
 			if(cancelCheckoutPressed) {
 				return; //return to the welcome screen
