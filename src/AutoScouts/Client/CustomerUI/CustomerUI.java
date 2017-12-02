@@ -721,7 +721,7 @@ public class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 		while(!cancelCheckoutPressed && !cancelPaymentPressed && !cashSufficient) {
 			clearScreen();
 			double amtdue = co.getTotal() - cashValueInserted;
-			if(amtdue < 0.01) {
+			if(amtdue > 0.01) {
 				System.out.println("Insert cash now.");
 				System.out.println("(Note: In lieu of actual devices, precede input");
 				System.out.println(" with 'bill ' to simulate inputting a bill or");
