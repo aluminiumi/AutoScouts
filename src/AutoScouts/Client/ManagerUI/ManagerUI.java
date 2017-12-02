@@ -286,6 +286,7 @@ public class ManagerUI extends ApplicationLayerClient {
 		int option = 0;
 		try {
 			option = Integer.parseInt(command);
+		} catch (NoSuchElementException e) {
 		} catch (Exception e) {
 			System.out.println(e);
 			return;
