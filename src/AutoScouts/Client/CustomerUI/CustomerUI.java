@@ -279,20 +279,23 @@ public class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 		return 1; //error
 	}
 
-  //Assumption: card type can be deduced from the card #
+  	//Assumption: card type can be deduced from the card #
+	//first digit of card < 5 is debit
+	//first digit of card >= 5 is credit
 	//0 represents debit cards, 1 credit.
 	private int identifyCardType(long card) {
-		//TODO: implement
-		return 0;
+		int firstdigit = Math.floor(card / Math.pow(10, 16));
+		if(firstdigit < 5) //debit
+			return 0;
+		return 1; //credit
 	}
 
+	//private boolean checkPinValidity(int pin) {
+	//	return pin < 10000;
+	//}
+  
 	//Assumption: the pin must be 4 digits and pins padded with 0's are represented by int without the 0's,
 	//eg. if PIN inputted was "0037", pin variable will be integer "37".
-	private boolean checkPinValidity(int pin) {
-		return pin < 10000;
-	}
-  
-  //like above but checks for negative
 	private int processPinInput(int input) {
 		if(input >= 0 && input <= 9999) { //ensure 4-digit PIN
 			return 0;
@@ -362,8 +365,12 @@ public class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 
 	//Assumtion: Every cards has 16 digits and card # padded with 0's are represented by int without the 0's
 	//eg. if card Number was "0000 0012 3456 7890", the card variable will be long "1234567890"
-	private boolean checkCardValidity(long card) {
-		return card < 10000000000000000;
+	private boolean cardIsValid(long card) {
+		int firstdigit = Math.floor(card / Math.pow(10, 16));
+		if(firstdigit != 0) 
+			return (card < 10000000000000000 && card > 999999999999999);
+		else
+			return (card < 10000000000000000);
 	}
 
   /*
@@ -380,7 +387,7 @@ public class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 		int cardType = -1;
 		int authNo = -1;
 
-		double total = go.getTotal();
+		double total = co.getSubtotal();
 
 		do {
 
@@ -504,20 +511,27 @@ public class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 			cardno = 0;
 		}
 		if(cardno != 0) { //card was swiped/inserted
-			int pin;
-			if(isDebit()) {
-				pin = PromptForPin();
-				if(pin == -1) { //cancel checkout pressed
-					cancelCheckoutPressed = true;
-				} else if(pin == -2) { //cancel payment pressed
-					cancelPaymentPressed = true;
-				} else {
+			if(cardIsValid(cardno)) {
+				int pin;
+				int cardtype = identifyCardType(cardno);
+				if(cardtype == 0 && isDebit()) {
+					pin = PromptForPin();
+					if(pin == -1) { //cancel checkout pressed
+						cancelCheckoutPressed = true;
+					} else if(pin == -2) { //cancel payment pressed
+						cancelPaymentPressed = true;
+					} else {
+						System.out.println("Authorizing...");
+						authDebit(cardno, pin); //expect result in authResult
+					}
+				} else { //credit, not debit
 					System.out.println("Authorizing...");
-					authDebit(cardno, pin); //expect result in authResult
+					authCredit(cardno); //expect result in authResult
 				}
-			} else { //credit, not debit
-				System.out.println("Authorizing...");
-				authCredit(cardno); //expect result in authResult
+			} else {
+				System.out.println("Card not valid. Must by 16 digits");
+				PromptForPaymentType();
+				return;
 			}
 		}
 		for(int x=0; x<60; x++) {
