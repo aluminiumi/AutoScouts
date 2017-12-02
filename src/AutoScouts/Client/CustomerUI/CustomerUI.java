@@ -368,7 +368,7 @@ public class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 	private boolean cardIsValid(long card) {
 		int firstdigit = (int)Math.floor(card / Math.pow(10, 16));
 		if(firstdigit != 0) 
-			return (card < 10000000000000000L && card > 999999999999999L);
+			return (card < 10000000000000000L || card > 999999999999999L);
 		else
 			return (card < 10000000000000000L);
 	}
