@@ -322,13 +322,14 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 		return 0;
 	}
 
+	//Assumption: the pin must be 4 digits and pins padded with 0's will already be removed,
+	//eg. if PIN inputted was "0037", pin variable will be integer representing 37.
 	private boolean checkPinValidity(int pin) {
-		//TODO: implement
-		return true;
+		return pin < 10000;
 	}
 
-	private int SendAuthorizationRequest(int cardType, int cardNo, int pin) {
-		//TODO: implement
+	private int SendAuthorizationRequest(int cost, int cardType, int cardNo, int pin) {
+		
 		return 1;
 	}
 
@@ -344,6 +345,8 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 		int pin = -1;
 		int cardType = -1;
 		int authNo = -1;
+
+		double total = go.getTotal();
 
 		do {
 
@@ -434,13 +437,13 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 			}
 
 			//send to auth
-			authNo = SendAuthorizationRequest(cardType, cardNo, pin);
+			authNo = SendAuthorizationRequest(total, cardType, cardNo, pin);
 
 		//Assumption: auth. number of 0 means the card was declined
 		} while (authNo == 0);
 
 		//print receipt
-
+		rp.print(String.format("%s\%s", cardNo % 1000, authNo % 1000));
 	}
 
 	private void PayByCashScreen() {
