@@ -370,11 +370,11 @@ public class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 	//Assumtion: Every cards has 16 digits and card # padded with 0's are represented by int without the 0's
 	//eg. if card Number was "0000 0012 3456 7890", the card variable will be long "1234567890"
 	private boolean cardIsValid(long card) {
-		int firstdigit = (int)Math.floor(card / Math.pow(10, 16));
-		if(firstdigit != 0) 
-			return !(card < 10000000000000000L || card > 999999999999999L);
-		else
-			return !(card < 10000000000000000L);
+		//int firstdigit = (int)Math.floor(card / Math.pow(10, 16));
+		if (card > 9999999999999999L) {
+			return false;
+		}
+		return true;
 	}
 
   /*

@@ -216,7 +216,8 @@ public class CommunicationManager implements Runnable {
 					long cardno = Long.parseLong(chunks[1]);
 					Double cost = Double.parseDouble(chunks[2]);
 					int result = auth.authorizeCard(cardno, cost);
-					out.println(interpretAuthResult(result));
+					String output = interpretAuthResult(result);
+					out.println(output);
 				} catch (Exception e) {
 					System.out.println("CommMan: authcredit: "+e);
 				}
