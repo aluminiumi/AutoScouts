@@ -1,6 +1,7 @@
 package AutoScouts;
 
 import java.util.Scanner;
+import java.util.NoSuchElementException;
 
 public class RestockerUI extends ApplicationLayerClient implements ScannerHost {
 	Scanner kbd;
