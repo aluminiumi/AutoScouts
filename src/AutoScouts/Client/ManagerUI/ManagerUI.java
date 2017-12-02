@@ -356,7 +356,11 @@ public class ManagerUI extends ApplicationLayerClient {
 
 		boolean workToDo = true;
 		while(workToDo) {
-			initialScreen();
+			try {
+				initialScreen();
+			} catch (Exception e) {
+				System.out.println("Go" + e);
+			}
 		}
 	}
 }
