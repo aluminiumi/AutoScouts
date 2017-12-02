@@ -245,12 +245,14 @@ public class RestockerUI extends ApplicationLayerClient implements ScannerHost {
 		System.out.println("------------");
 		System.out.println();
 		System.out.println("1. Restock");
+		System.out.println("2. Exit");
 		System.out.println();
 		System.out.print("Select menu option by number: ");
 		String command = kbd.nextLine();
 		int option = 0;
 		try {   
 			option = Integer.parseInt(command);
+		} catch (NoSuchElementException e) {
 		} catch (Exception e) {
 			System.out.println(e);
 			return;
@@ -258,6 +260,9 @@ public class RestockerUI extends ApplicationLayerClient implements ScannerHost {
 		switch(option) {
 			case 1: //Restock selected
 				PromptForScan();
+				break;
+			case 2: //Exit selected
+				System.exit(0);
 				break;
 			default:
 				System.out.println("Invalid option.");
