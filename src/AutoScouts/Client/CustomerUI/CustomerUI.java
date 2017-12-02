@@ -59,7 +59,11 @@ public class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 		co = new CustomerOrder();
 		boolean workToDo = true;
 		while(workToDo) {
-			initialScreen();
+			try {
+				initialScreen();
+			} catch (Exception e) {
+				System.out.println("Go" + e);
+			}
 		}
 	}
 
