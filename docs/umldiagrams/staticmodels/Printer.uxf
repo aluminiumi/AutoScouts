@@ -12,7 +12,7 @@
     <panel_attributes>&lt;&lt;abstract&gt;&gt;
 Printer
 --
-/+print(s: string): int/
+/+print(String): int/
 --
 Printer object sends signal
 to printer to print, and
@@ -89,10 +89,12 @@ Print reports for manager</panel_attributes>
       <x>220</x>
       <y>340</y>
       <w>220</w>
-      <h>70</h>
+      <h>100</h>
     </coordinates>
     <panel_attributes>&lt;&lt;output device interface&gt;&gt;
 ReceiptPrinter
+--
+#print(CustomerOrder): int
 --
 Prints receipt for customer</panel_attributes>
     <additional_attributes/>

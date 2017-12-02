@@ -4,10 +4,21 @@ import java.util.Scanner;
 
 class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 	private CustomerOrder co;
-	BarCodeScanner bs;
-	Scanner kbd;
-	int scannerInput;
-	int screenInput;
+	private ReceiptPrinter rp;
+	private CashDispenser cd;
+	private BarCodeScanner bs;
+	private PinPad pp;
+	private CardReader cr;
+	private CoinAcceptor ca;
+	private BillAcceptor ba;
+	private Scanner kbd;
+	private int screenInput;
+	private int barcodeInput;
+	private int billInput;
+	private int coinInput;
+	private int cardInput;
+	private int pinpadInput;
+	private double cashValueInserted = 0;
 
 	public static void main(String args[]) {
 		System.out.println("CustomerUI");
@@ -36,7 +47,13 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 
 	private void go() {
 		//setQuietMode(true);
+		rp = new ReceiptPrinter();
+		cd = new CashDispenser();
 		bs = new BarCodeScanner(this);
+		pp = new PinPad(this);
+		cr = new CardReader(this);
+		ca = new CoinAcceptor(this);
+		ba = new BillAcceptor(this);
 		kbd = new Scanner(System.in);
 		co = new CustomerOrder();
 		boolean workToDo = true;
@@ -46,14 +63,16 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 	}
 
 	private void clearScreen() {
-		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"+
-					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"+
-					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"+
-					"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+		System.out.println(
+			"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"+
+			"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"+
+			"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"+
+			"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 	}
 
 	private void initialScreen() {
 		targetItem = null;
+		cashValueInserted = 0;
 		co = new CustomerOrder();
 		clearScreen();
 		System.out.println("Welcome!");
@@ -88,9 +107,24 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 		String input = kbd.nextLine();
 		if(input.startsWith("scan ")) {
 			String stripped = input.substring(input.indexOf("scan ")+5, input.length());
-			System.out.println(stripped);
 			bs.simulateBufferedScan(stripped); 
-			//expect result back in scannerInput
+			//expect result back in barcodeInput
+		} else if(input.startsWith("bill ")) {
+			String stripped = input.substring(input.indexOf("bill ")+5, input.length());
+			ba.simulateBufferedScan(stripped); 
+			//expect result back in billInput
+		} else if(input.startsWith("coin ")) {
+			String stripped = input.substring(input.indexOf("coin ")+5, input.length());
+			ca.simulateBufferedScan(stripped); 
+			//expect result back in coinInput
+		} else if(input.startsWith("card ")) {
+			String stripped = input.substring(input.indexOf("card ")+5, input.length());
+			cr.simulateBufferedScan(stripped); 
+			//expect result back in cardInput
+		} else if(input.startsWith("pin ")) {
+			String stripped = input.substring(input.indexOf("pin ")+4, input.length());
+			pp.simulateBufferedScan(stripped); 
+			//expect result back in pinpadInput
 		} else {
 			screenInput = Integer.parseInt(input);
 		}
@@ -127,12 +161,12 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 				simulateMultipleDevices(); //necessary when physical barcode scanner absent
 
 				//check for barcode scanner input
-				if(scannerInput != 0) { //scanner input happened
-					if(processBarcodeScannedInput(scannerInput) != 0) {
+				if(barcodeInput != 0) { //scanner input happened
+					if(processBarcodeScannedInput(barcodeInput) != 0) {
 						//error happened
 						specialMessage = "Unrecognized item. See store associate.\n";
 					}
-					scannerInput = 0;
+					barcodeInput = 0;
 				}
 				//check for button/key presses
 				if(screenInput != 0) { //screen input happened
@@ -146,6 +180,8 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 						case 3: //total pressed
 							totalPressed = true;
 							break;
+						default:
+							break;
 					}
 					screenInput = 0;
 				}
@@ -157,7 +193,6 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 		if(cancelPressed) { 
 			return; //return to the welcome screen
 		} else if(totalPressed) {
-			PrintSubtotal();
 			PromptForPaymentType();
 		}
 
@@ -165,13 +200,74 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 
 	//This method is called by PromptToScan() every time a product is 
 	//scanned by the barcode scanner
-	private int processBarcodeScannedInput(int scannerInput) {
-		if(itemExists(scannerInput)) {
+	private int processBarcodeScannedInput(int input) {
+		if(itemExists(input)) {
 			co.add(targetItem);
 			return 0;
 		} else {
 			return 1; //flag error to caller
 		}
+	}
+
+	//This method is called by PromptToScan() every time a product is 
+	//scanned by the barcode scanner
+	private int processCoinInput(int input) {
+		switch(input) {
+			case 1:
+				cd.addPenny();
+				cashValueInserted+=.01;
+				break;
+			case 5:
+				cd.addNickel();
+				cashValueInserted+=.05;
+				break;
+			case 10:
+				cd.addDime();
+				cashValueInserted+=.1;
+				break;
+			case 25:
+				cd.addQuarter();
+				cashValueInserted+=.25;
+				break;
+			default:
+				return 1; //flag error to caller
+		}
+		return 0;
+	}
+
+	//This method is called by PromptToScan() every time a product is 
+	//scanned by the barcode scanner
+	private int processBillInput(int input) {
+		switch(input) {
+			case 1:
+				cd.addOne();
+				cashValueInserted+=1;
+				break;
+			case 5:
+				cd.addFive();
+				cashValueInserted+=5;
+				break;
+			case 10:
+				cd.addTen();
+				cashValueInserted+=10;
+				break;
+			case 20:
+				cd.addTwenty();
+				cashValueInserted+=20;
+				break;
+			case 50:
+				cd.addFifty();
+				cashValueInserted+=50;
+				break;
+			case 100:
+				cd.addHundred();
+				cashValueInserted+=100;
+				break;
+			default:
+				return 1; //flag error to caller
+		}
+		return 0;
+	
 	}
 
 	private void PrintSubtotal() {
@@ -186,13 +282,14 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 	}
 
 	private void PromptForPaymentType() {
-		//TODO: implement
+		clearScreen();
+		PrintSubtotal();
 		System.out.println("Select a payment method.");
 		printMenu(1);
 		int input;
 		try {
-			String input = kbd.nextLine();
-			input = Integer.parseInt(input);
+			String kbdinput = kbd.nextLine();
+			input = Integer.parseInt(kbdinput);
 		} catch (Exception e) {
 			System.out.println(e);
 			PromptForPaymentType();
@@ -220,7 +317,105 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 
 	private void PayByCashScreen() {
 		//TODO: implement
-		printMenu(2);
+		boolean cancelCheckoutPressed = false;
+		boolean cancelPaymentPressed = false;
+		boolean cashSufficient = false;
+		String specialMessage = "";
+		while(!cancelCheckoutPressed && !cancelPaymentPressed && !cashSufficient) {
+			clearScreen();
+			if(cashValueInserted < co.getTotal()) {
+				System.out.println("Insert cash now.");
+				System.out.println("(Note: In lieu of actual devices, precede input");
+				System.out.println(" with 'bill ' to simulate inputting a bill or");
+				System.out.println(" with 'coin ' to simulate inputting a coin.)");
+				System.out.println("(Valid values for bills: 1, 5, 10, 20, 50, 100)");
+				System.out.println("(Valid values for coins: 1, 5, 10, 25)");
+				System.out.println();
+				PrintSubtotal();
+				System.out.println();
+				System.out.println("Amount inserted: "+String.format("%1$,.2f",cashValueInserted));
+				System.out.println("Amount remaining: "+String.format("%1$,.2f",co.getTotal()-cashValueInserted));
+				System.out.println();
+				if(!(specialMessage == null) && !specialMessage.equals("")) {
+					System.out.println(specialMessage);
+					specialMessage = "";
+				}
+				printMenu(2);
+				try {
+					simulateMultipleDevices(); //necessary when physical barcode scanner absent
+	
+					//check for bill scanner input
+					if(billInput != 0) { //bill inserted
+						if(processBillInput(billInput) != 0) {
+							//error happened
+							specialMessage = "Unrecognized bill..\n";
+						}
+						billInput = 0;
+					}
+	
+					//check for coin scanner input
+					if(coinInput != 0) { //coin inserted
+						if(processCoinInput(coinInput) != 0) {
+							//error happened
+							specialMessage = "Unrecognized coin.\n";
+						}
+						coinInput = 0;
+					}
+	
+					//check for button/key presses
+					if(screenInput != 0) { //screen input happened
+						switch(screenInput) {
+							case 1: //cancel checkout pressed
+								cancelCheckoutPressed = true;
+								break;
+							case 2: //subtotal pressed
+								cancelPaymentPressed = true;
+								break;
+							default:
+								break;
+						}
+						screenInput = 0;
+					}
+					Thread.sleep(150);
+				} catch (Exception e) {
+					System.out.println(e);
+				}
+			} else {
+				cashSufficient = true;
+			}
+		}
+		if(cancelCheckoutPressed) { 
+			return; //return to the welcome screen
+		}
+		if(cancelPaymentPressed) {
+			PromptForPaymentType(); //return to payment type prompt
+			return;
+		}
+		if(cashSufficient) {
+			clearScreen();
+			try {
+				if(cashValueInserted > co.getTotal()) { //dispense change
+					System.out.println("Change is being dispensed...");
+					if(cd.dispense(cashValueInserted-co.getTotal()) != 0) {
+						System.out.println("Unable to make change. See store associate.");
+						Thread.sleep(5000);
+					}
+				}
+				System.out.println("Printing receipt...");
+				Thread.sleep(2000);
+				rp.print(co); //print receipt
+
+				Thread.sleep(11000);
+				clearScreen();
+				System.out.println("Please take your receipt.");
+				Thread.sleep(7000);
+				ReportToTransManager();
+				
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+			return; //return to welcome screen
+		}
 	}
 
 	/*
@@ -263,17 +458,6 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 				System.out.println("Unexpected response from server.");
 		}
 	}*/
-/*
-	protected void send(String message) {
-		if(message.startsWith("getitem "))
-			expectingItem = true;
-		super.send(message);
-	}
-*/
-	private void ScanItem(int i) {
-		send("getitem "+i);
-		expectingItem = true;
-	}
 
 	public void ReportToTransManager() {
 		for(InventoryItem item : co.getOrder()) {
@@ -281,11 +465,28 @@ class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 		}
 	}
 
-	//satisfies ScannerHost interface
-	//buffers inputs from physical scanner device
-	//useful when multiple input devices are present
-	public void receiveBufferedScan(int in) {
-		scannerInput = in;
-		//System.out.println("Scanned: "+in);
+	//Satisfies ScannerHost interface
+	//Buffers inputs from physical scanner devices
+	//Useful when multiple input devices are present
+	public void receiveBufferedScan(String device, int in) {
+		switch(device) {
+			case "barcode":
+				barcodeInput = in;
+				break;
+			case "bill":
+				billInput = in;
+				break;
+			case "coin":
+				coinInput = in;
+				break;
+			case "card":
+				cardInput = in;
+				break;
+			case "pinpad":
+				pinpadInput = in;
+				break;
+			default:
+				break;
+		}
 	}
 }
