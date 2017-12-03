@@ -69,9 +69,9 @@ _:CustomerUI_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>306</x>
+      <x>312</x>
       <y>282</y>
-      <w>180</w>
+      <w>168</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -79,7 +79,7 @@ _:CustomerUI_
 
 C14B.1: Customer selects PAY BY CASH
 </panel_attributes>
-    <additional_attributes>170.0;20.0;120.0;20.0</additional_attributes>
+    <additional_attributes>160.0;20.0;110.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -282,9 +282,9 @@ _:TransactionManager_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>336</x>
+      <x>342</x>
       <y>216</y>
-      <w>120</w>
+      <w>108</w>
       <h>66</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -294,7 +294,7 @@ C14B.2: Prompt for cash
 
 C14B.7: Dispense change
 </panel_attributes>
-    <additional_attributes>70.0;20.0;120.0;20.0</additional_attributes>
+    <additional_attributes>60.0;20.0;110.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -379,7 +379,7 @@ amount recieved to CustomerUI</panel_attributes>
     <coordinates>
       <x>264</x>
       <y>324</y>
-      <w>144</w>
+      <w>132</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -394,7 +394,7 @@ amount recieved to CustomerUI</panel_attributes>
     <coordinates>
       <x>234</x>
       <y>432</y>
-      <w>150</w>
+      <w>132</w>
       <h>78</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -409,7 +409,7 @@ C14B.5: Customer inserts coins
     <coordinates>
       <x>576</x>
       <y>456</y>
-      <w>96</w>
+      <w>90</w>
       <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -422,9 +422,9 @@ C14B.6: Coin value
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>462</x>
+      <x>468</x>
       <y>354</y>
-      <w>84</w>
+      <w>72</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -432,7 +432,7 @@ C14B.6: Coin value
 
 C14B.4: Bill value
 </panel_attributes>
-    <additional_attributes>90.0;10.0;40.0;40.0</additional_attributes>
+    <additional_attributes>80.0;10.0;30.0;40.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -445,7 +445,7 @@ C14B.4: Bill value
     <panel_attributes>lt=&lt;-
 
 
-C14B.8: Item IDs sold
+C14B.9: Item IDs sold
 </panel_attributes>
     <additional_attributes>100.0;20.0;50.0;20.0</additional_attributes>
   </element>
@@ -454,13 +454,13 @@ C14B.8: Item IDs sold
     <coordinates>
       <x>804</x>
       <y>342</y>
-      <w>108</w>
+      <w>102</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-C14B.8: Item IDs sold
+C14B.10: Item IDs sold
 </panel_attributes>
     <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
   </element>
@@ -469,30 +469,30 @@ C14B.8: Item IDs sold
     <coordinates>
       <x>1062</x>
       <y>330</y>
-      <w>132</w>
+      <w>114</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-C14B.10: Deduct inventory
+C14B.12: Deduct inventory
 </panel_attributes>
     <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1122</x>
+      <x>1128</x>
       <y>282</y>
-      <w>126</w>
+      <w>114</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-C14B.11: Deduct inventory
+C14B.13: Deduct inventory
 </panel_attributes>
-    <additional_attributes>130.0;20.0;70.0;20.0</additional_attributes>
+    <additional_attributes>120.0;20.0;60.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -522,16 +522,28 @@ _:TransactionLog_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1128</x>
+      <x>1134</x>
       <y>414</y>
-      <w>114</w>
+      <w>102</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-C14B.9: Log transaction
+C14B.11: Log transaction
 </panel_attributes>
-    <additional_attributes>120.0;20.0;60.0;20.0</additional_attributes>
+    <additional_attributes>110.0;20.0;50.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>624</x>
+      <y>342</y>
+      <w>96</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+  C14B.8: Receipt info</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
