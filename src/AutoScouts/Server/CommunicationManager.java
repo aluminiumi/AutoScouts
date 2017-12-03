@@ -217,6 +217,7 @@ public class CommunicationManager implements Runnable {
 					Double cost = Double.parseDouble(chunks[2]);
 					int result = auth.authorizeCard(cardno, cost);
 					String output = interpretAuthResult(result);
+					System.out.println(output);
 					out.println(output);
 				} catch (Exception e) {
 					System.out.println("CommMan: authcredit: "+e);
