@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"AutoScouts"},{"l":"AutoScouts.Client"},{"l":"AutoScouts.Client.CustomerUI"},{"l":"AutoScouts.Client.ManagerUI"},{"l":"AutoScouts.Client.RestockerUI"},{"l":"AutoScouts.Server"},{"l":"AutoScouts.Server.InventoryManager"}]

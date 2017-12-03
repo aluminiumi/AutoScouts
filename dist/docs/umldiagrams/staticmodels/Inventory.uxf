@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>49</x>
+      <y>56</y>
+      <w>308</w>
+      <h>231</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;application logic&gt;&gt;
+InventoryManager
+--
+-inventory: List&lt;InventoryItem&gt;
+-inventoryLevels: List&lt;StockingLevel&gt;
+-imr: InventoryMessageReport
+--
+#getInventoryItem(int): InventoryItem
+#getInventoryMessageReport(): inventoryMessageReport
+#resetInventoryMessageReport(): void
+#decrementItemQty(int): void
+#incrementItemQty(int, int): void
+#setItemName(int, String): void
+#setItemQty(int, int): void
+#setItemThresh(int, int): void
+#setItemPrice(int, float): void
+#setItemDiscount(int, float): void
+#createItem(int, String, float, float, int, int): InventoryItem
+--
+Keeps track of the items carried by the store, how many
+of each have been sold, and how many of each remain.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>833</x>
+      <y>126</y>
+      <w>168</w>
+      <h>308</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;database wrapper&gt;&gt;
+InventoryItem
+--
+-id: int
+-name: String
+-price: float
+-discount: float
+-qty: int
+-msgThresh: int
+--
+#getId(): int
+#getName(): String
+#getPrice(): float
+#getPriceWithDiscount(): float
+#getDiscount(): float
+#getQty(): int
+#getMessageThresh(): int
+#setId(int): void
+#setName(String): void
+#setPrice(float): void
+#setDiscount(float): void
+#setQty(int): void
+#setMessageThresh(int): void
+#subtractQty(int): void
+#addQty(int): void
+--
+Describes an item
+carried by the store.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>56</x>
+      <y>343</y>
+      <w>168</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;entity&gt;&gt;
+InventoryMessageReport
+--
+-report: List&lt;InventoryMessage&gt;
+--
+#reset(): void
+#add(InventoryMessage): void
+--
+Denotes all items with low stock</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>119</x>
+      <y>280</y>
+      <w>56</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+sends v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>294</x>
+      <y>343</y>
+      <w>161</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;entity&gt;&gt;
+InventoryMessage
+--
+-itemId: int
+--
+#getId(): int
+--
+#reset(): void
+#add(InventoryMessage): void
+--
+Denotes all items with low stock</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>217</x>
+      <y>364</y>
+      <w>91</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..n
+contains &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>406</x>
+      <y>91</y>
+      <w>308</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+DBManager
+--
+#getInventoryItem(int): InventoryItem
+#updateItemQty(int, int): void
+#updateItemName(int, String): void
+#updateItemThresh(int, int): void
+#updateItemPrice(int, float): void
+#updateItemDiscount(int, float): void
+#createItem(int, String, float, float, int, int): InventoryItem
+--
+Executes SQL queries</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>483</x>
+      <y>287</y>
+      <w>210</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;entity&gt;&gt;
+ConnectionProvider
+--
+-con: Connection
+--
+#getCon(): Connection
+#setCredFile(String): void
+--
+Provides SQL Connection to DBManager</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>525</x>
+      <y>210</y>
+      <w>49</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+uses v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>168</y>
+      <w>70</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+uses &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;80.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>707</x>
+      <y>168</y>
+      <w>140</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..n
+provides &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;180.0;20.0</additional_attributes>
+  </element>
+</diagram>
