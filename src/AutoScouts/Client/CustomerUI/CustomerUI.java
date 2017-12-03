@@ -314,12 +314,16 @@ public class CustomerUI extends ApplicationLayerClient implements ScannerHost {
 			switch(chunks[2]) {
 				case "insuff":
 					authResult = -1;
+					break;
 				case "badpin":
 					authResult = -2;
+					break;
 				case "norecog":
 					authResult = -3;
+					break;
 				case "deactiv":
 					authResult = -4;
+					break;
 				
 			}
 		}
