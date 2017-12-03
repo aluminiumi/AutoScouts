@@ -1,7 +1,0 @@
-AutoScouts
-AutoScouts.Client
-AutoScouts.Client.CustomerUI
-AutoScouts.Client.ManagerUI
-AutoScouts.Client.RestockerUI
-AutoScouts.Server
-AutoScouts.Server.InventoryManager
