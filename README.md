@@ -1,15 +1,45 @@
 # AutoScouts
 Automated Supermarket Checkout System (Software Engineering Project)
 
+## Prerequisites
+Ensure that you have Apache Ant (bundled with many Java IDEs), and either MySQL or MariaDB installed.
+
+## Installation
+
+### To setup the database:
+
+#### From database shell:
+Within your database query shell (run 'mysql' to get this shell, or use your favorite graphical interface), run the sequence of queries contained in dist/sql/create_autoscouts.sql. You may do this from the command line shell with:
+
+	*source C:\Path to File\AutoScouts\dist\sql\create_autoscouts.sql*
+	or
+	*source /path/to/AutoScouts/dist/sql/create_autoscouts.sql*
+	
+The database login credentials are in the dist/dblogin.txt file. Either update this file to reflect your credentials to your database, or create a user with username "cs3365" and password "reedsgroup" that will connect to localhost on port 3306 to database autoscouts. The following SQL query will create the appropriate user:
+
+	*GRANT ALL PRIVILEGES ON autoscouts.* TO 'cs3365'@'localhost' IDENTIFIED BY 'reedsgroup';*
 
 ### To compile:
-$ *ant*
+From the command line, in either Linux or Windows, navigate to the directory where AutoScouts is saved and run:
+
+	*ant*
 
 ### To compile, generate JavaDocs, and create JAR file in dist folder:
-$ *ant dist*
+From the command line, in either Linux or Windows, navigate to the directory where AutoScouts is saved and run:
+
+	*ant dist*
+	
+Warning messages may be safely ignored.
 
 ### To run server, after dist:
-$ *java -jar dist/AutoScouts.jar*
+
+#### To run server from the command line:
+
+	*java -jar dist/AutoScouts.jar*
+
+#### To run server silently in the background from a graphical interface (Windows)
+
+	Double-click AutoScouts.jar
 
 The server (AutoScouts.jar) starts up on port 41114 by default, or increments until it finds a free port.
 
@@ -18,41 +48,29 @@ The server can be provided an optional argument to seek out a database credentia
 Example: $ *java -jar AutoScouts.jar /path/to/dblogin.txt*
 
 ### To run clients, after dist:
-$ *java -jar dist/RestockerUI.jar* 
 
-$ *java -jar dist/ManagerUI.jar*
+#### To run the Restocker client
+From the command line, run:
 
-$ *java -jar dist/CustomerUI.jar*
+	*java -jar dist/RestockerUI.jar* 
+
+#### To run the Manager client
+From the command line, run:
+
+	*java -jar dist/ManagerUI.jar*
+
+#### To run the Customer client
+From the command line, run:
+
+	*java -jar dist/CustomerUI.jar*
 
 The clients will attempt to connect to localhost on port 41114 by default, but can take an alternative address and port number as arguments.
 
-Example: $ *java -jar dist/CustomerUI.jar myserver.example.net 45678*
+Example: 
 
-### To clean up for proper push to GitHub:
-$ *ant clean*
+	*java -jar dist/CustomerUI.jar myserver.example.net 45678*
 
-----------------------------------INSTALLATION INSTRUCTIONS FOR WINDOWS----------------------------------
-
-Follow these instructions to install the AutoScouts system developed by Reed's Group to a Windows computer. If you find
-that you require more detailed instructions on how to complete a given step, Google and Stack Overflow are your friends.
-
-Step 1: Ensure you have Apache Ant (bundled with many Java IDEs) and either MySQL or MariaDB installed.
-
-Step 2: From the Windows command line, change directory into the AutoScouts directory and run the command "ant dist" (without
-the quotes). Ignore the many warning messages this generates.
-
-Step 3: Run your database's command prompt and enter "source [path to file]\create_autoscouts.sql" (without ANY quotes; for
-example, source C:\My Stuff\Autoscouts\dist\sql\create_autoscouts.sql).
-
-Step 4: The database login credentials are in the dblogin.txt file. Make sure you create a user with username "cs3365" and
-password "reedsgroup" that will connect to localhost on port 3306 to database autoscouts. Copy and paste the following line
-into the SQL command line once you are logged in: GRANT ALL PRIVILEGES ON autoscouts.* TO 'cs3365'@'localhost' IDENTIFIED BY 'reedsgroup';
-
-Step 5: Run the server by either: 
-	a) Navigating to the dist folder in Windows Explorer and double-clicking AutoScouts.jar (if you want it to run silently)
-	b) Navigating to the dist folder in your command prompt window and running the command "java -jar dist/AutoScouts.jar"
-	(without the quotes) (if you want to see the command-line output)
-	 
-Step 6: You are now running the AutoScouts system. You may run any of the three client interfaces by double-clicking on their
-icons in their folder or by running them from the command line the same way you run AutoScouts.jar.
-
+### To clean up for proper push to GitHub (developers only):
+From the command line, run:
+	
+	*ant clean*
