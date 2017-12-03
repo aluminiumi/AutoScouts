@@ -75,9 +75,9 @@ _:ReportPrinter_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>450</x>
+      <x>460</x>
       <y>320</y>
-      <w>120</w>
+      <w>100</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -85,7 +85,7 @@ _:ReportPrinter_
 
 T4: Print daily 
 report</panel_attributes>
-    <additional_attributes>90.0;20.0;20.0;20.0</additional_attributes>
+    <additional_attributes>80.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -117,7 +117,7 @@ _:CommunicationManager_
     <coordinates>
       <x>230</x>
       <y>400</y>
-      <w>110</w>
+      <w>100</w>
       <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -132,7 +132,7 @@ daily report
     <coordinates>
       <x>350</x>
       <y>410</y>
-      <w>110</w>
+      <w>100</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -163,7 +163,7 @@ daily report</panel_attributes>
     <panel_attributes>Use Case Name: Print Daily Report
 Summary: Daily Reports are provided periodically.
 They are sent to a printer for the manager.
-Actor: Timer
+Actor: CMTimer
 Precondition: The transaction log is stored.
 
 Description:

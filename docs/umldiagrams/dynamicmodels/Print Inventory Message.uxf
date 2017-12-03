@@ -76,9 +76,9 @@ _:ReportPrinter_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>460</x>
+      <x>470</x>
       <y>310</y>
-      <w>160</w>
+      <w>140</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -86,7 +86,7 @@ _:ReportPrinter_
 
 I4: Print 
 inventory message</panel_attributes>
-    <additional_attributes>110.0;20.0;40.0;20.0</additional_attributes>
+    <additional_attributes>100.0;20.0;30.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -134,7 +134,7 @@ message
     <coordinates>
       <x>370</x>
       <y>410</y>
-      <w>100</w>
+      <w>90</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -165,7 +165,7 @@ message</panel_attributes>
     </coordinates>
     <panel_attributes>Use Case Name:  Print Inventory Message 
 Summary:  Buffered inventory messages are printed periodically. 
-Actor:  Timer 
+Actor:  CMTimer 
 Precondition:  Inventory messages have been stored by system. 
 
 Description:   
