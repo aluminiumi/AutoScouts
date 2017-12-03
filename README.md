@@ -14,7 +14,7 @@ Within your database query shell (run 'mysql' to get this shell, or use your fav
 	source C:\Path to File\AutoScouts\dist\sql\create_autoscouts.sql
 or
 
-	*source /path/to/AutoScouts/dist/sql/create_autoscouts.sql
+	source /path/to/AutoScouts/dist/sql/create_autoscouts.sql
 	
 The database login credentials are in the dist/dblogin.txt file. Either update this file to reflect your credentials to your database, or create a user with username "cs3365" and password "reedsgroup" that will connect to localhost on port 3306 to database autoscouts. The following SQL query will create the appropriate user:
 
