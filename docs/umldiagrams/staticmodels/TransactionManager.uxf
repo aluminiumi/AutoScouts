@@ -37,7 +37,7 @@ _:TransactionLog_
 #add(Transaction): void
 #get(int): Transaction
 #getSize(): int
-#getTotalRevenue(): float
+#getTotalRevenue(): double
 #consolidateTransactions(): TransactionLog
 #getTransactionList(): List&lt;Transaction&gt;
 --
@@ -56,12 +56,12 @@ Daily list of all customer transactions.</panel_attributes>
 _:Transaction_
 --
 -item: int
--price: float
+-price: double
 -quantity: int
 --
 #getItem(): int
 #getQty(): int
-#getPrice(): float
+#getPrice(): double
 #incrementQty(int): void
 #addToPrice(float): void
 --

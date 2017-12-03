@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>56</x>
+      <x>49</x>
       <y>91</y>
       <w>308</w>
       <h>231</h>
@@ -24,9 +24,9 @@ _:InventoryManager_
 #setItemName(int, String): void
 #setItemQty(int, int): void
 #setItemThresh(int, int): void
-#setItemPrice(int, float): void
-#setItemDiscount(int, float): void
-#createItem(int, String, float, float, int, int): InventoryItem
+#setItemPrice(int, doublet): void
+#setItemDiscount(int, double): void
+#createItem(int, String, double, double, int, int): InventoryItem
 --
 Keeps track of the items carried by the store, how many
 of each have been sold, and how many of each remain.</panel_attributes>
@@ -35,7 +35,7 @@ of each have been sold, and how many of each remain.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>840</x>
+      <x>833</x>
       <y>161</y>
       <w>168</w>
       <h>308</h>
@@ -45,22 +45,22 @@ _:InventoryItem_
 --
 -id: int
 -name: String
--price: float
--discount: float
+-price: double
+-discount: double
 -qty: int
 -msgThresh: int
 --
 #getId(): int
 #getName(): String
-#getPrice(): float
-#getPriceWithDiscount(): float
-#getDiscount(): float
+#getPrice(): double
+#getPriceWithDiscount(): double
+#getDiscount(): double
 #getQty(): int
 #getMessageThresh(): int
 #setId(int): void
 #setName(String): void
-#setPrice(float): void
-#setDiscount(float): void
+#setPrice(double): void
+#setDiscount(double): void
 #setQty(int): void
 #setMessageThresh(int): void
 #subtractQty(int): void
@@ -92,16 +92,16 @@ Denotes all items with low stock</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>126</x>
+      <x>119</x>
       <y>315</y>
-      <w>56</w>
+      <w>63</w>
       <h>77</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=1
 sends v</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;20.0;90.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -140,7 +140,7 @@ contains &gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>413</x>
+      <x>406</x>
       <y>126</y>
       <w>308</w>
       <h>147</h>
@@ -153,9 +153,9 @@ _:DBManager_
 #updateItemQty(int, int): void
 #updateItemName(int, String): void
 #updateItemThresh(int, int): void
-#updateItemPrice(int, float): void
-#updateItemDiscount(int, float): void
-#createItem(int, String, float, float, int, int): InventoryItem
+#updateItemPrice(int, double): void
+#updateItemDiscount(int, double): void
+#createItem(int, String, double, double, int, int): InventoryItem
 --
 Executes SQL queries</panel_attributes>
     <additional_attributes/>
@@ -182,21 +182,21 @@ Provides SQL Connection to DBManager</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>532</x>
+      <x>525</x>
       <y>266</y>
-      <w>49</w>
+      <w>56</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=1
 uses v</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+    <additional_attributes>10.0;10.0;20.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>357</x>
+      <x>350</x>
       <y>203</y>
       <w>70</w>
       <h>35</h>
@@ -210,7 +210,7 @@ uses &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>714</x>
+      <x>707</x>
       <y>203</y>
       <w>140</w>
       <h>35</h>

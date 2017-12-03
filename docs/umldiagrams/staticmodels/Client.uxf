@@ -39,7 +39,7 @@ This class resides on the checkout station itself.</panel_attributes>
 _:CustomerOrder_
 --
 _-ClassAttribute: List&lt;InventoryItem&gt;_
--taxRate: float
+-taxRate: double
 --
 #add(InventoryItem): void
 #getItemAtIndex(i: int): InventoryItem
