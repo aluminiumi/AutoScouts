@@ -30,7 +30,7 @@ interfaces and manager classes</panel_attributes>
       <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;output device interface&gt;&gt;
-ReportPrinter
+_:ReportPrinter_
 --
 #print(string): int
 --
@@ -60,7 +60,7 @@ m2=1
       <h>170</h>
     </coordinates>
     <panel_attributes>&lt;&lt;control&gt;&gt;
-CMTimer
+_:CMTimer_
 --
 #PrintDailyReport(): void
 #PrintInventoryMessage(): void
@@ -95,7 +95,7 @@ m2=1
       <h>120</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
-AuthorizationCenterServiceInterface
+_:AuthorizationCenterServiceInterface_
 --
 #authorizeCard(cardNumber: long, pin: int, cost: double): int
 #authorizeCard(cardNumber: long, cost: double): int

@@ -10,7 +10,7 @@
       <h>231</h>
     </coordinates>
     <panel_attributes>&lt;&lt;application logic&gt;&gt;
-InventoryManager
+_:InventoryManager_
 --
 -imr: InventoryMessageReport
 --
@@ -41,7 +41,7 @@ of each have been sold, and how many of each remain.</panel_attributes>
       <h>308</h>
     </coordinates>
     <panel_attributes>&lt;&lt;database wrapper&gt;&gt;
-InventoryItem
+_:InventoryItem_
 --
 -id: int
 -name: String
@@ -79,7 +79,7 @@ carried by the store.</panel_attributes>
       <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;entity&gt;&gt;
-InventoryMessageReport
+_:InventoryMessageReport_
 --
 -report: List&lt;InventoryMessage&gt;
 --
@@ -112,7 +112,7 @@ sends v</panel_attributes>
       <h>105</h>
     </coordinates>
     <panel_attributes>&lt;&lt;entity&gt;&gt;
-InventoryMessage
+_:InventoryMessage_
 --
 -itemId: int
 --
@@ -146,7 +146,7 @@ contains &gt;</panel_attributes>
       <h>147</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
-DBManager
+_:DBManager_
 --
 #getDBdump(): String
 #getInventoryItem(int): InventoryItem
@@ -169,7 +169,7 @@ Executes SQL queries</panel_attributes>
       <h>98</h>
     </coordinates>
     <panel_attributes>&lt;&lt;entity&gt;&gt;
-ConnectionProvider
+_:ConnectionProvider_
 --
 #getCon(): Connection
 #readCredFile(String): boolean

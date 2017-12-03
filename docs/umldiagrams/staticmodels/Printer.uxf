@@ -4,13 +4,13 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>130</x>
+      <x>140</x>
       <y>60</y>
       <w>210</w>
       <h>140</h>
     </coordinates>
     <panel_attributes>&lt;&lt;abstract&gt;&gt;
-Printer
+_:Printer_
 --
 /+print(String): int/
 --
@@ -22,13 +22,13 @@ returns success/error code</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>250</x>
+      <x>260</x>
       <y>340</y>
       <w>280</w>
       <h>130</h>
     </coordinates>
     <panel_attributes>&lt;&lt;output device interface&gt;&gt;
-ReportPrinter
+_:ReportPrinter_
 --
 #print(TransactionLog): int
 #print(InventoryMessageReport): int
@@ -39,7 +39,7 @@ Print reports for manager</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>220</x>
+      <x>230</x>
       <y>190</y>
       <w>30</w>
       <h>110</h>
@@ -50,7 +50,7 @@ Print reports for manager</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>100</x>
+      <x>110</x>
       <y>260</y>
       <w>270</w>
       <h>40</h>
@@ -62,7 +62,7 @@ Print reports for manager</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>100</x>
+      <x>110</x>
       <y>270</y>
       <w>30</w>
       <h>90</h>
@@ -74,7 +74,7 @@ Print reports for manager</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>340</x>
+      <x>350</x>
       <y>270</y>
       <w>30</w>
       <h>90</h>
@@ -86,13 +86,13 @@ Print reports for manager</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
+      <x>10</x>
       <y>340</y>
       <w>240</w>
       <h>130</h>
     </coordinates>
     <panel_attributes>&lt;&lt;output device interface&gt;&gt;
-ReceiptPrinter
+_:ReceiptPrinter_
 --
 #print(CustomerOrder): int
 #print(CustomerOrder , int, int): int
