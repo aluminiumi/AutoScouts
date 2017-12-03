@@ -1,17 +1,17 @@
 package AutoScouts;
 
 public class CashDispenser {
-	int qtyOfPennies = 10;
-	int qtyOfNickels = 10;
-	int qtyOfDimes = 10;
-	int qtyOfQuarters = 10;
-	int qtyOfOnes = 10;
-	int qtyOfFives = 10;
-	int qtyOfTens = 10;
-	int qtyOfTwenties = 10;
-	int qtyOfFifties = 10;
-	int qtyOfHundreds = 10;
-	int dispenserDelay = 600;
+	private int qtyOfPennies = 10;
+	private int qtyOfNickels = 10;
+	private int qtyOfDimes = 10;
+	private int qtyOfQuarters = 10;
+	private int qtyOfOnes = 10;
+	private int qtyOfFives = 10;
+	private int qtyOfTens = 10;
+	private int qtyOfTwenties = 10;
+	private int qtyOfFifties = 10;
+	private int qtyOfHundreds = 10;
+	private int dispenserDelay = 600;
 
 	CashDispenser() {
 
