@@ -104,7 +104,7 @@ public class CommunicationManager implements Runnable {
 			case "printreports": //not used, just for debugging
 				PrintDailyReport();
 				PrintInventoryMessage();
-				out.println("Okay.");
+				//out.println("Okay.");
 				break;
 			case "getitem": //used by CustomerUI, RestockerUI, ManagerUI
 				try{
