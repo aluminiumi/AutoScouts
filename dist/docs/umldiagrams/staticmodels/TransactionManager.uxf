@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>20</y>
+      <w>320</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;application logic&gt;&gt;
+_:TransactionManager_
+--
+-transLog: TransactionLog
+--
+#processSaleOfItem(int): void
+#getDailyReport(): TransactionLog
+#resetDailyReport(): void
+--
+Generates and sends transaction reports.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>540</x>
+      <y>20</y>
+      <w>320</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;entity&gt;&gt;
+_:TransactionLog_
+--
+-transList: List&lt;Transaction&gt;
+--
+#add(Transaction): void
+#get(int): Transaction
+#getSize(): int
+#getTotalRevenue(): float
+#consolidateTransactions(): TransactionLog
+#getTransactionList(): List&lt;Transaction&gt;
+--
+Daily list of all customer transactions.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1080</x>
+      <y>20</y>
+      <w>220</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;entity&gt;&gt;
+_:Transaction_
+--
+-item: int
+-price: float
+-quantity: int
+--
+#getItem(): int
+#getQty(): int
+#getPrice(): float
+#incrementQty(int): void
+#addToPrice(float): void
+--
+Historic record of a customer
+transaction, including items
+purchased, their prices and 
+the quantity purchased.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>50</y>
+      <w>150</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+has &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>850</x>
+      <y>110</y>
+      <w>250</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=1
+contains &gt;
+</panel_attributes>
+    <additional_attributes>230.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+</diagram>

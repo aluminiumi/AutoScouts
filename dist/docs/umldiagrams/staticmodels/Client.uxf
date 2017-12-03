@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>5</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>385</x>
+      <y>270</y>
+      <w>220</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;user interface&gt;&gt;
+CustomerUI
+--
+-co: CustomerOrder
+-cardNumber: Long
+-pin: int
+--
+#CheckoutOrder(i: CustomerOrder): void
+#PromptToScan(): void
+#ScanItem(i: int): void
+#UpdateOrderDisplay(): void
+#PrintTotal(): void
+#PromptForPaymentType(): void
+#SelectPaymentType(): void
+#ShowSubtotal(): void
+#SendAuthorizationRequest()
+#NewScreen(): void
+#ReportToTransManager(): void
+--
+This class resides on the checkout station itself.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>190</x>
+      <y>285</y>
+      <w>145</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;entity&gt;&gt;
+CustomerOrder
+{Some Properties}
+--
+_-ClassAttribute: List&lt;InventoryItem&gt;_
+-taxRate: float
+--
+#add(InventoryItem): void
+#getItemAtIndex(i: int): InventoryItem
+#size(): int
+#getTaxTotal(): double
+#getSubtotal(): double
+#getTotal(): double
+#getOrder(): List&lt;InventoryItem&gt;
+--
+This class is a list of type InventoryItem
+whose contents are used throughout 
+CustomerUI for inventory management 
+and receipt printing. Reset for each 
+customer.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>310</y>
+      <w>65</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+&lt; uses</panel_attributes>
+    <additional_attributes>110.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>170</x>
+      <y>530</y>
+      <w>105</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;output device interface&gt;&gt;
+ReceiptPrinter
+--
+#print(CustomerOrder): int
+--
+Prints receipt for customer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>215</x>
+      <y>505</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-
+
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>445</x>
+      <y>530</y>
+      <w>110</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;input device interface&gt;&gt;
+CardReader
+--
+#ejectCard(): void
+--
+Reads credit card number</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>290</x>
+      <y>530</y>
+      <w>145</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;input device interface&gt;&gt;
+Coin Acceptor
+--
+Accepts and identifies coins and sends 
+amount recieved to CustomerUI</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>565</x>
+      <y>530</y>
+      <w>155</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;input device interface&gt;&gt;
+BillAcceptor
+--
+Accepts and identifies paper currency and 
+sends amount recieved to customerUI</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>735</x>
+      <y>530</y>
+      <w>105</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;input device interface&gt;&gt;
+PinPad
+--
+Accepts PIN from customer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>495</x>
+      <y>505</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>505</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>635</x>
+      <y>505</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>355</x>
+      <y>505</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-
+
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>885</x>
+      <y>505</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>270</y>
+      <w>165</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;user interface&gt;&gt;
+ManagerUI
+--
+#ViewOrUpdate(): void
+#displayInventoryItem(): boolean
+#updateInventoryItem(i: InventoryItem): void
+--
+This class interacts with the store manager
+actor and the CommunicationManager.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>835</x>
+      <y>270</y>
+      <w>145</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;user interface&gt;&gt;
+RestockerUI
+--
+#displayInventoryItem(int): boolean
+#PromptForScan(): void
+#UpdateQuantity(int, int): void
+#AddNewItem(i: InventoryItem): void
+--
+This class initiates the restock use
+case associated with the actor
+Restocker
+This class interacts with the rest of the
+system to fulfill the restock use case</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>865</x>
+      <y>530</y>
+      <w>145</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;input device interface&gt;&gt;
+BarCodeScanner
+--
+Reads bar codes from inventory items</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>930</x>
+      <y>385</y>
+      <w>35</w>
+      <h>155</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+has v</panel_attributes>
+    <additional_attributes>10.0;290.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>100</x>
+      <y>445</y>
+      <w>400</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+bg=black</panel_attributes>
+    <additional_attributes>780.0;10.0;780.0;130.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>445</x>
+      <y>500</y>
+      <w>455</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;890.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>5</y>
+      <w>155</w>
+      <h>115</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+Client
+--
+-destAddress: String
+-portNum: int
+-quietMode: boolean
+--
+#connect(): Thread
+#die(): void
+#setQuietMode(boolean): void
+/+send()/
+/+receive()/
+--
+This class handles clientside session to 
+CommunicationManager</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>710</x>
+      <y>230</y>
+      <w>15</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>245</y>
+      <w>450</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;50.0;10.0;20.0;880.0;20.0;880.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>140</y>
+      <w>155</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+ApplicationLayerClient
+--
+-targetItem: InventoryItem
+-expectingItem: boolean
+--
+#requestInventoryItem(int): void
+#itemExists(int): void
+--
+This class handles clientside session to 
+CommunicationManager</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>710</x>
+      <y>115</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>620</x>
+      <y>610</y>
+      <w>155</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;input device interface&gt;&gt;
+NumberReaderDevice
+--
+-reader: Scanner
+-caller: Object
+-devicename: String
+--
+#scan(): int
+#bufferedScan(): void
+#simulateBufferedScan(String): void
+--
+Reads numbers from physical devices</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>690</x>
+      <y>585</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>355</x>
+      <y>580</y>
+      <w>590</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>1160.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>15</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>15</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>930</x>
+      <y>565</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>565</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>635</x>
+      <y>565</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>495</x>
+      <y>570</y>
+      <w>15</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>355</x>
+      <y>565</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>55</x>
+      <y>530</y>
+      <w>105</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;output device interface&gt;&gt;
+CashDispenser
+--
+Keeps track of money held
+and dispenses as needed</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>100</x>
+      <y>505</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-
+
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+</diagram>
