@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>504</x>
-      <y>133</y>
+      <y>105</y>
       <w>140</w>
       <h>147</h>
     </coordinates>
@@ -19,7 +19,7 @@ _:CustomerUI_
     <id>UMLClass</id>
     <coordinates>
       <x>1022</x>
-      <y>350</y>
+      <y>322</y>
       <w>147</w>
       <h>77</h>
     </coordinates>
@@ -31,7 +31,7 @@ _:AuthorizationCenter_</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>672</x>
-      <y>392</y>
+      <y>364</y>
       <w>147</w>
       <h>35</h>
     </coordinates>
@@ -44,7 +44,7 @@ _:ManagerUI_
     <id>UMLClass</id>
     <coordinates>
       <x>847</x>
-      <y>392</y>
+      <y>364</y>
       <w>147</w>
       <h>35</h>
     </coordinates>
@@ -57,7 +57,7 @@ _:RestockerUI_
     <id>UMLClass</id>
     <coordinates>
       <x>483</x>
-      <y>532</y>
+      <y>504</y>
       <w>707</w>
       <h>63</h>
     </coordinates>
@@ -70,7 +70,7 @@ _:CommunicationManager_
     <id>UMLClass</id>
     <coordinates>
       <x>560</x>
-      <y>672</y>
+      <y>644</y>
       <w>147</w>
       <h>49</h>
     </coordinates>
@@ -83,7 +83,7 @@ _:InventoryManager_
     <id>UMLClass</id>
     <coordinates>
       <x>1036</x>
-      <y>672</y>
+      <y>644</y>
       <w>147</w>
       <h>49</h>
     </coordinates>
@@ -96,7 +96,7 @@ _:TransactionManager_
     <id>UMLClass</id>
     <coordinates>
       <x>714</x>
-      <y>616</y>
+      <y>588</y>
       <w>147</w>
       <h>49</h>
     </coordinates>
@@ -109,7 +109,7 @@ _:ReportPrinter_
     <id>UMLClass</id>
     <coordinates>
       <x>889</x>
-      <y>616</y>
+      <y>588</y>
       <w>147</w>
       <h>49</h>
     </coordinates>
@@ -122,12 +122,12 @@ _:CMTimer_
     <id>UMLClass</id>
     <coordinates>
       <x>672</x>
-      <y>105</y>
+      <y>77</y>
       <w>147</w>
       <h>28</h>
     </coordinates>
     <panel_attributes>&lt;&lt;output device interface&gt;&gt;
-ReceiptPrinter
+_:ReceiptPrinter_
 --
 Prints receipt for customer</panel_attributes>
     <additional_attributes/>
@@ -136,12 +136,12 @@ Prints receipt for customer</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>672</x>
-      <y>238</y>
+      <y>210</y>
       <w>147</w>
       <h>28</h>
     </coordinates>
     <panel_attributes>&lt;&lt;input device interface&gt;&gt;
-CardReader
+_:CardReader_
 --
 Reads credit card number</panel_attributes>
     <additional_attributes/>
@@ -150,12 +150,12 @@ Reads credit card number</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1001</x>
-      <y>105</y>
+      <y>77</y>
       <w>147</w>
       <h>28</h>
     </coordinates>
     <panel_attributes>&lt;&lt;input device interface&gt;&gt;
-PinPad
+_:PinPad_
 --
 Accepts PIN from customer</panel_attributes>
     <additional_attributes/>
@@ -164,12 +164,12 @@ Accepts PIN from customer</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>840</x>
-      <y>238</y>
+      <y>210</y>
       <w>147</w>
       <h>28</h>
     </coordinates>
     <panel_attributes>&lt;&lt;input device interface&gt;&gt;
-BillAcceptor
+_:BillAcceptor_
 --
 Accepts and identifies paper currency and 
 sends amount recieved to customerUI</panel_attributes>
@@ -179,12 +179,12 @@ sends amount recieved to customerUI</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1001</x>
-      <y>238</y>
+      <y>210</y>
       <w>147</w>
       <h>28</h>
     </coordinates>
     <panel_attributes>&lt;&lt;input device interface&gt;&gt;
-CoinAcceptor
+_:CoinAcceptor_
 --
 Accepts and identifies coins and sends 
 amount recieved to CustomerUI</panel_attributes>
@@ -194,12 +194,12 @@ amount recieved to CustomerUI</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>840</x>
-      <y>105</y>
+      <y>77</y>
       <w>147</w>
       <h>28</h>
     </coordinates>
     <panel_attributes>&lt;&lt;input device interface&gt;&gt;
-BarCodeScanner
+_:BarCodeScanner_
 --
 Reads ID barcodes from items 
 presented for purchase.</panel_attributes>
@@ -209,7 +209,7 @@ presented for purchase.</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>637</x>
-      <y>126</y>
+      <y>98</y>
       <w>119</w>
       <h>28</h>
     </coordinates>
@@ -221,67 +221,67 @@ presented for purchase.</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>637</x>
-      <y>126</y>
+      <y>98</y>
       <w>294</w>
-      <h>42</h>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=-
 </panel_attributes>
-    <additional_attributes>10.0;40.0;400.0;40.0;400.0;10.0</additional_attributes>
+    <additional_attributes>10.0;30.0;400.0;30.0;400.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>637</x>
-      <y>126</y>
+      <y>98</y>
       <w>448</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>lt=-
-</panel_attributes>
-    <additional_attributes>10.0;60.0;620.0;60.0;620.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>637</x>
-      <y>210</y>
-      <w>119</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>lt=-
 </panel_attributes>
-    <additional_attributes>10.0;20.0;150.0;20.0;150.0;40.0</additional_attributes>
+    <additional_attributes>10.0;40.0;620.0;40.0;620.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>637</x>
-      <y>196</y>
-      <w>301</w>
-      <h>56</h>
+      <y>189</y>
+      <w>119</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=-
 </panel_attributes>
-    <additional_attributes>10.0;20.0;410.0;20.0;410.0;60.0</additional_attributes>
+    <additional_attributes>10.0;20.0;150.0;20.0;150.0;30.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>637</x>
       <y>182</y>
-      <w>455</w>
-      <h>70</h>
+      <w>301</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>lt=-
 </panel_attributes>
-    <additional_attributes>10.0;20.0;630.0;20.0;630.0;80.0</additional_attributes>
+    <additional_attributes>10.0;20.0;410.0;20.0;410.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>637</x>
+      <y>175</y>
+      <w>455</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;20.0;630.0;20.0;630.0;50.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>497</x>
-      <y>63</y>
+      <y>35</y>
       <w>672</w>
       <h>224</h>
     </coordinates>
@@ -293,7 +293,7 @@ presented for purchase.</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>511</x>
-      <y>70</y>
+      <y>42</y>
       <w>133</w>
       <h>49</h>
     </coordinates>
@@ -306,7 +306,7 @@ style=wordwrap</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>658</x>
-      <y>350</y>
+      <y>322</y>
       <w>168</w>
       <h>91</h>
     </coordinates>
@@ -317,7 +317,7 @@ style=wordwrap</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>840</x>
-      <y>294</y>
+      <y>266</y>
       <w>161</w>
       <h>147</h>
     </coordinates>
@@ -327,20 +327,20 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1001</x>
-      <y>476</y>
-      <w>189</w>
+      <x>987</x>
+      <y>448</y>
+      <w>203</w>
       <h>35</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
-AuthorizationCenterServiceInterface</panel_attributes>
+_:AuthorizationCenterServiceInterface_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>560</x>
-      <y>273</y>
+      <y>245</y>
       <w>21</w>
       <h>273</h>
     </coordinates>
@@ -352,7 +352,7 @@ AuthorizationCenterServiceInterface</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>735</x>
-      <y>420</y>
+      <y>392</y>
       <w>21</w>
       <h>126</h>
     </coordinates>
@@ -364,7 +364,7 @@ AuthorizationCenterServiceInterface</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>910</x>
-      <y>420</y>
+      <y>392</y>
       <w>21</w>
       <h>126</h>
     </coordinates>
@@ -375,7 +375,7 @@ AuthorizationCenterServiceInterface</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1085</x>
-      <y>420</y>
+      <y>392</y>
       <w>21</w>
       <h>70</h>
     </coordinates>
@@ -386,7 +386,7 @@ AuthorizationCenterServiceInterface</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1085</x>
-      <y>504</y>
+      <y>476</y>
       <w>21</w>
       <h>42</h>
     </coordinates>
@@ -397,7 +397,7 @@ AuthorizationCenterServiceInterface</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>623</x>
-      <y>588</y>
+      <y>560</y>
       <w>21</w>
       <h>98</h>
     </coordinates>
@@ -408,7 +408,7 @@ AuthorizationCenterServiceInterface</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1099</x>
-      <y>588</y>
+      <y>560</y>
       <w>21</w>
       <h>98</h>
     </coordinates>
@@ -419,7 +419,7 @@ AuthorizationCenterServiceInterface</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>777</x>
-      <y>588</y>
+      <y>560</y>
       <w>21</w>
       <h>42</h>
     </coordinates>
@@ -430,7 +430,7 @@ AuthorizationCenterServiceInterface</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>952</x>
-      <y>588</y>
+      <y>560</y>
       <w>21</w>
       <h>42</h>
     </coordinates>
@@ -441,7 +441,7 @@ AuthorizationCenterServiceInterface</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>658</x>
-      <y>350</y>
+      <y>322</y>
       <w>112</w>
       <h>49</h>
     </coordinates>
@@ -455,7 +455,7 @@ style=wordwrap</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>840</x>
-      <y>301</y>
+      <y>273</y>
       <w>133</w>
       <h>49</h>
     </coordinates>
@@ -468,7 +468,7 @@ style=wordwrap</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>371</x>
-      <y>462</y>
+      <y>434</y>
       <w>833</w>
       <h>420</h>
     </coordinates>
@@ -479,7 +479,7 @@ style=wordwrap</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>406</x>
-      <y>469</y>
+      <y>441</y>
       <w>147</w>
       <h>49</h>
     </coordinates>
@@ -492,7 +492,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>700</x>
-      <y>686</y>
+      <y>658</y>
       <w>350</w>
       <h>28</h>
     </coordinates>
@@ -503,7 +503,7 @@ style=wordwrap</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>553</x>
-      <y>749</y>
+      <y>721</y>
       <w>147</w>
       <h>42</h>
     </coordinates>
@@ -516,7 +516,7 @@ _:DBManager_
     <id>Relation</id>
     <coordinates>
       <x>623</x>
-      <y>714</y>
+      <y>686</y>
       <w>21</w>
       <h>49</h>
     </coordinates>
@@ -527,7 +527,7 @@ _:DBManager_
     <id>UMLClass</id>
     <coordinates>
       <x>553</x>
-      <y>819</y>
+      <y>791</y>
       <w>147</w>
       <h>42</h>
     </coordinates>
@@ -540,7 +540,7 @@ _:ConnectionProvider_
     <id>UMLClass</id>
     <coordinates>
       <x>728</x>
-      <y>749</y>
+      <y>721</y>
       <w>161</w>
       <h>42</h>
     </coordinates>
@@ -552,7 +552,7 @@ _:InventoryItem_</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>693</x>
-      <y>756</y>
+      <y>728</y>
       <w>49</w>
       <h>28</h>
     </coordinates>
@@ -563,7 +563,7 @@ _:InventoryItem_</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>623</x>
-      <y>784</y>
+      <y>756</y>
       <w>21</w>
       <h>49</h>
     </coordinates>
@@ -574,7 +574,7 @@ _:InventoryItem_</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>777</x>
-      <y>28</y>
+      <y>0</y>
       <w>175</w>
       <h>42</h>
     </coordinates>
@@ -586,12 +586,12 @@ style=wordwrap</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>847</x>
-      <y>343</y>
+      <y>315</y>
       <w>147</w>
       <h>28</h>
     </coordinates>
     <panel_attributes>&lt;&lt;input device interface&gt;&gt;
-BarCodeScanner
+_:BarCodeScanner_
 --
 Reads ID barcodes from items 
 presented for purchase.</panel_attributes>
@@ -601,7 +601,7 @@ presented for purchase.</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>910</x>
-      <y>364</y>
+      <y>336</y>
       <w>21</w>
       <h>42</h>
     </coordinates>
@@ -612,7 +612,7 @@ presented for purchase.</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1099</x>
-      <y>714</y>
+      <y>686</y>
       <w>21</w>
       <h>35</h>
     </coordinates>
@@ -623,7 +623,7 @@ presented for purchase.</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1036</x>
-      <y>735</y>
+      <y>707</y>
       <w>147</w>
       <h>49</h>
     </coordinates>
@@ -636,7 +636,7 @@ _:TransactionLog_
     <id>Relation</id>
     <coordinates>
       <x>1099</x>
-      <y>777</y>
+      <y>749</y>
       <w>21</w>
       <h>35</h>
     </coordinates>
@@ -647,7 +647,7 @@ _:TransactionLog_
     <id>UMLClass</id>
     <coordinates>
       <x>1036</x>
-      <y>798</y>
+      <y>770</y>
       <w>147</w>
       <h>49</h>
     </coordinates>
@@ -660,7 +660,7 @@ _:Transaction_
     <id>UMLClass</id>
     <coordinates>
       <x>392</x>
-      <y>672</y>
+      <y>644</y>
       <w>147</w>
       <h>49</h>
     </coordinates>
@@ -673,7 +673,7 @@ _:InventoryMessageReport_
     <id>Relation</id>
     <coordinates>
       <x>532</x>
-      <y>679</y>
+      <y>651</y>
       <w>42</w>
       <h>28</h>
     </coordinates>
@@ -684,7 +684,7 @@ _:InventoryMessageReport_
     <id>UMLClass</id>
     <coordinates>
       <x>392</x>
-      <y>742</y>
+      <y>714</y>
       <w>126</w>
       <h>49</h>
     </coordinates>
@@ -697,11 +697,35 @@ _:InventoryMessage_
     <id>Relation</id>
     <coordinates>
       <x>455</x>
-      <y>714</y>
+      <y>686</y>
       <w>21</w>
       <h>42</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1008</x>
+      <y>140</y>
+      <w>140</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;output device interface&gt;&gt;
+_:CashDispenser_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>637</x>
+      <y>140</y>
+      <w>385</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;20.0;530.0;20.0</additional_attributes>
   </element>
 </diagram>
