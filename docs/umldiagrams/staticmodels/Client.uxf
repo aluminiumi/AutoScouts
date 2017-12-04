@@ -361,8 +361,8 @@ _:Client_
 #connect(): Thread
 #die(): void
 #setQuietMode(boolean): void
-/+send()/
-/+receive()/
+/+send()/ {abstract}
+/+receive()/ {abstract}
 --
 This class handles clientside session to 
 CommunicationManager</panel_attributes>
@@ -550,7 +550,7 @@ Reads numbers from physical devices</panel_attributes>
     <coordinates>
       <x>110</x>
       <y>1060</y>
-      <w>210</w>
+      <w>220</w>
       <h>280</h>
     </coordinates>
     <panel_attributes>&lt;&lt;output device interface&gt;&gt;
