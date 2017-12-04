@@ -120,9 +120,9 @@ _:InventoryManager_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>190</x>
+      <x>180</x>
       <y>200</y>
-      <w>140</w>
+      <w>160</w>
       <h>160</h>
     </coordinates>
     <panel_attributes>
@@ -135,7 +135,7 @@ M9: Item choice
 
 M17: Updated item
 details</panel_attributes>
-    <additional_attributes>100.0;20.0;30.0;20.0</additional_attributes>
+    <additional_attributes>110.0;20.0;40.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -148,7 +148,7 @@ details</panel_attributes>
     <panel_attributes>lt=&lt;-
 
 
-M8: Prompt for
+M8*: Prompt for
 item choice
 
 M16: Display details
@@ -162,9 +162,9 @@ updated details
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>690</x>
+      <x>680</x>
       <y>200</y>
-      <w>140</w>
+      <w>160</w>
       <h>130</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -175,14 +175,14 @@ M2: Retrieve item list
 M10: Item ID
 
 M18: Item update</panel_attributes>
-    <additional_attributes>110.0;20.0;20.0;20.0</additional_attributes>
+    <additional_attributes>120.0;20.0;30.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>870</x>
       <y>260</y>
-      <w>160</w>
+      <w>180</w>
       <h>150</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -201,7 +201,7 @@ M19: Item update
     <coordinates>
       <x>1050</x>
       <y>280</y>
-      <w>160</w>
+      <w>180</w>
       <h>100</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -215,9 +215,9 @@ M22: New details</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>700</x>
+      <x>690</x>
       <y>50</y>
-      <w>150</w>
+      <w>170</w>
       <h>130</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -228,7 +228,7 @@ M7: Return item list
 M15: Return item info
 
 M23: New details</panel_attributes>
-    <additional_attributes>30.0;20.0;110.0;20.0</additional_attributes>
+    <additional_attributes>40.0;20.0;120.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -248,7 +248,7 @@ _:DBManager_
     <coordinates>
       <x>860</x>
       <y>490</y>
-      <w>160</w>
+      <w>180</w>
       <h>150</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -279,7 +279,7 @@ M20: Item update
     <coordinates>
       <x>1050</x>
       <y>510</y>
-      <w>160</w>
+      <w>180</w>
       <h>100</h>
     </coordinates>
     <panel_attributes>lt=&lt;-

@@ -4,8 +4,8 @@
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>594</x>
-      <y>42</y>
+      <x>396</x>
+      <y>0</y>
       <w>288</w>
       <h>162</h>
     </coordinates>
@@ -32,8 +32,8 @@ Postcondition:  Payment has been made with cash.
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>516</x>
-      <y>234</y>
+      <x>318</x>
+      <y>192</y>
       <w>126</w>
       <h>102</h>
     </coordinates>
@@ -45,8 +45,8 @@ _:CustomerUI_
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>198</x>
-      <y>252</y>
+      <x>0</x>
+      <y>210</y>
       <w>54</w>
       <h>72</h>
     </coordinates>
@@ -57,8 +57,8 @@ _:CustomerUI_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>264</x>
-      <y>264</y>
+      <x>66</x>
+      <y>222</y>
       <w>264</w>
       <h>24</h>
     </coordinates>
@@ -69,23 +69,23 @@ _:CustomerUI_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>306</x>
-      <y>282</y>
+      <x>108</x>
+      <y>240</y>
       <w>180</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-C14B.1: Customer selects PAY BY CASH
+C16B.1: Customer selects PAY BY CASH
 </panel_attributes>
     <additional_attributes>170.0;20.0;120.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>348</x>
-      <y>54</y>
+      <x>150</x>
+      <y>12</y>
       <w>126</w>
       <h>54</h>
     </coordinates>
@@ -97,8 +97,8 @@ _:BarCodeScanner_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>468</x>
-      <y>72</y>
+      <x>270</x>
+      <y>30</y>
       <w>72</w>
       <h>174</h>
     </coordinates>
@@ -109,8 +109,8 @@ _:BarCodeScanner_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>606</x>
-      <y>402</y>
+      <x>408</x>
+      <y>360</y>
       <w>132</w>
       <h>42</h>
     </coordinates>
@@ -122,8 +122,8 @@ _:ReceiptPrinter_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>606</x>
-      <y>330</y>
+      <x>408</x>
+      <y>288</y>
       <w>18</w>
       <h>84</h>
     </coordinates>
@@ -134,8 +134,8 @@ _:ReceiptPrinter_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>246</x>
-      <y>72</y>
+      <x>48</x>
+      <y>30</y>
       <w>114</w>
       <h>174</h>
     </coordinates>
@@ -146,8 +146,8 @@ _:ReceiptPrinter_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>732</x>
-      <y>246</y>
+      <x>534</x>
+      <y>204</y>
       <w>120</w>
       <h>66</h>
     </coordinates>
@@ -159,8 +159,8 @@ _:CommunicationManager_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>978</x>
-      <y>246</y>
+      <x>780</x>
+      <y>204</y>
       <w>144</w>
       <h>72</h>
     </coordinates>
@@ -172,8 +172,8 @@ _:InventoryManager_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1242</x>
-      <y>258</y>
+      <x>1044</x>
+      <y>216</y>
       <w>120</w>
       <h>54</h>
     </coordinates>
@@ -185,8 +185,8 @@ _:DBManager_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>636</x>
-      <y>270</y>
+      <x>438</x>
+      <y>228</y>
       <w>108</w>
       <h>24</h>
     </coordinates>
@@ -197,8 +197,8 @@ _:DBManager_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>846</x>
-      <y>270</y>
+      <x>648</x>
+      <y>228</y>
       <w>144</w>
       <h>24</h>
     </coordinates>
@@ -209,8 +209,8 @@ _:DBManager_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1116</x>
-      <y>270</y>
+      <x>918</x>
+      <y>228</y>
       <w>138</w>
       <h>24</h>
     </coordinates>
@@ -221,8 +221,8 @@ _:DBManager_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>978</x>
-      <y>120</y>
+      <x>780</x>
+      <y>78</y>
       <w>144</w>
       <h>72</h>
     </coordinates>
@@ -234,8 +234,8 @@ _:InventoryMessageReport_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1044</x>
-      <y>186</y>
+      <x>846</x>
+      <y>144</y>
       <w>18</w>
       <h>72</h>
     </coordinates>
@@ -246,8 +246,8 @@ _:InventoryMessageReport_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1044</x>
-      <y>312</y>
+      <x>846</x>
+      <y>270</y>
       <w>18</w>
       <h>84</h>
     </coordinates>
@@ -258,8 +258,8 @@ _:InventoryMessageReport_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>978</x>
-      <y>384</y>
+      <x>780</x>
+      <y>342</y>
       <w>144</w>
       <h>72</h>
     </coordinates>
@@ -271,8 +271,8 @@ _:TransactionManager_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>786</x>
-      <y>306</y>
+      <x>588</x>
+      <y>264</y>
       <w>204</w>
       <h>120</h>
     </coordinates>
@@ -282,25 +282,25 @@ _:TransactionManager_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>336</x>
-      <y>216</y>
-      <w>120</w>
+      <x>84</x>
+      <y>174</y>
+      <w>228</w>
       <h>66</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-C14B.2: Prompt for cash
+C16B.2[moneyInserted&lt;totalCost]: Prompt for cash
 
-C14B.7: Dispense change
+C16B.11: Dispense change
 </panel_attributes>
-    <additional_attributes>70.0;20.0;120.0;20.0</additional_attributes>
+    <additional_attributes>160.0;20.0;210.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>270</x>
-      <y>372</y>
+      <x>72</x>
+      <y>330</y>
       <w>186</w>
       <h>48</h>
     </coordinates>
@@ -314,8 +314,8 @@ sends amount recieved to customerUI</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>306</x>
-      <y>498</y>
+      <x>102</x>
+      <y>576</y>
       <w>168</w>
       <h>48</h>
     </coordinates>
@@ -329,8 +329,8 @@ amount recieved to CustomerUI</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>246</x>
-      <y>312</y>
+      <x>48</x>
+      <y>270</y>
       <w>36</w>
       <h>84</h>
     </coordinates>
@@ -341,20 +341,20 @@ amount recieved to CustomerUI</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>222</x>
-      <y>318</y>
-      <w>96</w>
-      <h>228</h>
+      <x>24</x>
+      <y>276</y>
+      <w>90</w>
+      <h>348</h>
     </coordinates>
     <panel_attributes>lt=-
 </panel_attributes>
-    <additional_attributes>140.0;360.0;10.0;360.0;10.0;10.0</additional_attributes>
+    <additional_attributes>130.0;560.0;10.0;360.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>450</x>
-      <y>330</y>
+      <x>252</x>
+      <y>288</y>
       <w>84</w>
       <h>60</h>
     </coordinates>
@@ -365,140 +365,140 @@ amount recieved to CustomerUI</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>468</x>
-      <y>330</y>
-      <w>114</w>
-      <h>216</h>
+      <x>264</x>
+      <y>288</y>
+      <w>120</w>
+      <h>336</h>
     </coordinates>
     <panel_attributes>lt=-
 </panel_attributes>
-    <additional_attributes>170.0;10.0;170.0;340.0;10.0;340.0</additional_attributes>
+    <additional_attributes>180.0;10.0;180.0;340.0;10.0;540.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>264</x>
-      <y>324</y>
+      <x>66</x>
+      <y>282</y>
       <w>144</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-   C14B.3: Customer inserts bills
+   C16B.3: Customer inserts bills
 </panel_attributes>
     <additional_attributes>20.0;60.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>234</x>
-      <y>432</y>
+      <x>36</x>
+      <y>390</y>
       <w>150</w>
       <h>78</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-C14B.5: Customer inserts coins
+C16B.7: Customer inserts coins
 </panel_attributes>
     <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
-      <y>456</y>
-      <w>96</w>
+      <x>378</x>
+      <y>414</y>
+      <w>102</w>
       <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-C14B.6: Coin value
+C16B.10: Coin value
 </panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>462</x>
-      <y>354</y>
+      <x>264</x>
+      <y>312</y>
       <w>84</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-C14B.4: Bill value
+C16B.6: Bill value
 </panel_attributes>
     <additional_attributes>90.0;10.0;40.0;40.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>642</x>
-      <y>282</y>
-      <w>96</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-
-
-C14B.8: Item IDs sold
-</panel_attributes>
-    <additional_attributes>100.0;20.0;50.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>804</x>
-      <y>342</y>
+      <x>438</x>
+      <y>240</y>
       <w>108</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-C14B.8: Item IDs sold
+C16B.14: Item IDs sold
+</panel_attributes>
+    <additional_attributes>110.0;20.0;60.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>606</x>
+      <y>300</y>
+      <w>114</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+
+C16B.15: Item IDs sold
 </panel_attributes>
     <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1062</x>
-      <y>330</y>
+      <x>864</x>
+      <y>288</y>
       <w>132</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-C14B.10: Deduct inventory
+C16B.17: Deduct inventory
 </panel_attributes>
     <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1122</x>
-      <y>282</y>
+      <x>924</x>
+      <y>240</y>
       <w>126</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-C14B.11: Deduct inventory
+C16B.18: Deduct inventory
 </panel_attributes>
     <additional_attributes>130.0;20.0;70.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1242</x>
-      <y>384</y>
+      <x>1044</x>
+      <y>342</y>
       <w>120</w>
       <h>60</h>
     </coordinates>
@@ -510,8 +510,8 @@ _:TransactionLog_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1116</x>
-      <y>402</y>
+      <x>918</x>
+      <y>360</y>
       <w>138</w>
       <h>24</h>
     </coordinates>
@@ -522,16 +522,217 @@ _:TransactionLog_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1128</x>
-      <y>414</y>
+      <x>930</x>
+      <y>372</y>
       <w>114</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 
-C14B.9: Log transaction
+C16B.16: Log transaction
 </panel_attributes>
     <additional_attributes>120.0;20.0;60.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>186</x>
+      <y>504</y>
+      <w>132</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;external input device&gt;&gt;
+Bill Acceptor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>372</y>
+      <w>18</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;220.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>144</x>
+      <y>444</y>
+      <w>144</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;220.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>222</x>
+      <y>384</y>
+      <w>72</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+  C16B.4: Read</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>192</x>
+      <y>378</y>
+      <w>18</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>132</x>
+      <y>384</y>
+      <w>60</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes> C16B.5: Get input
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>156</x>
+      <y>756</y>
+      <w>132</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;external input device&gt;&gt;
+Coin Acceptor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>624</y>
+      <w>18</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;220.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>114</x>
+      <y>696</y>
+      <w>144</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;220.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>198</x>
+      <y>648</y>
+      <w>72</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+  C16B.8: Read</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>168</x>
+      <y>642</y>
+      <w>18</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>108</x>
+      <y>648</y>
+      <w>60</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes> C16B.9: Get input
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>492</x>
+      <y>396</y>
+      <w>18</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>438</y>
+      <w>102</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>432</x>
+      <y>462</y>
+      <w>126</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;external output device&gt;&gt;
+Printer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>408</y>
+      <w>78</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+
+C16B.13: Print</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>300</y>
+      <w>78</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+
+C16B.12: Print</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
