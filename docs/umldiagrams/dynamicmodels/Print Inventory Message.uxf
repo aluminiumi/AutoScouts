@@ -121,7 +121,7 @@ _:CommunicationManager_
       <w>100</w>
       <h>90</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=&lt;&lt;&lt;-
 
 I2: Prepare 
 inventory 
@@ -137,7 +137,7 @@ message
       <w>100</w>
       <h>80</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=&lt;.
 I3: Return 
 inventory 
 message</panel_attributes>
@@ -197,7 +197,7 @@ Postcondition:  Inventory messages have been printed</panel_attributes>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
-T5: Print daily report
+I5: Print daily report
 </panel_attributes>
     <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
   </element>
@@ -233,7 +233,7 @@ T5: Print daily report
       <h>100</h>
     </coordinates>
     <panel_attributes>&lt;&lt;external output device&gt;&gt;
-Printer</panel_attributes>
+_:PrinterDevice_</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

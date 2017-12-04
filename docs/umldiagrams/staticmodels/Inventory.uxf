@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>20</zoom_level>
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>0</y>
-      <w>880</w>
-      <h>660</h>
+      <x>342</x>
+      <y>90</y>
+      <w>264</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>&lt;&lt;application logic&gt;&gt;
 _:InventoryManager_
@@ -35,10 +35,10 @@ of each have been sold, and how many of each remain.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2240</x>
-      <y>200</y>
-      <w>480</w>
-      <h>880</h>
+      <x>996</x>
+      <y>168</y>
+      <w>144</w>
+      <h>264</h>
     </coordinates>
     <panel_attributes>&lt;&lt;database wrapper&gt;&gt;
 _:InventoryItem_
@@ -73,10 +73,10 @@ carried by the store.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>40</x>
-      <y>820</y>
-      <w>480</w>
-      <h>280</h>
+      <x>354</x>
+      <y>336</y>
+      <w>144</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;entity&gt;&gt;
 _:InventoryMessageReport_
@@ -93,10 +93,10 @@ Denotes all items with low stock</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>220</x>
-      <y>640</y>
-      <w>160</w>
-      <h>220</h>
+      <x>408</x>
+      <y>282</y>
+      <w>48</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
@@ -107,10 +107,10 @@ sends v</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>720</x>
-      <y>820</y>
-      <w>460</w>
-      <h>300</h>
+      <x>558</x>
+      <y>336</y>
+      <w>138</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;entity&gt;&gt;
 _:InventoryMessage_
@@ -127,10 +127,10 @@ Denotes all items with low stock</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>500</x>
-      <y>880</y>
-      <w>260</w>
-      <h>100</h>
+      <x>492</x>
+      <y>354</y>
+      <w>78</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
@@ -141,10 +141,10 @@ contains &gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1020</x>
-      <y>100</y>
-      <w>880</w>
-      <h>440</h>
+      <x>648</x>
+      <y>120</y>
+      <w>264</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 _:DBManager_
@@ -166,10 +166,10 @@ Executes SQL queries</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1260</x>
-      <y>660</y>
-      <w>580</w>
-      <h>520</h>
+      <x>720</x>
+      <y>312</y>
+      <w>174</w>
+      <h>156</h>
     </coordinates>
     <panel_attributes>&lt;&lt;entity&gt;&gt;
 _:ConnectionProvider_
@@ -193,24 +193,24 @@ Provides SQL Connection to DBManager</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1380</x>
-      <y>520</y>
-      <w>140</w>
-      <h>180</h>
+      <x>756</x>
+      <y>246</y>
+      <w>42</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=1
 uses v</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>860</x>
-      <y>320</y>
-      <w>200</w>
-      <h>100</h>
+      <x>600</x>
+      <y>186</y>
+      <w>60</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
@@ -221,28 +221,55 @@ uses &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1880</x>
-      <y>320</y>
-      <w>400</w>
-      <h>100</h>
+      <x>906</x>
+      <y>204</y>
+      <w>102</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=0..n
 provides &gt;</panel_attributes>
-    <additional_attributes>10.0;20.0;180.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;150.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>2240</x>
-      <y>1080</y>
-      <w>480</w>
-      <h>480</h>
+      <x>978</x>
+      <y>438</y>
+      <w>210</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>Relation in relational database:
 -Inventory ( _id_ , ItemName, Price, 
 Discount, Qty, Threshold)</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>996</x>
+      <y>120</y>
+      <w>144</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;external entity&gt;&gt;
+_:Database_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>906</x>
+      <y>120</y>
+      <w>102</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+interfaces with &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;150.0;20.0</additional_attributes>
   </element>
 </diagram>

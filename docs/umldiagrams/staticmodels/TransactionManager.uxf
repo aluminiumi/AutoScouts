@@ -7,7 +7,7 @@
       <x>0</x>
       <y>20</y>
       <w>320</w>
-      <h>150</h>
+      <h>180</h>
     </coordinates>
     <panel_attributes>&lt;&lt;application logic&gt;&gt;
 _:TransactionManager_
