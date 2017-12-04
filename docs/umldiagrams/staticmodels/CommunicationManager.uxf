@@ -4,13 +4,19 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>370</x>
+      <x>300</x>
       <y>210</y>
-      <w>300</w>
-      <h>150</h>
+      <w>290</w>
+      <h>250</h>
     </coordinates>
     <panel_attributes>&lt;&lt;business logic&gt;&gt;
 _:CommunicationManager_
+--
+-auth: AuthorizationCenterServiceInterface
+-clientSocket: Socket
+-im: InventoryManager
+-rprinter: ReportPrinter
+-tm: transactionManager
 --
 #PrintDailyReport(): void
 #PrintInventoryMessage(): void
@@ -24,7 +30,7 @@ interfaces and manager classes</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>70</x>
+      <x>0</x>
       <y>210</y>
       <w>220</w>
       <h>90</h>
@@ -40,7 +46,7 @@ Print reports for manager</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
+      <x>210</x>
       <y>220</y>
       <w>110</w>
       <h>50</h>
@@ -54,13 +60,15 @@ m2=1
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>70</x>
+      <x>0</x>
       <y>320</y>
       <w>230</w>
-      <h>170</h>
+      <h>190</h>
     </coordinates>
     <panel_attributes>&lt;&lt;control&gt;&gt;
 _:CMTimer_
+--
+-cm: CommunicationManager
 --
 #PrintDailyReport(): void
 #PrintInventoryMessage(): void
@@ -75,7 +83,7 @@ TransactionManager, respectively.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>290</x>
+      <x>220</x>
       <y>320</y>
       <w>100</w>
       <h>50</h>
@@ -89,7 +97,7 @@ m2=1
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>760</x>
+      <x>690</x>
       <y>210</y>
       <w>390</w>
       <h>120</h>
@@ -107,15 +115,15 @@ transaction manager.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>660</x>
+      <x>580</x>
       <y>290</y>
-      <w>120</w>
+      <w>130</w>
       <h>50</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=1
 has &gt;</panel_attributes>
-    <additional_attributes>10.0;20.0;100.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
   </element>
 </diagram>

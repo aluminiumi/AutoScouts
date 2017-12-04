@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>7</zoom_level>
+  <zoom_level>20</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>49</x>
-      <y>91</y>
-      <w>308</w>
-      <h>231</h>
+      <x>0</x>
+      <y>0</y>
+      <w>880</w>
+      <h>660</h>
     </coordinates>
     <panel_attributes>&lt;&lt;application logic&gt;&gt;
 _:InventoryManager_
@@ -35,10 +35,10 @@ of each have been sold, and how many of each remain.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>833</x>
-      <y>161</y>
-      <w>168</w>
-      <h>308</h>
+      <x>2240</x>
+      <y>200</y>
+      <w>480</w>
+      <h>880</h>
     </coordinates>
     <panel_attributes>&lt;&lt;database wrapper&gt;&gt;
 _:InventoryItem_
@@ -48,7 +48,7 @@ _:InventoryItem_
 -price: double
 -discount: double
 -qty: int
--msgThresh: int
+-messagegThresh: int
 --
 #getId(): int
 #getName(): String
@@ -73,14 +73,15 @@ carried by the store.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>63</x>
-      <y>378</y>
-      <w>168</w>
-      <h>84</h>
+      <x>40</x>
+      <y>820</y>
+      <w>480</w>
+      <h>280</h>
     </coordinates>
     <panel_attributes>&lt;&lt;entity&gt;&gt;
 _:InventoryMessageReport_
 --
+-imanager: InventoryManager
 -report: List&lt;InventoryMessage&gt;
 --
 #reset(): void
@@ -92,29 +93,29 @@ Denotes all items with low stock</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>119</x>
-      <y>315</y>
-      <w>63</w>
-      <h>77</h>
+      <x>220</x>
+      <y>640</y>
+      <w>160</w>
+      <h>220</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=1
 sends v</panel_attributes>
-    <additional_attributes>10.0;10.0;20.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>301</x>
-      <y>378</y>
-      <w>161</w>
-      <h>105</h>
+      <x>720</x>
+      <y>820</y>
+      <w>460</w>
+      <h>300</h>
     </coordinates>
     <panel_attributes>&lt;&lt;entity&gt;&gt;
 _:InventoryMessage_
 --
--itemId: int
+-id: int
 --
 #getId(): int
 #reset(): void
@@ -126,10 +127,10 @@ Denotes all items with low stock</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>224</x>
-      <y>399</y>
-      <w>91</w>
-      <h>35</h>
+      <x>500</x>
+      <y>880</y>
+      <w>260</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
@@ -140,13 +141,15 @@ contains &gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>406</x>
-      <y>126</y>
-      <w>308</w>
-      <h>147</h>
+      <x>1020</x>
+      <y>100</y>
+      <w>880</w>
+      <h>440</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 _:DBManager_
+--
+-con: Connection
 --
 #getDBdump(): String
 #getInventoryItem(int): InventoryItem
@@ -163,13 +166,21 @@ Executes SQL queries</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>490</x>
-      <y>322</y>
-      <w>210</w>
-      <h>98</h>
+      <x>1260</x>
+      <y>660</y>
+      <w>580</w>
+      <h>520</h>
     </coordinates>
     <panel_attributes>&lt;&lt;entity&gt;&gt;
 _:ConnectionProvider_
+--
+-con: Connection
+-dbhost: String
+-dbloginfile: String
+-dbname: String
+-dbPort: String
+-password: String
+username: String
 --
 #getCon(): Connection
 #readCredFile(String): boolean
@@ -182,24 +193,24 @@ Provides SQL Connection to DBManager</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>525</x>
-      <y>266</y>
-      <w>56</w>
-      <h>70</h>
+      <x>1380</x>
+      <y>520</y>
+      <w>140</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=1
 uses v</panel_attributes>
-    <additional_attributes>10.0;10.0;20.0;80.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>350</x>
-      <y>203</y>
-      <w>70</w>
-      <h>35</h>
+      <x>860</x>
+      <y>320</y>
+      <w>200</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
@@ -210,15 +221,28 @@ uses &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>707</x>
-      <y>203</y>
-      <w>140</w>
-      <h>35</h>
+      <x>1880</x>
+      <y>320</y>
+      <w>400</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=0..n
 provides &gt;</panel_attributes>
     <additional_attributes>10.0;20.0;180.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>2240</x>
+      <y>1080</y>
+      <w>480</w>
+      <h>480</h>
+    </coordinates>
+    <panel_attributes>Relation in relational database:
+-Inventory ( _id_ , ItemName, Price, 
+Discount, Qty, Threshold)</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
