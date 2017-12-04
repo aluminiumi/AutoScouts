@@ -5,12 +5,27 @@
     <id>UMLClass</id>
     <coordinates>
       <x>840</x>
-      <y>540</y>
-      <w>310</w>
-      <h>250</h>
+      <y>400</y>
+      <w>320</w>
+      <h>480</h>
     </coordinates>
     <panel_attributes>&lt;&lt;user interface&gt;&gt;
 _:CustomerUI_
+--
+-authResult: int
+-ba: BillAcceptor
+-billInput: int
+-bs: BarCodeScanner
+-ca: coinAcceptor
+-cardInput: long
+-cashValueInserted: double
+-cd: CashDispenser
+-cr: CardReader
+-kbd: Scanner
+-pinpadInput: int
+-pp: PinPad
+-rp: RecieptPrinter
+-screenInput: int
 --
 #CheckoutOrder(i: CustomerOrder): void
 #PromptToScan(): void
@@ -230,12 +245,14 @@ m2=1
     <id>UMLClass</id>
     <coordinates>
       <x>1280</x>
-      <y>540</y>
+      <y>550</y>
       <w>310</w>
-      <h>140</h>
+      <h>160</h>
     </coordinates>
     <panel_attributes>&lt;&lt;user interface&gt;&gt;
 _:ManagerUI_
+--
+-kbd: scanner
 --
 #ViewOrUpdate(): void
 #displayInventoryItem(): boolean
@@ -250,11 +267,15 @@ actor and the CommunicationManager.</panel_attributes>
     <coordinates>
       <x>1670</x>
       <y>540</y>
-      <w>290</w>
-      <h>200</h>
+      <w>300</w>
+      <h>260</h>
     </coordinates>
     <panel_attributes>&lt;&lt;user interface&gt;&gt;
 _:RestockerUI_
+--
+-bs: BarCodeScanner
+-expectingItem: boolean
+-kbd: Scanner
 --
 #displayInventoryItem(int): boolean
 #PromptForScan(): void
@@ -286,27 +307,27 @@ Reads bar codes from inventory items</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1860</x>
-      <y>730</y>
+      <y>790</y>
       <w>70</w>
-      <h>350</h>
+      <h>290</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=1
 has v</panel_attributes>
-    <additional_attributes>10.0;330.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;270.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>200</x>
-      <y>780</y>
+      <y>870</y>
       <w>820</w>
-      <h>260</h>
+      <h>170</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=black</panel_attributes>
-    <additional_attributes>800.0;10.0;800.0;240.0;10.0;240.0</additional_attributes>
+    <additional_attributes>800.0;10.0;800.0;150.0;10.0;150.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -325,7 +346,7 @@ bg=black</panel_attributes>
       <x>1280</x>
       <y>10</y>
       <w>310</w>
-      <h>230</h>
+      <h>270</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 _:Client_
@@ -333,13 +354,15 @@ _:Client_
 -destAddress: String
 -portNum: int
 -quietMode: boolean
+-sendBuffer: String
+-sout: PrintWriter
 -workToDo: boolean
 --
 #connect(): Thread
 #die(): void
 #setQuietMode(boolean): void
-/+send()/
-/+receive()/
+/+send()/ {abstract}
+/+receive()/ {abstract}
 --
 This class handles clientside session to 
 CommunicationManager</panel_attributes>
@@ -349,29 +372,29 @@ CommunicationManager</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1420</x>
-      <y>460</y>
+      <y>480</y>
       <w>30</w>
-      <h>100</h>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>980</x>
+      <x>1150</x>
       <y>490</y>
-      <w>900</w>
+      <w>730</w>
       <h>70</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;50.0;10.0;20.0;880.0;20.0;880.0;50.0</additional_attributes>
+    <additional_attributes>10.0;20.0;710.0;20.0;710.0;50.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>1280</x>
-      <y>280</y>
+      <y>300</y>
       <w>310</w>
       <h>190</h>
     </coordinates>
@@ -380,6 +403,7 @@ _:ApplicationLayerClient_
 --
 -targetItem: InventoryItem
 -expectingItem: boolean
+-order: List&lt;InventoryItem&gt;
 --
 #requestInventoryItem(int): void
 #itemExists(int): void
@@ -393,12 +417,12 @@ CommunicationManager</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1420</x>
-      <y>230</y>
+      <y>270</y>
       <w>30</w>
-      <h>70</h>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -526,7 +550,7 @@ Reads numbers from physical devices</panel_attributes>
     <coordinates>
       <x>110</x>
       <y>1060</y>
-      <w>210</w>
+      <w>220</w>
       <h>280</h>
     </coordinates>
     <panel_attributes>&lt;&lt;output device interface&gt;&gt;
