@@ -75,9 +75,9 @@ _:ReportPrinter_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>460</x>
+      <x>450</x>
       <y>320</y>
-      <w>100</w>
+      <w>120</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -85,7 +85,7 @@ _:ReportPrinter_
 
 T4: Print daily 
 report</panel_attributes>
-    <additional_attributes>80.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>90.0;20.0;20.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -117,7 +117,7 @@ _:CommunicationManager_
     <coordinates>
       <x>230</x>
       <y>400</y>
-      <w>100</w>
+      <w>110</w>
       <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -132,7 +132,7 @@ daily report
     <coordinates>
       <x>350</x>
       <y>410</y>
-      <w>100</w>
+      <w>110</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -185,5 +185,54 @@ Postcondition: The daily reports have been completed</panel_attributes>
     </coordinates>
     <panel_attributes>CMTimer</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>570</x>
+      <y>500</y>
+      <w>210</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;external output device&gt;&gt;
+Printer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>460</y>
+      <w>170</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>670</x>
+      <y>390</y>
+      <w>30</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>400</y>
+      <w>170</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+T5: Print daily report
+</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
